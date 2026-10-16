@@ -6,14 +6,15 @@
     "so_id": "SO-A",
     "visit_date": "2026-11-02",
     "trigger_type": "Loyalty Club Slab Target Gap",
-    "message": "Namaste A-D019 Enterprises (Loyalty Club)! You have 11,830 pts and are only 88,340 pts away from Slab 4 payout (Rs 10/pt = Rs 10.0L bonus). Placing 11042 sheets of Tier-8 this week unlocks the bonus before Nov 30. Looking forward to meeting you tomorrow at 10 AM.",
-    "character_count": 263,
+    "message": "Namaste A-D019 Enterprises (Loyalty Club)! You have 11,830 pts and are only 88,340 pts away from Slab 4 payout (Rs 10/pt = Rs 10.0L bonus). Placing 11042 sheets of Tier-8 this week unlocks the bonus before Nov 30. Looking forward to meeting you tomorrow at 12:12 PM.",
+    "character_count": 266,
     "grounding_data": {
       "current_points": 11830,
       "target_slab": "Slab 4",
       "target_points": 100170.0,
       "points_needed": 88340,
-      "equivalent_tier8_sheets": 11042
+      "equivalent_tier8_sheets": 11042,
+      "planned_arrival": "12:12 PM"
     }
   },
   {
@@ -23,13 +24,14 @@
     "so_id": "SO-A",
     "visit_date": "2026-11-02",
     "trigger_type": "Product Tier De-growth Alert",
-    "message": "Hi Sureshji, noticed your orders dropped 100.0% from last month (Rs 0.3L to Rs 0.0L). We have special spot discounts on 1mm laminates tomorrow. Let us review your current inventory and fast-moving designs at 11:30 AM.",
+    "message": "Hi Sureshji, noticed your orders dropped 100.0% from last month (Rs 0.3L to Rs 0.0L). We have special spot discounts on 1mm laminates tomorrow. Let us review your current inventory and fast-moving designs at 10:52 AM.",
     "character_count": 217,
     "grounding_data": {
       "prior_month_sales_inr": 25883.0,
       "curr_month_sales_inr": 0.0,
       "degrowth_percentage": "100.0%",
-      "value_lost_inr": 25883.0
+      "value_lost_inr": 25883.0,
+      "planned_arrival": "10:52 AM"
     }
   },
   {
@@ -39,13 +41,14 @@
     "so_id": "SO-A",
     "visit_date": "2026-11-02",
     "trigger_type": "High GST Wallet Headroom Opportunity",
-    "message": "Namaste Rameshji! Your annual turnover is Rs 2.5 Cr+, but current laminate purchases are Rs 0.6 Lakhs (0.3% share). Let's discuss exclusive distributor pricing to capture your upcoming commercial project orders. See you tomorrow at 12:15 PM.",
+    "message": "Namaste Rameshji! Your annual turnover is Rs 2.5 Cr+, but current laminate purchases are Rs 0.6 Lakhs (0.3% share). Let's discuss exclusive distributor pricing to capture your upcoming commercial project orders. See you tomorrow at 09:58 AM.",
     "character_count": 241,
     "grounding_data": {
       "gst_turnover_proxy_inr": 25000000.0,
       "annual_purchases_inr": 63579.0,
       "estimated_wallet_share": "0.3%",
-      "uncaptured_headroom_inr": 24936421.0
+      "uncaptured_headroom_inr": 24936421.0,
+      "planned_arrival": "09:58 AM"
     }
   },
   {
@@ -55,11 +58,12 @@
     "so_id": "SO-A",
     "visit_date": "2026-11-02",
     "trigger_type": "Sudden Sales Drop Recovery",
-    "message": "Hi Maheshji, we observed zero billing over recent days against your 1.7 sheets/day average. I am visiting tomorrow at 2 PM to resolve any dispatch delays, damaged sheets, or pending scheme credit notes immediately.",
-    "character_count": 214,
+    "message": "Hi Maheshji, we observed zero billing over recent days against your 1.7 sheets/day average. I am visiting tomorrow at 11:19 AM to resolve any dispatch delays, damaged sheets, or pending scheme credit notes immediately.",
+    "character_count": 218,
     "grounding_data": {
       "historical_daily_rate": "1.7 sheets/day",
-      "urgency_window": "< 7 days response"
+      "urgency_window": "< 7 days response",
+      "planned_arrival": "11:19 AM"
     }
   },
   {
@@ -69,14 +73,15 @@
     "so_id": "SO-A",
     "visit_date": "2026-11-02",
     "trigger_type": "Non-Club Monthly Scheme Acceleration",
-    "message": "Namaste A-D093 Interiors! You are currently at 5 scheme points. Reaching Slab 1 (15 pts) unlocks a cash bonus of Rs 150 (Rs 10.0/pt). Just 5 sheets of Tier-4 will qualify you for the payout. Visiting tomorrow at 3:30 PM.",
-    "character_count": 220,
+    "message": "Namaste A-D093 Interiors! You are currently at 5 scheme points. Reaching Slab 1 (15 pts) unlocks a cash bonus of Rs 150 (Rs 10.0/pt). Just 5 sheets of Tier-4 will qualify you for the payout. Visiting tomorrow at 10:25 AM.",
+    "character_count": 221,
     "grounding_data": {
       "current_monthly_points": 5,
       "target_slab": "Slab 1 (15 pts)",
       "points_needed": 10,
       "bonus_rate": "Rs 10.0/pt",
-      "estimated_cash_bonus_inr": 150
+      "estimated_cash_bonus_inr": 150,
+      "planned_arrival": "10:25 AM"
     }
   }
 ]
