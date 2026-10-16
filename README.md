@@ -34,6 +34,7 @@ py -3.11 simulate.py --workbook PJP_Assignment_Sample_Data.xlsx --plan plan_nove
   * Milestone M4 (Routing & TSP Sequencing): `docs/research_paper_m4.md`
   * Milestone M5 (WhatsApp Nudges): `docs/research_paper_m5.md`
   * Milestone M6 (Dynamic Online Re-planner): `docs/research_paper_m6.md`
+  * Milestone M7 (Simulation & Tuning): `docs/research_paper_m7.md`
 * **Antigravity Skills:** `.agents/skills/pjp-data-engineer/` and `.agents/skills/pjp-ai-developer/`
 
 ---
