@@ -79,6 +79,17 @@ def rank_and_schedule():
     # 2. Dynamically load officer profiles
     officers = load_officer_profiles()
 
+    # Load scheme targets for club accounts to compute slab proximity
+    scheme_targets_file = DATA_DIR / "scheme_targets.csv"
+    club_targets: Dict[str, List[float]] = defaultdict(list)
+    if scheme_targets_file.exists():
+        with open(scheme_targets_file, mode="r", encoding="utf-8") as f:
+            for r in csv.DictReader(f):
+                pid = r.get("parent_dealer_id", "").strip()
+                pts = float(r.get("slab_target_points") or 0.0)
+                if pid and pts > 0:
+                    club_targets[pid].append(pts)
+
     # 3. Load dealer feature vectors grouped by officer
     dealers_by_officer: Dict[str, List[dict]] = defaultdict(list)
     with open(features_file, mode="r", encoding="utf-8") as f:
@@ -86,6 +97,7 @@ def rank_and_schedule():
             dealer = {
                 "dealer_id": row["dealer_id"],
                 "so_id": row["so_id"],
+                "parent_dealer_id": row.get("parent_dealer_id", "").strip(),
                 "club": int(row["club"]) == 1,
                 "has_gps": int(row["has_gps"]) == 1,
                 "lat": float(row["lat"]) if row.get("lat") else None,
@@ -94,6 +106,7 @@ def rank_and_schedule():
                 "headroom": float(row.get("headroom_inr") or 0.0),
                 "degrowth_mom": float(row.get("degrowth_mom_inr") or 0.0),
                 "degrowth_qoq": float(row.get("degrowth_qoq_inr") or 0.0),
+                "degrowth_yoy": float(row.get("degrowth_yoy_inr") or 0.0),
                 "is_active": int(row.get("is_active_for_events") or 0) == 1,
             }
             dealers_by_officer[row["so_id"]].append(dealer)
@@ -103,23 +116,40 @@ def rank_and_schedule():
     focus_selection: Dict[str, dict] = {}
 
     for so_id, dealer_list in dealers_by_officer.items():
-        max_degrowth = max((d["degrowth_mom"] + d["degrowth_qoq"] for d in dealer_list), default=1.0) or 1.0
+        # Multi-temporal blended de-growth: 45% MoM, 35% QoQ, 20% YoY
+        for d in dealer_list:
+            d["degrowth_blended"] = 0.45 * d["degrowth_mom"] + 0.35 * d["degrowth_qoq"] + 0.20 * d["degrowth_yoy"]
+
+        max_degrowth = max((d["degrowth_blended"] for d in dealer_list), default=1.0) or 1.0
         max_headroom = max((d["headroom"] for d in dealer_list), default=1.0) or 1.0
         max_rate = max((d["rate"] for d in dealer_list), default=1.0) or 1.0
+        log_max_rate = math.log1p(max_rate) if max_rate > 0 else 1.0
 
         for dealer in dealer_list:
-            degrowth_norm = (dealer["degrowth_mom"] + dealer["degrowth_qoq"]) / max_degrowth
+            degrowth_norm = dealer["degrowth_blended"] / max_degrowth
             headroom_norm = dealer["headroom"] / max_headroom
-            rate_norm = dealer["rate"] / max_rate
+            rate_norm = math.log1p(dealer["rate"]) / log_max_rate if log_max_rate > 0 else 0.0
+
+            # Club & Slab Proximity
             club_bonus = 1.0 if dealer["club"] else 0.0
+            pid = dealer["parent_dealer_id"] if dealer["parent_dealer_id"] else dealer["dealer_id"]
+            targets = sorted(club_targets.get(pid, []))
+            slab_prox = 1.0 if (dealer["club"] and targets) else 0.0
+            club_score = 0.70 * club_bonus + 0.30 * slab_prox
+
+            dealer["score_degrowth"] = round(degrowth_norm, 6)
+            dealer["score_headroom"] = round(headroom_norm, 6)
+            dealer["score_volume"] = round(rate_norm, 6)
+            dealer["score_club"] = round(club_score, 6)
 
             composite_score = (
                 RANKING_WEIGHTS["degrowth"] * degrowth_norm
                 + RANKING_WEIGHTS["headroom"] * headroom_norm
                 + RANKING_WEIGHTS["volume_risk"] * rate_norm
-                + RANKING_WEIGHTS["club_loyalty"] * club_bonus
+                + RANKING_WEIGHTS["club_loyalty"] * club_score
             )
             dealer["rank_score"] = round(composite_score, 6)
+            dealer["is_focus"] = 0
             ranked_records.append(dealer)
 
         # Sort descending by composite ranking score
@@ -147,15 +177,27 @@ def rank_and_schedule():
         remaining_slots = non_club_capacity - len(selected_located)
         selected_unlocated = unlocated_pool[:remaining_slots]
 
+        for d in club_dealers:
+            d["is_focus"] = 1
+        for d in selected_located:
+            d["is_focus"] = 1
+        for d in selected_unlocated:
+            d["is_focus"] = 1
+
         focus_selection[so_id] = {
             "club": club_dealers,
             "located": selected_located,
             "unlocated": selected_unlocated,
         }
 
-    # Save ranking audit log
+    # Save comprehensive ranking audit log with explainable sub-components
     with open(DATA_DIR / "ranked_dealers.csv", mode="w", newline="", encoding="utf-8") as f:
-        fieldnames = ["dealer_id", "so_id", "club", "has_gps", "rate", "headroom", "degrowth_mom", "rank_score"]
+        fieldnames = [
+            "dealer_id", "so_id", "club", "has_gps", "rate", "headroom",
+            "degrowth_mom", "degrowth_qoq", "degrowth_yoy",
+            "score_degrowth", "score_headroom", "score_volume", "score_club",
+            "rank_score", "is_focus"
+        ]
         writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
         writer.writeheader()
         writer.writerows(sorted(ranked_records, key=lambda d: (d["so_id"], -d["rank_score"])))

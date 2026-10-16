@@ -1,28 +1,28 @@
 {
  "seed": 3,
- "simulated_adherence": 0.9295,
+ "simulated_adherence": 0.9365,
  "initial_plan_adherence": 0.8717,
  "focus_dealers": 394,
- "focus_coverage": 0.8731,
+ "focus_coverage": 0.8706,
  "club_dealers_in_focus": 27,
- "club_cadence_met": 0.4074,
+ "club_cadence_met": 0.4815,
  "drop_events": 11,
- "drops_visited_within_7_days": 3,
- "drop_response_rate": 0.2727,
- "median_days_to_drop_visit": 7,
+ "drops_visited_within_7_days": 2,
+ "drop_response_rate": 0.1818,
+ "median_days_to_drop_visit": 8,
  "hike_events": 7,
  "visits_made_during_hikes": 3,
  "visits_cancelled_during_hikes": 1,
- "visits_planned_day_of": 397,
+ "visits_planned_day_of": 394,
  "visits_completed": 369,
  "missed_by_reason": {
-  "missed_dealer_unavailable": 16,
+  "missed_dealer_unavailable": 13,
   "missed_weather": 3,
   "missed_out_of_time": 9
  },
- "avg_travel_min_per_so_day": 91.2,
+ "avg_travel_min_per_so_day": 94.3,
  "avg_completed_per_so_day": 4.92,
  "guardrail_breaches": {},
  "replan_failures": 0,
- "simulated_points_november": 77307
+ "simulated_points_november": 77025
 }

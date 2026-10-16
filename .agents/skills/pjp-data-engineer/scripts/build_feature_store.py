@@ -124,6 +124,10 @@ def build_features() -> Path:
     # Dynamic quarter buckets
     q_curr_months = sorted_months[-3:] if len(sorted_months) >= 3 else sorted_months
     q_prior_months = sorted_months[-6:-3] if len(sorted_months) >= 6 else []
+    q_prior_year_months = [
+        f"{int(m[:4]) - 1}{m[4:]}" for m in q_curr_months
+        if f"{int(m[:4]) - 1}{m[4:]}" in observed_months
+    ]
 
     # 6. Load GST compliance profiles
     gst_data: Dict[str, dict] = {}
@@ -144,7 +148,7 @@ def build_features() -> Path:
         if is_active:
             active_account_count += 1
 
-        # GST and Headroom derive
+        # GST and Headroom derive with Inversion Adjustment
         gst_profile = gst_data.get(dealer_id, {})
         proxy_band = gst_profile.get("turnover_band_proxy", "").strip()
         status_text = gst_profile.get("lookup_status", "")
@@ -154,7 +158,9 @@ def build_features() -> Path:
             proxy_band, FEATURE_CONFIG["default_gst_proxy"]
         )
         purchases = annual_purchases.get(dealer_id, 0.0)
-        wallet_headroom = max(0.0, turnover_proxy - purchases)
+        # Inversion adjustment: if dealer purchases exceed proxy, estimate total business capacity at >= 1.25x purchases
+        turnover_est = max(turnover_proxy, purchases * 1.25)
+        wallet_headroom = max(0.0, turnover_est - purchases)
 
         # Dynamic Month-on-Month value lost
         val_prior = monthly_sales_val[dealer_id].get(prior_month, 0.0)
@@ -165,6 +171,10 @@ def build_features() -> Path:
         val_q_prior = sum(monthly_sales_val[dealer_id].get(m, 0.0) for m in q_prior_months)
         val_q_curr = sum(monthly_sales_val[dealer_id].get(m, 0.0) for m in q_curr_months)
         degrowth_qoq = max(0.0, val_q_prior - val_q_curr)
+
+        # Dynamic Year-on-Year value lost
+        val_yoy_prior = sum(monthly_sales_val[dealer_id].get(m, 0.0) for m in q_prior_year_months)
+        degrowth_yoy = max(0.0, val_yoy_prior - val_q_curr) if q_prior_year_months else 0.0
 
         feature_rows.append({
             "dealer_id": dealer_id,
@@ -178,11 +188,12 @@ def build_features() -> Path:
             "points_per_sheet": round(points_per_sheet, 2),
             "is_active_for_events": 1 if is_active else 0,
             "annual_purchases_inr": round(purchases, 2),
-            "gst_turnover_proxy_inr": round(turnover_proxy, 2),
+            "gst_turnover_proxy_inr": round(turnover_est, 2),
             "headroom_inr": round(wallet_headroom, 2),
             "is_valid_gst": 1 if is_valid_gst else 0,
             "degrowth_mom_inr": round(degrowth_mom, 2),
             "degrowth_qoq_inr": round(degrowth_qoq, 2),
+            "degrowth_yoy_inr": round(degrowth_yoy, 2),
             "sales_prior_month_inr": round(val_prior, 2),
             "sales_curr_month_inr": round(val_curr, 2),
         })
