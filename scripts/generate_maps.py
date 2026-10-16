@@ -117,11 +117,14 @@ def generate_maps():
 
                 ax.scatter(d_lon, d_lat, color="#059669", s=140, marker="o", zorder=4)
                 label_text = f"Stop {v['sequence']}: {v['account_id']}\nArr: {v['planned_arrival']} (+{v['travel_min']}m)"
+                seq = v["sequence"]
+                offsets = [(14, 12), (14, -22), (-95, 14), (-95, -20), (14, 28), (-95, 28)]
+                ox, oy = offsets[(seq - 1) % len(offsets)]
                 ax.annotate(
                     label_text,
                     (d_lon, d_lat),
                     textcoords="offset points",
-                    xytext=(10, -10 if v["sequence"] % 2 == 0 else 10),
+                    xytext=(ox, oy),
                     fontsize=8,
                     bbox=dict(boxstyle="round,pad=0.2", edgecolor="#059669", facecolor="#ECFDF5", alpha=0.9),
                 )
@@ -162,13 +165,35 @@ def generate_maps():
             f"Est. Call Time: {len(visits) * 25} min\n"
             f"Net Budget: {total_travel_min + len(visits) * 25:.1f} / 460 min"
         )
+        # Dynamically place info box in the corner with maximum spatial clearance
+        min_lon, max_lon = min(route_lons), max(route_lons)
+        min_lat, max_lat = min(route_lats), max(route_lats)
+        span_lon = max(max_lon - min_lon, 1e-5)
+        span_lat = max(max_lat - min_lat, 1e-5)
+
+        candidate_corners = [
+            (0.02, 0.02, "bottom", "left", 0.0, 0.0),
+            (0.98, 0.02, "bottom", "right", 1.0, 0.0),
+            (0.02, 0.98, "top", "left", 0.0, 1.0),
+        ]
+        best_corner = max(
+            candidate_corners,
+            key=lambda c: min(
+                ((lon - min_lon) / span_lon - c[4]) ** 2 +
+                ((lat - min_lat) / span_lat - c[5]) ** 2
+                for lon, lat in zip(route_lons, route_lats)
+            )
+        )
+        box_x, box_y, va, ha = best_corner[0], best_corner[1], best_corner[2], best_corner[3]
+
         ax.text(
-            0.02,
-            0.02,
+            box_x,
+            box_y,
             info_text,
             transform=ax.transAxes,
             fontsize=9,
-            verticalalignment="bottom",
+            verticalalignment=va,
+            horizontalalignment=ha,
             bbox=dict(boxstyle="round,pad=0.5", edgecolor="#9CA3AF", facecolor="#F9FAFB", alpha=0.95),
         )
 

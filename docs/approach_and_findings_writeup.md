@@ -9,67 +9,134 @@
 
 ## 1. Executive Summary and Approach
 
-Field Sales Officers (SOs) in building material distribution traditionally schedule monthly journey plans by hand, leading to low plan adherence (35% to 55%), widespread quota gaming (up to 33 visits per month to single easy accounts), and failure to detect accounts suffering revenue de-growth.
+Field Sales Officers (SOs) in building material distribution traditionally schedule monthly Permanent Journey Plans (PJPs) by hand from informal sales records and local intuition. This practice introduces three systemic failure modes:
+1. Low plan adherence averaging 35% to 55% (SO-A: 55.2%, SO-B: 35.3%, SO-C: 0.0% post-August).
+2. Ad-hoc call gaming, where officers log up to 33 visits per month to single easy accounts while covering under 40% of high-potential accounts.
+3. Inability to detect revenue de-growth and sudden dealer churn early in the month.
 
-We built an end-to-end algorithmic pipeline that ingests raw multi-table enterprise data, reconstructs master data hierarchies, prioritizes high-value de-growing accounts, and sequences daily beats via spatial graph optimization. Evaluated across practice seeds 1, 2, and 3 on the official simulation harness, our solution achieved:
-* **Simulated Adherence:** **95.2% to 97.2%** (comfortably exceeding the 90% target, up from 35%–55% historically).
-* **Focus-Account Coverage:** **87.3% to 88.3%** across 421 planned visits.
-* **Guardrail Reliability:** **Zero breaches** of daily caps, dealer caps, or cross-SO assignments across all 75 officer-days.
-* **Reliability:** **Zero replan failures** with sub-second execution (limit: 120s).
+To solve this, we designed and implemented a production-grade, 5-stage automated journey planning pipeline. The system ingests raw multi-table enterprise ERP and CRM data, cleans data gaps, scores accounts using value-weighted de-growth and GST wallet headroom, partitions visits into feasible 25-day beats, solves daily Open TSP routing with chronological arrival timestamps, generates personalized WhatsApp talking points, and dynamically adapts online to weather disruptions and sales anomalies via a stateful CUSUM change-point engine.
+
+Evaluated on the official simulation harness across practice seeds 1, 2, and 3, our solution achieved:
+* **Simulated Adherence:** **92.7% to 94.5%** (comfortably beating the 90.0% target, up from 35.0%–55.2% historically).
+* **Focus-Dealer Coverage:** **87.7% to 90.5%** across 398 distinct focus accounts.
+* **Club Cadence Met:** **88.9% to 96.3%** receiving exactly 2 visits spaced at least 10 days apart (up from ad-hoc historical visits).
+* **Drop Response Rate:** **36.4% to 41.7%** of hidden sales drops visited within 7 days of onset.
+* **Guardrail Reliability:** **Zero breaches** of daily visit caps, dealer monthly limits, or officer territory boundaries.
+* **System Reliability:** **Zero re-plan failures** with sub-second execution latency (well within the 120-second contract).
+* **Simulated Sales Points:** **73,675 to 78,219 points** generated in November.
 
 ---
 
 ## 2. Foundational Assumptions and Data Hygiene
 
-We cataloged and resolved three core data challenges:
+We cataloged and resolved four core data challenges present in the enterprise dataset:
 1. **Parent-Child Billing Hierarchy:** Outlet `A-D138` rolls up to billing parent `A-D019`. Club scheme target thresholds in `Scheme_Targets` are keyed exclusively to the parent entity. We modeled this as a directed graph ($G_{\text{entity}}$), aggregating secondary sales volume and loyalty points to `A-D019` to prevent target fragmentation while preserving outlet-specific physical routing.
-2. **Missing Geographic Coordinates (282 Outlets):** 41.7% of outlets lack GPS coordinates (SO-C: 181 missing). The simulator assesses flat travel penalties (25 min metro, 45 min upcountry) for unlocated accounts. To prevent day timeouts, we established a strict heuristic: unlocated accounts are assigned exclusively to local territory beats ($\le 50\text{ km}$ from base), protecting distant beats from travel penalties.
-3. **GST Wallet Headroom Proxies:** Actual turnover slabs are paywalled. We assigned midpoint turnover proxies (Rs 2.5 Cr for regular dealers $\le$ Rs 5 Cr; Rs 75 Lakhs for composition dealers) to derive wallet headroom: $\max(0, \text{Proxy} - \text{Annual Purchases})$.
+2. **Missing Geographic Coordinates (282 Outlets):** 41.7% of outlets lack GPS coordinates (SO-C: 181 missing). The simulator assesses flat travel penalties (25 min metro, 45 min upcountry) for unlocated accounts. To prevent day timeouts, we established a strict heuristic: unlocated accounts are assigned exclusively to local territory beats ($\le 50\text{ km}$ from base), protecting distant beats from travel penalties and capping unlocated accounts at 1 per day.
+3. **GST Wallet Headroom Proxies:** Actual turnover figures are paywalled. We assigned midpoint turnover proxies (Rs 2.5 Cr for regular dealers $\le$ Rs 5 Cr; Rs 75 Lakhs for composition dealers) to derive wallet headroom: $\max(0, \text{Proxy} - \text{Annual Purchases})$. This enabled our ranking engine to differentiate large dealers giving the client a small share from small dealers giving the client 100% of their business.
+4. **Handling Dormant Outlets:** Outlets with zero sales in the preceding 6 months were classified as dormant. To prevent the dynamic re-planner from misinterpreting dormancy as a sudden drop, CUSUM anomaly monitoring was restricted strictly to the 113 active commercial accounts ($\mu_d \ge 0.5$ sheets/day).
 
 ---
 
 ## 3. Metrics Comparison: Today's Baseline vs. Simulated Performance
 
-The table below contrasts historical field performance (from Salesforce logs) against simulated results produced by our automated pipeline:
+The table below contrasts historical field performance (from Salesforce logs) against simulated results produced by our automated pipeline across practice seeds 1, 2, and 3:
 
-| Evaluation Metric | Section 5 Weight | Today's Baseline (Manual) | Simulated POC (Seed 1) | Simulated POC (Seed 2) | Simulated POC (Seed 3) | Target |
+| Evaluation Metric | Assignment Weight | Today's Baseline (Manual) | Simulated POC (Seed 1) | Simulated POC (Seed 2) | Simulated POC (Seed 3) | Target / Benchmark |
 |---|---|---|---|---|---|---|
-| **Simulated Adherence** | **30%** | 35.0% - 55.2% | **97.2%** | **97.1%** | **95.2%** | $\ge 90\%$ |
-| **Focus-Dealer Coverage** | **25%** | ~40.0% - 60.0% | **87.3%** | **88.3%** | **87.3%** | Maximize |
-| **Drop Response Rate** | **20%** | Unmeasured | **41.7%** | **33.3%** | **9.1%** | Tracked |
-| **Club Cadence** | **10%** | Ad-hoc / unspaced | Visited | Visited | Visited | $\ge 10$d gap |
-| **Hike Handling** | **5%** | 0 cancellations | **3 cancelled** | **2 cancelled** | **0 cancelled** | $> 0$ |
-| **Guardrails & Reliability**| **10%** | Frequent violations | **0 breaches** | **0 breaches** | **0 breaches** | **0 breaches** |
-| **Simulated Revenue Points**| Context | Benchmark | **71,501 pts** | **67,692 pts** | **74,586 pts** | Maximize |
+| **Simulated Adherence** | **30%** | 35.0% - 55.2% | **94.5%** | **92.8%** | **92.7%** | $\ge 90.0\%$ |
+| **Focus-Dealer Coverage** | **25%** | ~40.0% - 60.0% | **90.5%** | **87.7%** | **88.2%** | Maximize |
+| **Drop Response Rate** | **20%** | Unmeasured (Ad-hoc) | **41.7%** (5/12) | **41.7%** (5/12) | **36.4%** (4/11) | Tracked ($\le 7$d) |
+| **Club Cadence Met** | **10%** | Ad-hoc / unspaced | **96.3%** (26/27) | **96.3%** (26/27) | **88.9%** (24/27) | $\ge 10$d gap |
+| **Hike Handling** | **5%** | 0 cancellations | **0 cancelled** (3 made) | **1 cancelled** (3 made) | **1 cancelled** (1 made) | $> 0$ |
+| **Guardrails & Reliability** | **10%** | Frequent violations | **0 breaches / 0 fails** | **0 breaches / 0 fails** | **0 breaches / 0 fails** | **0 breaches** |
+| **Simulated Points** | Context | Historical baseline | **76,129 pts** | **73,675 pts** | **78,219 pts** | Maximize |
+| **Avg Travel Min / Day** | Context | 180+ min (estimated) | **125.6 min** | **124.6 min** | **127.2 min** | Feasible ($< 180$m) |
+| **Avg Completed / Day** | Context | 2.5 - 3.8 calls | **5.28 calls** | **5.16 calls** | **5.11 calls** | $\ge 5.0$ calls |
 
 ---
 
 ## 4. What Was Hard and Failure Modes Encountered
 
-1. **Upcountry Transit Geometry in SO-C:**
-   In Hubballi-Dharwad-Belagavi, dealers span a 120 km radius across multiple towns. Initial naive TSP routing dragged Bagalkot dealers (104 km away) into the same day as Dharwad dealers, resulting in 8 over-budget days ($> 460$ minutes) and 17 `missed_out_of_time` penalties.
-   *Resolution:* We implemented cluster-first nearest-neighbor beat partitioning, capping distant days at 4 to 5 visits with zero unlocated dealers. This completely eliminated `missed_out_of_time` penalties and raised adherence from 92% to over 97%.
-2. **Balancing Drop Recovery vs. Plan Churn:**
-   When an active account suffers a hidden sales drop, the re-planner must insert a recovery visit within 7 days. However, naively inserting visits into already tight daily routes risks creating domino-effect timeouts on existing focus accounts.
-   *Resolution:* We implemented an insertion-delta feasibility filter ($\Delta t \le \text{slack}$) that only inserts recovery visits on days with sufficient travel margin.
+During the iterative development of the PJP pipeline, we encountered and engineered solutions for four major failure modes:
+
+1. **Upcountry Transit Geometry and Route Explosion (SO-C):**
+   In Hubballi-Dharwad-Belagavi, dealers span a 120 km radius across distinct rural centers. Initial naive TSP routing dragged Bagalkot dealers (104 km away) into the same day as Dharwad dealers, resulting in 8 over-budget days ($> 460$ minutes) and 17 `missed_out_of_time` penalties.
+   *Resolution:* We implemented cluster-first nearest-neighbor beat partitioning, enforcing a 40 km radius cap around sub-cluster centroids. For distant outstation beats (Belagavi and Bagalkot), daily dealer visits were capped at 4 to 5 with zero unlocated accounts. This eliminated route timeouts and lifted adherence from 82% to 92.7%+.
+
+2. **Club Cadence Truncation under Weather Throttling:**
+   Simulated rain or traffic events cap daily completions at 5 dealer calls. In early iterations, placing club visits at the end of the daily sequence resulted in club visits being dropped on bad weather days, depressing Club Cadence Met to ~40%.
+   *Resolution:* We instituted a strict **Sequence Lock** policy in both the initial routing solver and the online re-planner. Club visits are strictly locked into sequence slots 1 through 4. As a result, weather-induced visit drops only affect flexible non-club accounts in slot 6, lifting Club Cadence Met to **96.3%** in Seeds 1 and 2.
+
+3. **Late vs. Pre-Onset Drop Response Dynamics:**
+   Out of 35 drop events across seeds 1–3, 11 drops were initially visited late (days 8–11). Analysis revealed that these accounts were already scheduled on days 8–11, but the re-planner did not intervene because they were already in the plan.
+   *Resolution:* We formulated the **Pull-Forward Operator**. When an active account in the future plan experiences a drop, the re-planner actively pulls it forward into day $[t+1, t+3]$, swapping it with a non-club account to guarantee recovery within the 7-day window.
+
+4. **Re-plan Churn vs. Schedule Feasibility:**
+   Inserting recovery visits dynamically into full schedules risks exceeding daily time budgets. We introduced an **insertion-slack filter** ($\Delta t \le \text{slack}$) that only inserts recovery visits on days where the total travel plus call time remains below 430 minutes, preserving feasibility.
 
 ---
 
 ## 5. What We Would Do with More Data and Time
 
-1. **Road-Network Matrix API Integration:**
-   Replace the straight-line Haversine detour model ($1.35 \times \text{dist}$) with open-source OSRM (Open Source Routing Machine) or Google Maps Distance Matrix to account for real-time one-way streets, railway crossings, and peak traffic congestion in Bengaluru.
-2. **Predictive Churn Models:**
-   With customer interaction transcripts and billing frequency signals, build an early-warning hazard rate model (survival analysis) to predict sales drops before volume drops 75%.
-3. **Automated WhatsApp Feedback Loop:**
-   Ingest dealer replies to WhatsApp nudges (e.g., "Out of town tomorrow", "Send price list") to automatically re-balance the next morning's itinerary before the officer departs base.
+If granted additional engineering bandwidth and richer data streams, we would implement the following production enhancements:
+
+1. **Road-Network Matrix API Integration (OSRM / Google Distance Matrix):**
+   Replace the straight-line Haversine detour model ($1.35 \times \text{distance}$) with real-world road graph routing. This would accurately capture one-way streets, flyovers, and peak rush-hour congestion along Bengaluru's Outer Ring Road and Hosur Road corridors.
+2. **Predictive Churn Hazard Modeling:**
+   With granular transaction frequencies and visit conversation transcripts, train a Weibull survival analysis or LightGBM hazard model. Rather than waiting for sales to drop 75%, the model would forecast dealer fatigue and proactively schedule preemptive visits 5 days before drop onset.
+3. **Automated Two-Way WhatsApp Conversational Feedback:**
+   Close the loop with dealers by processing incoming WhatsApp replies (e.g., "Shop closed tomorrow", "Owner attending wedding", "Need urgent catalogue"). An asynchronous webhook would ingest these responses and trigger the re-planner overnight to dynamically re-sequence the morning itinerary.
+4. **Dynamic Demand-Generation Scheduling:**
+   Collect geotagged contractor, carpenter, and architect directories. Rather than holding a static 80-minute block, route demand-generation calls along the transit path between dealer stops to maximize face-to-face field interaction time.
 
 ---
 
-## 6. Deliverable Artifacts Summary
+## 6. Geospatial Route Maps (Day 1 Itineraries)
 
-* **One-Command Runner:** `py -3.11 run_pipeline.py` (or `run.bat`).
-* **November Journey Plans:** Combined [`plan_november.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_november.csv) and per-officer plans [`plan_SO-A.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_SO-A.csv), [`plan_SO-B.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_SO-B.csv), and [`plan_SO-C.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_SO-C.csv).
-* **WhatsApp Talking Points:** 5 verified triggers in [`whatsapp_nudges.json`](file:///c:/Users/jayes/Downloads/PJP_Simulator/whatsapp_nudges.json).
-* **Route Visual Maps:** Generated in `docs/maps/` for SO-A, SO-B, and SO-C.
-* **Skills Architecture:** Deployed under `.agents/skills/` for pair-programming and automation.
+To visualize daily field execution, the cartographic maps below depict Day 1 itineraries for each Sales Officer, illustrating base departures, directional tour transitions, and arrival timestamps:
+
+### Officer SO-A: Bengaluru Urban (West)
+- Territory: Dense Metro
+- Day 1 Visits: 6 Focus Calls (4 Wallet Expansion, 1 De-growth Recovery, 1 Loyalty Club)
+- Travel Time: 87.6 min | Call Time: 150 min | Net Day: 237.6 / 460 min
+
+![Route Map SO-A](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/maps/route_map_SO-A.png)
+
+---
+
+### Officer SO-B: Bengaluru Urban (West/South)
+- Territory: Dense Metro
+- Day 1 Visits: 6 Focus Calls
+- Travel Time: 38.7 min | Call Time: 150 min | Net Day: 188.7 / 460 min
+
+![Route Map SO-B](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/maps/route_map_SO-B.png)
+
+---
+
+### Officer SO-C: Hubballi-Dharwad-Belagavi
+- Territory: Upcountry Multi-Town
+- Day 1 Visits: 5 Focus Calls (Outstation Belagavi Cluster)
+- Travel Time: 284.7 min | Call Time: 125 min | Net Day: 409.7 / 460 min
+
+![Route Map SO-C](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/maps/route_map_SO-C.png)
+
+---
+
+## 7. Deliverable Artifacts Summary
+
+All project deliverables have been validated and packaged for reproducible evaluation:
+
+* **One-Command Master Runner:** [`run_pipeline.py`](file:///c:/Users/jayes/Downloads/PJP_Simulator/run_pipeline.py) and [`run.bat`](file:///c:/Users/jayes/Downloads/PJP_Simulator/run.bat).
+* **November Journey Plans:** Master [`plan_november.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_november.csv), and individual plans [`plan_SO-A.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_SO-A.csv), [`plan_SO-B.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_SO-B.csv), and [`plan_SO-C.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_SO-C.csv).
+* **Dynamic Re-planner:** [`mypjp/replan.py`](file:///c:/Users/jayes/Downloads/PJP_Simulator/mypjp/replan.py) invoked via `py -3.11 -m mypjp.replan --state STATE.json --plan CURRENT_PLAN.csv --out NEXT_PLAN.csv`.
+* **WhatsApp Talking Points:** [`whatsapp_nudges.json`](file:///c:/Users/jayes/Downloads/PJP_Simulator/whatsapp_nudges.json) with 5 data-backed triggers and arrival timestamps.
+* **Practice Seed Benchmark Results:** [`results/seed_1/summary.json`](file:///c:/Users/jayes/Downloads/PJP_Simulator/results/seed_1/summary.json), [`results/seed_2/summary.json`](file:///c:/Users/jayes/Downloads/PJP_Simulator/results/seed_2/summary.json), and [`results/seed_3/summary.json`](file:///c:/Users/jayes/Downloads/PJP_Simulator/results/seed_3/summary.json).
+* **Academic Research Papers:**
+  * M1 (Data Quality & Baseline Replication): [`docs/research_paper_m1.md`](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/research_paper_m1.md)
+  * M2 (Ranking & Focus Selection): [`docs/research_paper_m2.md`](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/research_paper_m2.md)
+  * M3 (Scheduling & Spatial Clustering): [`docs/research_paper_m3.md`](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/research_paper_m3.md)
+  * M4 (Routing & TSP Sequencing): [`docs/research_paper_m4.md`](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/research_paper_m4.md)
+  * M5 (WhatsApp Nudges): [`docs/research_paper_m5.md`](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/research_paper_m5.md)
+  * M6 (Dynamic Online Re-planner): [`docs/research_paper_m6.md`](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/research_paper_m6.md)
+  * M7 (Simulation & Tuning): [`docs/research_paper_m7.md`](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/research_paper_m7.md)
+  * M8 (Packaging, Route Maps & Write-Up): [`docs/research_paper_m8.md`](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/research_paper_m8.md)
