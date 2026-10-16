@@ -159,6 +159,12 @@ def route_tsp():
         if not feasible_dealers and ordered_dealers:
             feasible_dealers = [(ordered_dealers[0], 0.0, CONFIG["call_minutes"])]
 
+        # Sequence Lock: ensure Loyalty Club accounts are not placed at sequence 6 to protect from weather cuts
+        if len(feasible_dealers) == 6:
+            feat_last = features.get(feasible_dealers[5][0]["dealer_id"], {})
+            if int(feat_last.get("club") or 0) == 1:
+                feasible_dealers[4], feasible_dealers[5] = feasible_dealers[5], feasible_dealers[4]
+
         # Generate timed sequence
         for seq_idx, (dealer, leg_travel, total_elapsed) in enumerate(feasible_dealers, start=1):
             arrival_minute = total_elapsed - CONFIG["call_minutes"]

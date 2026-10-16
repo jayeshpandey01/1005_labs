@@ -9,8 +9,8 @@ date,so_id,sequence,account_id,account_type,planned_arrival,travel_min_from_prev
 2026-11-02,SO-B,2,B-D102,Dealer,09:55,0.4,Wallet Share Expansion (High Headroom)
 2026-11-02,SO-B,3,B-D062,Dealer,10:21,0.4,Wallet Share Expansion (High Headroom)
 2026-11-02,SO-B,4,B-D090,Dealer,10:47,0.8,Revenue Recovery (De-growth Alert)
-2026-11-02,SO-B,5,B-D061,Dealer,11:24,12.0,Loyalty Club Bi-Monthly Cadence
-2026-11-02,SO-B,6,B-D124,Dealer,12:13,24.5,Loyalty Club Bi-Monthly Cadence
+2026-11-02,SO-B,5,B-D124,Dealer,12:13,24.5,Loyalty Club Bi-Monthly Cadence
+2026-11-02,SO-B,6,B-D061,Dealer,11:24,12.0,Loyalty Club Bi-Monthly Cadence
 2026-11-02,SO-C,1,C-D026,Dealer,10:21,51.9,Loyalty Club Bi-Monthly Cadence
 2026-11-02,SO-C,2,C-D178,Dealer,14:38,231.8,Wallet Share Expansion (High Headroom)
 2026-11-02,SO-C,3,C-D211,Dealer,15:04,0.4,Wallet Share Expansion (High Headroom)
@@ -26,8 +26,8 @@ date,so_id,sequence,account_id,account_type,planned_arrival,travel_min_from_prev
 2026-11-03,SO-B,2,B-D112,Dealer,09:58,0.2,Wallet Share Expansion (High Headroom)
 2026-11-03,SO-B,3,B-D095,Dealer,10:24,0.7,Wallet Share Expansion (High Headroom)
 2026-11-03,SO-B,4,B-D041,Dealer,10:51,2.0,Revenue Recovery (De-growth Alert)
-2026-11-03,SO-B,5,B-D135,Dealer,11:50,34.1,Loyalty Club Bi-Monthly Cadence
-2026-11-03,SO-B,6,B-D122,Dealer,12:29,13.4,Loyalty Club Bi-Monthly Cadence
+2026-11-03,SO-B,5,B-D122,Dealer,12:29,13.4,Loyalty Club Bi-Monthly Cadence
+2026-11-03,SO-B,6,B-D135,Dealer,11:50,34.1,Loyalty Club Bi-Monthly Cadence
 2026-11-03,SO-C,1,C-D145,Dealer,14:15,285.7,Wallet Share Expansion (High Headroom)
 2026-11-03,SO-C,2,C-D127,Dealer,14:43,2.5,Wallet Share Expansion (High Headroom)
 2026-11-03,SO-C,3,C-D299,Dealer,15:09,1.5,Wallet Share Expansion (High Headroom)
@@ -55,14 +55,14 @@ date,so_id,sequence,account_id,account_type,planned_arrival,travel_min_from_prev
 2026-11-05,SO-A,2,A-D152,Dealer,10:00,2.3,Wallet Share Expansion (High Headroom)
 2026-11-05,SO-A,3,A-D156,Dealer,10:27,1.6,Wallet Share Expansion (High Headroom)
 2026-11-05,SO-A,4,A-D130,Dealer,10:55,3.5,Wallet Share Expansion (High Headroom)
-2026-11-05,SO-A,5,A-D110,Dealer,11:45,25,Wallet Share Expansion (High Headroom)
-2026-11-05,SO-A,6,A-D119,Dealer,12:31,20.6,Loyalty Club Bi-Monthly Cadence
+2026-11-05,SO-A,5,A-D119,Dealer,12:31,20.6,Loyalty Club Bi-Monthly Cadence
+2026-11-05,SO-A,6,A-D110,Dealer,11:45,25,Wallet Share Expansion (High Headroom)
 2026-11-05,SO-B,1,B-D120,Dealer,09:32,2.5,Wallet Share Expansion (High Headroom)
 2026-11-05,SO-B,2,B-D048,Dealer,09:58,0.7,Wallet Share Expansion (High Headroom)
 2026-11-05,SO-B,3,B-D153,Dealer,10:23,0.4,Revenue Recovery (De-growth Alert)
 2026-11-05,SO-B,4,B-D111,Dealer,10:48,0.4,Wallet Share Expansion (High Headroom)
-2026-11-05,SO-B,5,B-D085,Dealer,12:42,88.7,Loyalty Club Bi-Monthly Cadence
-2026-11-05,SO-B,6,B-D081,Dealer,14:24,77.0,Loyalty Club Bi-Monthly Cadence
+2026-11-05,SO-B,5,B-D081,Dealer,14:24,77.0,Loyalty Club Bi-Monthly Cadence
+2026-11-05,SO-B,6,B-D085,Dealer,12:42,88.7,Loyalty Club Bi-Monthly Cadence
 2026-11-05,SO-C,1,C-D075,Dealer,12:34,184.9,Wallet Share Expansion (High Headroom)
 2026-11-05,SO-C,2,C-D273,Dealer,13:03,3.1,Wallet Share Expansion (High Headroom)
 2026-11-05,SO-C,3,C-D126,Dealer,13:28,0.6,Wallet Share Expansion (High Headroom)
@@ -73,14 +73,14 @@ date,so_id,sequence,account_id,account_type,planned_arrival,travel_min_from_prev
 2026-11-06,SO-A,2,A-D118,Dealer,10:16,7.5,Wallet Share Expansion (High Headroom)
 2026-11-06,SO-A,3,A-D057,Dealer,10:42,0.5,Wallet Share Expansion (High Headroom)
 2026-11-06,SO-A,4,A-D027,Dealer,11:30,23.5,Wallet Share Expansion (High Headroom)
-2026-11-06,SO-A,5,A-D170,Dealer,12:20,25.1,Wallet Share Expansion (High Headroom)
-2026-11-06,SO-A,6,A-D165,Dealer,13:43,57.4,Loyalty Club Bi-Monthly Cadence
+2026-11-06,SO-A,5,A-D165,Dealer,13:43,57.4,Loyalty Club Bi-Monthly Cadence
+2026-11-06,SO-A,6,A-D170,Dealer,12:20,25.1,Wallet Share Expansion (High Headroom)
 2026-11-06,SO-B,1,B-D008,Dealer,09:52,22.5,Loyalty Club Bi-Monthly Cadence
 2026-11-06,SO-B,2,B-D097,Dealer,10:29,11.9,Wallet Share Expansion (High Headroom)
 2026-11-06,SO-B,3,B-D080,Dealer,10:55,1.0,Wallet Share Expansion (High Headroom)
 2026-11-06,SO-B,4,B-D003,Dealer,11:21,0.7,Revenue Recovery (De-growth Alert)
-2026-11-06,SO-B,5,B-D096,Dealer,11:48,1.9,Wallet Share Expansion (High Headroom)
-2026-11-06,SO-B,6,B-D152,Dealer,12:17,4.5,Loyalty Club Bi-Monthly Cadence
+2026-11-06,SO-B,5,B-D152,Dealer,12:17,4.5,Loyalty Club Bi-Monthly Cadence
+2026-11-06,SO-B,6,B-D096,Dealer,11:48,1.9,Wallet Share Expansion (High Headroom)
 2026-11-06,SO-C,1,C-D197,Dealer,10:21,51.5,Wallet Share Expansion (High Headroom)
 2026-11-06,SO-C,2,C-D101,Dealer,10:46,0.3,Wallet Share Expansion (High Headroom)
 2026-11-06,SO-C,3,C-D237,Dealer,11:12,0.2,Wallet Share Expansion (High Headroom)
@@ -91,14 +91,14 @@ date,so_id,sequence,account_id,account_type,planned_arrival,travel_min_from_prev
 2026-11-07,SO-A,2,A-D058,Dealer,10:15,1.3,Wallet Share Expansion (High Headroom)
 2026-11-07,SO-A,3,A-D146,Dealer,10:41,1.1,Wallet Share Expansion (High Headroom)
 2026-11-07,SO-A,4,A-D015,Dealer,11:07,0.7,Wallet Share Expansion (High Headroom)
-2026-11-07,SO-A,5,A-D003,Dealer,11:32,0.1,Wallet Share Expansion (High Headroom)
-2026-11-07,SO-A,6,A-D138,Dealer,12:20,23.1,Loyalty Club Bi-Monthly Cadence
+2026-11-07,SO-A,5,A-D138,Dealer,12:20,23.1,Loyalty Club Bi-Monthly Cadence
+2026-11-07,SO-A,6,A-D003,Dealer,11:32,0.1,Wallet Share Expansion (High Headroom)
 2026-11-07,SO-B,1,B-D001,Dealer,09:32,2.4,Revenue Recovery (De-growth Alert)
 2026-11-07,SO-B,2,B-D028,Dealer,09:57,0.4,Wallet Share Expansion (High Headroom)
 2026-11-07,SO-B,3,B-D100,Dealer,10:24,1.6,Wallet Share Expansion (High Headroom)
 2026-11-07,SO-B,4,B-D079,Dealer,10:50,1.2,Wallet Share Expansion (High Headroom)
-2026-11-07,SO-B,5,B-D109,Dealer,11:17,1.7,Loyalty Club Bi-Monthly Cadence
-2026-11-07,SO-B,6,B-D098,Dealer,12:13,31.7,Loyalty Club Bi-Monthly Cadence
+2026-11-07,SO-B,5,B-D098,Dealer,12:13,31.7,Loyalty Club Bi-Monthly Cadence
+2026-11-07,SO-B,6,B-D109,Dealer,11:17,1.7,Loyalty Club Bi-Monthly Cadence
 2026-11-07,SO-C,1,C-D124,Dealer,12:29,179.7,Wallet Share Expansion (High Headroom)
 2026-11-07,SO-C,2,C-D189,Dealer,12:55,0.4,Wallet Share Expansion (High Headroom)
 2026-11-07,SO-C,3,C-D275,Dealer,13:20,0.3,Wallet Share Expansion (High Headroom)
@@ -109,8 +109,8 @@ date,so_id,sequence,account_id,account_type,planned_arrival,travel_min_from_prev
 2026-11-09,SO-A,2,A-D220,Dealer,10:29,1.3,Wallet Share Expansion (High Headroom)
 2026-11-09,SO-A,3,A-D026,Dealer,10:56,2.2,Wallet Share Expansion (High Headroom)
 2026-11-09,SO-A,4,A-D102,Dealer,11:21,0.5,Wallet Share Expansion (High Headroom)
-2026-11-09,SO-A,5,A-D009,Dealer,11:47,0.7,Wallet Share Expansion (High Headroom)
-2026-11-09,SO-A,6,A-D069,Dealer,12:23,11.1,Loyalty Club Bi-Monthly Cadence
+2026-11-09,SO-A,5,A-D069,Dealer,12:23,11.1,Loyalty Club Bi-Monthly Cadence
+2026-11-09,SO-A,6,A-D009,Dealer,11:47,0.7,Wallet Share Expansion (High Headroom)
 2026-11-09,SO-B,1,B-D002,Dealer,09:30,0.5,Loyalty Club Bi-Monthly Cadence
 2026-11-09,SO-B,2,B-D150,Dealer,09:58,2.6,Loyalty Club Bi-Monthly Cadence
 2026-11-09,SO-B,3,B-D101,Dealer,10:39,16.0,Wallet Share Expansion (High Headroom)
@@ -133,8 +133,8 @@ date,so_id,sequence,account_id,account_type,planned_arrival,travel_min_from_prev
 2026-11-10,SO-B,2,B-D075,Dealer,10:15,18.7,Wallet Share Expansion (High Headroom)
 2026-11-10,SO-B,3,B-D076,Dealer,10:41,1.3,Wallet Share Expansion (High Headroom)
 2026-11-10,SO-B,4,B-D049,Dealer,11:08,1.8,Wallet Share Expansion (High Headroom)
-2026-11-10,SO-B,5,B-D005,Dealer,11:34,0.7,Wallet Share Expansion (High Headroom)
-2026-11-10,SO-B,6,B-D066,Dealer,12:39,40.2,Loyalty Club Bi-Monthly Cadence
+2026-11-10,SO-B,5,B-D066,Dealer,12:39,40.2,Loyalty Club Bi-Monthly Cadence
+2026-11-10,SO-B,6,B-D005,Dealer,11:34,0.7,Wallet Share Expansion (High Headroom)
 2026-11-10,SO-C,1,C-D120,Dealer,12:27,177.7,Wallet Share Expansion (High Headroom)
 2026-11-10,SO-C,2,C-D048,Dealer,12:55,2.9,Wallet Share Expansion (High Headroom)
 2026-11-10,SO-C,3,C-D198,Dealer,13:22,1.5,Wallet Share Expansion (High Headroom)
@@ -151,8 +151,8 @@ date,so_id,sequence,account_id,account_type,planned_arrival,travel_min_from_prev
 2026-11-11,SO-B,2,B-D146,Dealer,09:57,0.4,Wallet Share Expansion (High Headroom)
 2026-11-11,SO-B,3,B-D091,Dealer,10:22,0.4,Wallet Share Expansion (High Headroom)
 2026-11-11,SO-B,4,B-D118,Dealer,10:48,0.7,Wallet Share Expansion (High Headroom)
-2026-11-11,SO-B,5,B-D089,Dealer,11:13,0.3,Wallet Share Expansion (High Headroom)
-2026-11-11,SO-B,6,B-D088,Dealer,11:48,9.6,Loyalty Club Bi-Monthly Cadence
+2026-11-11,SO-B,5,B-D088,Dealer,11:48,9.6,Loyalty Club Bi-Monthly Cadence
+2026-11-11,SO-B,6,B-D089,Dealer,11:13,0.3,Wallet Share Expansion (High Headroom)
 2026-11-11,SO-C,1,C-D076,Dealer,12:31,181.9,Wallet Share Expansion (High Headroom)
 2026-11-11,SO-C,2,C-D115,Dealer,12:57,0.6,Wallet Share Expansion (High Headroom)
 2026-11-11,SO-C,3,C-D031,Dealer,13:23,0.6,Wallet Share Expansion (High Headroom)
@@ -169,8 +169,8 @@ date,so_id,sequence,account_id,account_type,planned_arrival,travel_min_from_prev
 2026-11-12,SO-B,2,B-D031,Dealer,09:58,0.5,Wallet Share Expansion (High Headroom)
 2026-11-12,SO-B,3,B-D014,Dealer,10:25,2.5,Wallet Share Expansion (High Headroom)
 2026-11-12,SO-B,4,B-D103,Dealer,10:52,2.0,Wallet Share Expansion (High Headroom)
-2026-11-12,SO-B,5,B-D021,Dealer,11:20,2.5,Wallet Share Expansion (High Headroom)
-2026-11-12,SO-B,6,B-D023,Dealer,11:56,11.4,Loyalty Club Bi-Monthly Cadence
+2026-11-12,SO-B,5,B-D023,Dealer,11:56,11.4,Loyalty Club Bi-Monthly Cadence
+2026-11-12,SO-B,6,B-D021,Dealer,11:20,2.5,Wallet Share Expansion (High Headroom)
 2026-11-12,SO-C,1,C-D055,Dealer,14:46,316.4,Wallet Share Expansion (High Headroom)
 2026-11-12,SO-C,2,C-D108,Dealer,15:12,1.3,Wallet Share Expansion (High Headroom)
 2026-11-12,SO-C,3,C-D257,Dealer,16:43,65.8,Wallet Share Expansion (High Headroom)
@@ -214,14 +214,14 @@ date,so_id,sequence,account_id,account_type,planned_arrival,travel_min_from_prev
 2026-11-16,SO-A,2,A-D053,Dealer,10:06,1.4,Wallet Share Expansion (High Headroom)
 2026-11-16,SO-A,3,A-D087,Dealer,10:32,0.9,Wallet Share Expansion (High Headroom)
 2026-11-16,SO-A,4,A-D193,Dealer,10:59,1.8,Wallet Share Expansion (High Headroom)
-2026-11-16,SO-A,5,A-D092,Dealer,11:25,1.6,Wallet Share Expansion (High Headroom)
-2026-11-16,SO-A,6,A-D019,Dealer,12:21,30.9,Loyalty Club Bi-Monthly Cadence
+2026-11-16,SO-A,5,A-D019,Dealer,12:21,30.9,Loyalty Club Bi-Monthly Cadence
+2026-11-16,SO-A,6,A-D092,Dealer,11:25,1.6,Wallet Share Expansion (High Headroom)
 2026-11-16,SO-B,1,B-D061,Dealer,09:42,12.6,Loyalty Club Bi-Monthly Cadence
 2026-11-16,SO-B,2,B-D129,Dealer,10:14,6.9,Wallet Share Expansion (High Headroom)
 2026-11-16,SO-B,3,B-D058,Dealer,10:46,7.1,Wallet Share Expansion (High Headroom)
 2026-11-16,SO-B,4,B-D020,Dealer,11:16,5.0,Wallet Share Expansion (High Headroom)
-2026-11-16,SO-B,5,B-D013,Dealer,11:46,4.6,Wallet Share Expansion (High Headroom)
-2026-11-16,SO-B,6,B-D124,Dealer,12:23,12.7,Loyalty Club Bi-Monthly Cadence
+2026-11-16,SO-B,5,B-D124,Dealer,12:23,12.7,Loyalty Club Bi-Monthly Cadence
+2026-11-16,SO-B,6,B-D013,Dealer,11:46,4.6,Wallet Share Expansion (High Headroom)
 2026-11-16,SO-C,1,C-D253,Dealer,10:16,46.9,Wallet Share Expansion (High Headroom)
 2026-11-16,SO-C,2,C-D138,Dealer,10:43,1.7,Wallet Share Expansion (High Headroom)
 2026-11-16,SO-C,3,C-D230,Dealer,11:53,45,Wallet Share Expansion (High Headroom)
@@ -232,14 +232,14 @@ date,so_id,sequence,account_id,account_type,planned_arrival,travel_min_from_prev
 2026-11-17,SO-A,2,A-D097,Dealer,10:06,1.0,Wallet Share Expansion (High Headroom)
 2026-11-17,SO-A,3,A-D028,Dealer,10:33,2.0,Wallet Share Expansion (High Headroom)
 2026-11-17,SO-A,4,A-D188,Dealer,11:03,5.1,Wallet Share Expansion (High Headroom)
-2026-11-17,SO-A,5,A-D204,Dealer,11:29,1.3,Wallet Share Expansion (High Headroom)
-2026-11-17,SO-A,6,A-D033,Dealer,12:12,18.3,Loyalty Club Bi-Monthly Cadence
+2026-11-17,SO-A,5,A-D033,Dealer,12:12,18.3,Loyalty Club Bi-Monthly Cadence
+2026-11-17,SO-A,6,A-D204,Dealer,11:29,1.3,Wallet Share Expansion (High Headroom)
 2026-11-17,SO-B,1,B-D053,Dealer,09:34,4.8,Wallet Share Expansion (High Headroom)
 2026-11-17,SO-B,2,B-D050,Dealer,10:00,0.5,Wallet Share Expansion (High Headroom)
 2026-11-17,SO-B,3,B-D011,Dealer,10:27,2.1,Wallet Share Expansion (High Headroom)
 2026-11-17,SO-B,4,B-D027,Dealer,10:55,2.9,Wallet Share Expansion (High Headroom)
-2026-11-17,SO-B,5,B-D135,Dealer,11:55,34.8,Loyalty Club Bi-Monthly Cadence
-2026-11-17,SO-B,6,B-D122,Dealer,12:33,13.4,Loyalty Club Bi-Monthly Cadence
+2026-11-17,SO-B,5,B-D122,Dealer,12:33,13.4,Loyalty Club Bi-Monthly Cadence
+2026-11-17,SO-B,6,B-D135,Dealer,11:55,34.8,Loyalty Club Bi-Monthly Cadence
 2026-11-17,SO-C,1,C-D234,Dealer,10:24,54.4,Wallet Share Expansion (High Headroom)
 2026-11-17,SO-C,2,C-D217,Dealer,10:49,0.2,Wallet Share Expansion (High Headroom)
 2026-11-17,SO-C,3,C-D087,Dealer,11:15,0.7,Wallet Share Expansion (High Headroom)
@@ -250,8 +250,8 @@ date,so_id,sequence,account_id,account_type,planned_arrival,travel_min_from_prev
 2026-11-18,SO-A,2,A-D178,Dealer,10:06,1.1,Wallet Share Expansion (High Headroom)
 2026-11-18,SO-A,3,A-D222,Dealer,10:34,3.1,Wallet Share Expansion (High Headroom)
 2026-11-18,SO-A,4,A-D224,Dealer,11:01,1.6,Wallet Share Expansion (High Headroom)
-2026-11-18,SO-A,5,A-D043,Dealer,11:29,3.0,Wallet Share Expansion (High Headroom)
-2026-11-18,SO-A,6,A-D106,Dealer,12:32,37.7,Loyalty Club Bi-Monthly Cadence
+2026-11-18,SO-A,5,A-D106,Dealer,12:32,37.7,Loyalty Club Bi-Monthly Cadence
+2026-11-18,SO-A,6,A-D043,Dealer,11:29,3.0,Wallet Share Expansion (High Headroom)
 2026-11-18,SO-B,1,B-D029,Dealer,09:32,2.1,Loyalty Club Bi-Monthly Cadence
 2026-11-18,SO-B,2,B-D032,Dealer,09:58,1.0,Loyalty Club Bi-Monthly Cadence
 2026-11-18,SO-B,3,B-D054,Dealer,10:32,9.7,Wallet Share Expansion (High Headroom)
@@ -268,14 +268,14 @@ date,so_id,sequence,account_id,account_type,planned_arrival,travel_min_from_prev
 2026-11-19,SO-A,2,A-D088,Dealer,10:33,24.9,Wallet Share Expansion (High Headroom)
 2026-11-19,SO-A,3,A-D039,Dealer,10:59,1.2,Wallet Share Expansion (High Headroom)
 2026-11-19,SO-A,4,A-D187,Dealer,11:26,1.6,Wallet Share Expansion (High Headroom)
-2026-11-19,SO-A,5,A-D161,Dealer,11:54,2.9,Wallet Share Expansion (High Headroom)
-2026-11-19,SO-A,6,A-D119,Dealer,12:26,6.7,Loyalty Club Bi-Monthly Cadence
+2026-11-19,SO-A,5,A-D119,Dealer,12:26,6.7,Loyalty Club Bi-Monthly Cadence
+2026-11-19,SO-A,6,A-D161,Dealer,11:54,2.9,Wallet Share Expansion (High Headroom)
 2026-11-19,SO-B,1,B-D009,Dealer,09:41,11.9,Wallet Share Expansion (High Headroom)
 2026-11-19,SO-B,2,B-D110,Dealer,10:10,3.2,Wallet Share Expansion (High Headroom)
 2026-11-19,SO-B,3,B-D077,Dealer,10:41,6.8,Wallet Share Expansion (High Headroom)
 2026-11-19,SO-B,4,B-D007,Dealer,11:13,7.0,Wallet Share Expansion (High Headroom)
-2026-11-19,SO-B,5,B-D085,Dealer,13:17,98.3,Loyalty Club Bi-Monthly Cadence
-2026-11-19,SO-B,6,B-D081,Dealer,14:59,77.0,Loyalty Club Bi-Monthly Cadence
+2026-11-19,SO-B,5,B-D081,Dealer,14:59,77.0,Loyalty Club Bi-Monthly Cadence
+2026-11-19,SO-B,6,B-D085,Dealer,13:17,98.3,Loyalty Club Bi-Monthly Cadence
 2026-11-19,SO-C,1,C-D007,Dealer,11:23,113.3,Wallet Share Expansion (High Headroom)
 2026-11-19,SO-C,2,C-D058,Dealer,11:49,1.1,Wallet Share Expansion (High Headroom)
 2026-11-19,SO-C,3,C-D184,Dealer,12:16,2.0,Wallet Share Expansion (High Headroom)
@@ -286,14 +286,14 @@ date,so_id,sequence,account_id,account_type,planned_arrival,travel_min_from_prev
 2026-11-20,SO-A,2,A-D177,Dealer,10:18,7.0,Wallet Share Expansion (High Headroom)
 2026-11-20,SO-A,3,A-D031,Dealer,10:47,4.0,Wallet Share Expansion (High Headroom)
 2026-11-20,SO-A,4,A-D066,Dealer,11:19,6.0,Wallet Share Expansion (High Headroom)
-2026-11-20,SO-A,5,A-D202,Dealer,11:49,5.7,Wallet Share Expansion (High Headroom)
-2026-11-20,SO-A,6,A-D165,Dealer,12:39,24.5,Loyalty Club Bi-Monthly Cadence
+2026-11-20,SO-A,5,A-D165,Dealer,12:39,24.5,Loyalty Club Bi-Monthly Cadence
+2026-11-20,SO-A,6,A-D202,Dealer,11:49,5.7,Wallet Share Expansion (High Headroom)
 2026-11-20,SO-B,1,B-D010,Dealer,09:40,10.4,Wallet Share Expansion (High Headroom)
 2026-11-20,SO-B,2,B-D084,Dealer,10:15,9.6,Wallet Share Expansion (High Headroom)
 2026-11-20,SO-B,3,B-D099,Dealer,10:47,7.4,Wallet Share Expansion (High Headroom)
 2026-11-20,SO-B,4,B-D130,Dealer,11:14,2.2,Wallet Share Expansion (High Headroom)
-2026-11-20,SO-B,5,B-D008,Dealer,12:12,32.7,Loyalty Club Bi-Monthly Cadence
-2026-11-20,SO-B,6,B-D152,Dealer,12:55,18.2,Loyalty Club Bi-Monthly Cadence
+2026-11-20,SO-B,5,B-D152,Dealer,12:55,18.2,Loyalty Club Bi-Monthly Cadence
+2026-11-20,SO-B,6,B-D008,Dealer,12:12,32.7,Loyalty Club Bi-Monthly Cadence
 2026-11-20,SO-C,1,C-D261,Dealer,12:17,167.9,Wallet Share Expansion (High Headroom)
 2026-11-20,SO-C,2,C-D250,Dealer,12:44,1.4,Wallet Share Expansion (High Headroom)
 2026-11-20,SO-C,3,C-D081,Dealer,15:03,114.5,Wallet Share Expansion (High Headroom)
@@ -303,14 +303,14 @@ date,so_id,sequence,account_id,account_type,planned_arrival,travel_min_from_prev
 2026-11-21,SO-A,2,A-D219,Dealer,10:15,1.7,Wallet Share Expansion (High Headroom)
 2026-11-21,SO-A,3,A-D008,Dealer,10:42,2.2,Wallet Share Expansion (High Headroom)
 2026-11-21,SO-A,4,A-D214,Dealer,11:09,1.8,Wallet Share Expansion (High Headroom)
-2026-11-21,SO-A,5,A-D135,Dealer,11:34,0.7,Wallet Share Expansion (High Headroom)
-2026-11-21,SO-A,6,A-D138,Dealer,12:27,27.2,Loyalty Club Bi-Monthly Cadence
+2026-11-21,SO-A,5,A-D138,Dealer,12:27,27.2,Loyalty Club Bi-Monthly Cadence
+2026-11-21,SO-A,6,A-D135,Dealer,11:34,0.7,Wallet Share Expansion (High Headroom)
 2026-11-21,SO-B,1,B-D109,Dealer,09:33,3.7,Loyalty Club Bi-Monthly Cadence
 2026-11-21,SO-B,2,B-D134,Dealer,10:06,8.2,Wallet Share Expansion (High Headroom)
 2026-11-21,SO-B,3,B-D069,Dealer,10:32,1.1,Wallet Share Expansion (High Headroom)
 2026-11-21,SO-B,4,B-D127,Dealer,10:58,0.3,Wallet Share Expansion (High Headroom)
-2026-11-21,SO-B,5,B-D063,Dealer,11:26,3.2,Wallet Share Expansion (High Headroom)
-2026-11-21,SO-B,6,B-D098,Dealer,12:15,23.9,Loyalty Club Bi-Monthly Cadence
+2026-11-21,SO-B,5,B-D098,Dealer,12:15,23.9,Loyalty Club Bi-Monthly Cadence
+2026-11-21,SO-B,6,B-D063,Dealer,11:26,3.2,Wallet Share Expansion (High Headroom)
 2026-11-21,SO-C,1,C-D027,Dealer,12:25,175.4,Wallet Share Expansion (High Headroom)
 2026-11-21,SO-C,2,C-D143,Dealer,12:50,0.3,Wallet Share Expansion (High Headroom)
 2026-11-21,SO-C,3,C-D195,Dealer,13:21,6.1,Wallet Share Expansion (High Headroom)
@@ -343,8 +343,8 @@ date,so_id,sequence,account_id,account_type,planned_arrival,travel_min_from_prev
 2026-11-24,SO-B,2,B-D015,Dealer,10:11,15.4,Wallet Share Expansion (High Headroom)
 2026-11-24,SO-B,3,B-D046,Dealer,10:41,5.0,Wallet Share Expansion (High Headroom)
 2026-11-24,SO-B,4,B-D082,Dealer,11:09,2.2,Wallet Share Expansion (High Headroom)
-2026-11-24,SO-B,5,B-D133,Dealer,11:38,4.6,Wallet Share Expansion (High Headroom)
-2026-11-24,SO-B,6,B-D066,Dealer,12:10,6.3,Loyalty Club Bi-Monthly Cadence
+2026-11-24,SO-B,5,B-D066,Dealer,12:10,6.3,Loyalty Club Bi-Monthly Cadence
+2026-11-24,SO-B,6,B-D133,Dealer,11:38,4.6,Wallet Share Expansion (High Headroom)
 2026-11-24,SO-C,1,C-D247,Dealer,12:32,182.4,Wallet Share Expansion (High Headroom)
 2026-11-24,SO-C,2,C-D139,Dealer,13:01,4.3,Wallet Share Expansion (High Headroom)
 2026-11-24,SO-C,3,C-D264,Dealer,13:33,7.0,Wallet Share Expansion (High Headroom)
