@@ -69,13 +69,14 @@
     "so_id": "SO-A",
     "visit_date": "2026-11-02",
     "trigger_type": "Non-Club Monthly Scheme Acceleration",
-    "message": "Namaste Anandji! You are currently at 32 scheme points. Reaching Slab 3 (50 pts) increases your payout rate from Rs 15 to Rs 20/pt. Just 9 sheets of Tier-4 or 18 sheets of Tier-2 will qualify you for the Rs 1,000 cash bonus. Visiting tomorrow at 3:30 PM.",
-    "character_count": 254,
+    "message": "Namaste A-D185 Interiors! You are currently at 5 scheme points. Reaching Slab 1 (15 pts) unlocks a cash bonus of Rs 150 (Rs 10.0/pt). Just 5 sheets of Tier-4 will qualify you for the payout. Visiting tomorrow at 3:30 PM.",
+    "character_count": 220,
     "grounding_data": {
-      "current_monthly_points": 32,
-      "target_slab": "Slab 3 (50 pts)",
-      "points_needed": 18,
-      "bonus_rate": "Rs 20/pt"
+      "current_monthly_points": 5,
+      "target_slab": "Slab 1 (15 pts)",
+      "points_needed": 10,
+      "bonus_rate": "Rs 10.0/pt",
+      "estimated_cash_bonus_inr": 150
     }
   }
 ]

@@ -34,11 +34,12 @@ def run_benchmark():
         out_dir = results_dir / f"seed_{seed}"
         out_dir.mkdir(parents=True, exist_ok=True)
 
+        replan_executable = f'"{sys.executable}" -m mypjp.replan'
         cmd = [
-            "py", "-3.11", "simulate.py",
+            sys.executable, "simulate.py",
             "--workbook", str(workbook),
             "--plan", str(plan),
-            "--replan-cmd", "py -3.11 -m mypjp.replan",
+            "--replan-cmd", replan_executable,
             "--seed", str(seed),
             "--out", str(out_dir)
         ]

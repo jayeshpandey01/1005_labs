@@ -36,17 +36,21 @@ def load_dealer_rates() -> Dict[str, float]:
     return rates
 
 
-def load_dealer_locations() -> Dict[str, Optional[Tuple[float, float]]]:
-    """Load coordinates for spatial insertion delta calculations."""
+def load_dealer_metadata() -> Dict[str, dict]:
+    """Load dealer metadata including assigned SO, club status, and coordinates."""
     dealers_file = DATA_DIR / "dealers.csv"
-    locations: Dict[str, Optional[Tuple[float, float]]] = {}
+    meta: Dict[str, dict] = {}
     if dealers_file.exists():
         with open(dealers_file, mode="r", encoding="utf-8") as f:
             for r in csv.DictReader(f):
                 lat = float(r["lat"]) if r.get("lat") else None
                 lon = float(r["lon"]) if r.get("lon") else None
-                locations[r["dealer_id"]] = (lat, lon) if (lat and lon) else None
-    return locations
+                meta[r["dealer_id"]] = {
+                    "so_id": r["so_id"].strip(),
+                    "club": r.get("loyalty_club_member", "").strip().lower() == "yes",
+                    "loc": (lat, lon) if (lat and lon) else None,
+                }
+    return meta
 
 
 def replan(state_path: str, plan_path: str, out_path: str):
@@ -61,7 +65,7 @@ def replan(state_path: str, plan_path: str, out_path: str):
     completed_mtd = state.get("completed_visits_month_to_date", [])
 
     dealer_rates = load_dealer_rates()
-    dealer_locs = load_dealer_locations()
+    dealer_meta = load_dealer_metadata()
 
     # Track completed visits per dealer month to date
     completed_counts: Dict[str, int] = defaultdict(int)
@@ -123,8 +127,11 @@ def replan(state_path: str, plan_path: str, out_path: str):
                 # Find an upcoming day for this dealer's SO with space (< 6 visits)
                 dealer_so = next((r["so_id"] for r in next_plan_rows if r["account_id"] == did), None)
                 if not dealer_so:
-                    # Lookup dealer SO from feature store
-                    dealer_so = "SO-A" if did.startswith("A-") else "SO-B" if did.startswith("B-") else "SO-C"
+                    # Dynamically lookup dealer's SO from master metadata
+                    dealer_so = dealer_meta.get(did, {}).get("so_id")
+
+                if not dealer_so:
+                    continue
 
                 # Insert on next feasible working day
                 for (day_str, s_id), rows in plan_by_day_so.items():

@@ -197,14 +197,28 @@ def build_nonclub_scheme_nudge(
     features: dict,
 ) -> Optional[dict]:
     """Generate dynamic nudge for non-club accounts nearing a monthly scheme upgrade."""
-    current_points = 32
-    target_points = 50
-    needed = target_points - current_points
+    rate = float(features.get("sales_rate_daily") or 0.5)
+    pps = float(features.get("points_per_sheet") or 2.0)
+    current_points = max(5, round(rate * 25 * pps))
+
+    # Dynamic target slab from scheme_rules_nonclub.csv: 15, 25, 50, 100
+    if current_points < 15:
+        target_slab, target_points, payout = "Slab 1", 15, 10.0
+    elif current_points < 25:
+        target_slab, target_points, payout = "Slab 2", 25, 12.5
+    elif current_points < 50:
+        target_slab, target_points, payout = "Slab 3", 50, 15.0
+    else:
+        target_slab, target_points, payout = "Slab 4", 100, 20.0
+
+    needed = max(5, target_points - current_points)
+    tier4_needed = max(2, round(needed / 2))
+    bonus_inr = round(target_points * payout)
 
     msg = (
-        f"Namaste Anandji! You are currently at {current_points} scheme points. Reaching Slab 3 "
-        f"(50 pts) increases your payout rate from Rs 15 to Rs 20/pt. Just 9 sheets of Tier-4 or 18 "
-        f"sheets of Tier-2 will qualify you for the Rs 1,000 cash bonus. Visiting tomorrow at 3:30 PM."
+        f"Namaste {dealer_name}! You are currently at {current_points} scheme points. Reaching {target_slab} "
+        f"({target_points} pts) unlocks a cash bonus of Rs {bonus_inr:,} (Rs {payout}/pt). Just {tier4_needed} "
+        f"sheets of Tier-4 will qualify you for the payout. Visiting tomorrow at 3:30 PM."
     )
     if len(msg) > 300:
         msg = msg[:297] + "..."
@@ -220,9 +234,10 @@ def build_nonclub_scheme_nudge(
         "character_count": len(msg),
         "grounding_data": {
             "current_monthly_points": current_points,
-            "target_slab": "Slab 3 (50 pts)",
+            "target_slab": f"{target_slab} ({target_points} pts)",
             "points_needed": needed,
-            "bonus_rate": "Rs 20/pt",
+            "bonus_rate": f"Rs {payout}/pt",
+            "estimated_cash_bonus_inr": bonus_inr,
         },
     }
 
