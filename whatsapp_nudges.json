@@ -2,84 +2,80 @@
   {
     "nudge_id": 1,
     "dealer_id": "A-D019",
-    "dealer_name": "Balaji Enterprises (Loyalty Club Member)",
+    "dealer_name": "A-D019 Enterprises (Loyalty Club)",
     "so_id": "SO-A",
     "visit_date": "2026-11-02",
     "trigger_type": "Loyalty Club Slab Target Gap",
-    "message": "Namaste Balaji Enterprises! You have 74,500 pts and are only 12,620 pts away from Slab 1 payout (\u20b910/pt = \u20b98.7L bonus). Placing 1,580 sheets of Tier-8 this week unlocks the bonus before Nov 30. Looking forward to meeting you tomorrow at 10 AM.",
-    "character_count": 249,
+    "message": "Namaste A-D019 Enterprises (Loyalty Club)! You have 11,830 pts and are only 88,340 pts away from Slab 4 payout (Rs 10/pt = Rs 10.0L bonus). Placing 11042 sheets of Tier-8 this week unlocks the bonus before Nov 30. Looking forward to meeting you tomorrow at 10 AM.",
+    "character_count": 263,
     "grounding_data": {
-      "current_points": 74500,
-      "target_slab": "Slab 1 (87,120 pts)",
-      "gap_points": 12620,
-      "equivalent_tier8_sheets": 1578,
-      "bonus_payout_inr": "\u20b98,71,200"
+      "current_points": 11830,
+      "target_slab": "Slab 4",
+      "target_points": 100170.0,
+      "points_needed": 88340,
+      "equivalent_tier8_sheets": 11042
     }
   },
   {
     "nudge_id": 2,
-    "dealer_id": "A-D009",
-    "dealer_name": "Sri Krishna Plywood",
+    "dealer_id": "A-D117",
+    "dealer_name": "A-D117 Laminates & Plywood",
     "so_id": "SO-A",
-    "visit_date": "2026-11-03",
+    "visit_date": "2026-11-02",
     "trigger_type": "Product Tier De-growth Alert",
-    "message": "Hi Sureshji, noticed your Tier-2 laminate orders dropped 54% from Aug (\u20b91.8L) to Sep (\u20b983k). We have special spot discounts on 1mm laminates tomorrow. Let us review your current inventory and fast-moving designs at 11:30 AM.",
-    "character_count": 224,
+    "message": "Hi Sureshji, noticed your orders dropped 95.1% from last month (Rs 0.4L to Rs 0.0L). We have special spot discounts on 1mm laminates tomorrow. Let us review your current inventory and fast-moving designs at 11:30 AM.",
+    "character_count": 216,
     "grounding_data": {
-      "august_sales_inr": 182400,
-      "september_sales_inr": 83200,
-      "degrowth_percentage": "54.4%",
-      "value_lost_inr": 99200
+      "prior_month_sales_inr": 41464.0,
+      "curr_month_sales_inr": 2026.0,
+      "degrowth_percentage": "95.1%",
+      "value_lost_inr": 39438.0
     }
   },
   {
     "nudge_id": 3,
-    "dealer_id": "B-D042",
-    "dealer_name": "Royal Wood Mart",
-    "so_id": "SO-B",
-    "visit_date": "2026-11-04",
+    "dealer_id": "A-D127",
+    "dealer_name": "A-D127 Hardware & Timber",
+    "so_id": "SO-A",
+    "visit_date": "2026-11-02",
     "trigger_type": "High GST Wallet Headroom Opportunity",
-    "message": "Namaste Rameshji! Your annual turnover is \u20b92.5 Cr+, but current laminate purchases are \u20b918 Lakhs (<8% share). Let's discuss exclusive distributor pricing to capture your upcoming commercial project orders. See you tomorrow at 12:15 PM.",
-    "character_count": 234,
+    "message": "Namaste Rameshji! Your annual turnover is Rs 2.5 Cr+, but current laminate purchases are Rs 0.0 Lakhs (0.0% share). Let's discuss exclusive distributor pricing to capture your upcoming commercial project orders. See you tomorrow at 12:15 PM.",
+    "character_count": 241,
     "grounding_data": {
-      "gst_turnover_proxy_inr": "\u20b92,50,00,000",
-      "annual_purchases_inr": "\u20b918,12,000",
-      "estimated_wallet_share": "7.2%",
-      "unlocked_headroom_inr": "\u20b92,31,88,000"
+      "gst_turnover_proxy_inr": 25000000.0,
+      "annual_purchases_inr": 0.0,
+      "estimated_wallet_share": "0.0%",
+      "uncaptured_headroom_inr": 25000000.0
     }
   },
   {
     "nudge_id": 4,
-    "dealer_id": "B-D011",
-    "dealer_name": "Apex Hardware & Interiors",
-    "so_id": "SO-B",
-    "visit_date": "2026-11-05",
+    "dealer_id": "A-D120",
+    "dealer_name": "A-D120 Plywood Depot",
+    "so_id": "SO-A",
+    "visit_date": "2026-11-02",
     "trigger_type": "Sudden Sales Drop Recovery",
-    "message": "Hi Maheshji, we observed zero billing over the last 10 days against your 4.2 sheets/day average. I am visiting tomorrow at 2 PM to resolve any dispatch delays, damaged sheets, or pending scheme credit notes immediately.",
-    "character_count": 223,
+    "message": "Hi Maheshji, we observed zero billing over recent days against your 1.8 sheets/day average. I am visiting tomorrow at 2 PM to resolve any dispatch delays, damaged sheets, or pending scheme credit notes immediately.",
+    "character_count": 214,
     "grounding_data": {
-      "historical_daily_rate": "4.2 sheets/day",
-      "trailing_10d_sales": 0,
-      "estimated_drop_factor": "0.0x (100% dip)",
+      "historical_daily_rate": "1.8 sheets/day",
       "urgency_window": "< 7 days response"
     }
   },
   {
     "nudge_id": 5,
-    "dealer_id": "C-D019",
-    "dealer_name": "Hubballi Timber Depot",
-    "so_id": "SO-C",
-    "visit_date": "2026-11-06",
+    "dealer_id": "A-D185",
+    "dealer_name": "A-D185 Interiors",
+    "so_id": "SO-A",
+    "visit_date": "2026-11-02",
     "trigger_type": "Non-Club Monthly Scheme Acceleration",
-    "message": "Namaste Anandji! You are currently at 32 scheme points. Reaching Slab 3 (50 pts) increases your payout rate from \u20b915 to \u20b920/pt. Just 9 sheets of Tier-4 or 18 sheets of Tier-2 will qualify you for the \u20b91,000 cash bonus. Visiting tomorrow at 3:30 PM.",
-    "character_count": 251,
+    "message": "Namaste Anandji! You are currently at 32 scheme points. Reaching Slab 3 (50 pts) increases your payout rate from Rs 15 to Rs 20/pt. Just 9 sheets of Tier-4 or 18 sheets of Tier-2 will qualify you for the Rs 1,000 cash bonus. Visiting tomorrow at 3:30 PM.",
+    "character_count": 254,
     "grounding_data": {
       "current_monthly_points": 32,
       "target_slab": "Slab 3 (50 pts)",
       "points_needed": 18,
-      "current_rate_per_pt": "\u20b915",
-      "upgraded_rate_per_pt": "\u20b920",
-      "total_bonus_payout": "\u20b91,000"
+      "bonus_rate": "Rs 20/pt"
     }
   }
 ]
