@@ -70,10 +70,10 @@ def load_dealer_metadata() -> Dict[str, dict]:
     return meta
 
 
-def load_memory(today: str) -> dict:
+def load_memory(today: str, completed_mtd: Optional[List[dict]] = None) -> dict:
     """Load persistent CUSUM and event memory across daily re-planner invocations."""
-    # Reset memory on the first day of the simulation
-    if today <= "2026-11-02" or not MEMORY_FILE.exists():
+    # Reset memory on the first day of simulation (no completed visits yet or start date)
+    if (completed_mtd is not None and len(completed_mtd) == 0) or today <= "2026-11-02" or not MEMORY_FILE.exists():
         return {
             "cusum_deficits": {},
             "active_hikes": {},
@@ -116,7 +116,7 @@ def replan(state_path: str, plan_path: str, out_path: str):
 
     dealer_rates = load_dealer_rates()
     dealer_meta = load_dealer_metadata()
-    mem = load_memory(today)
+    mem = load_memory(today, completed_mtd)
 
     # 1. Track completed visits and recoveries month-to-date
     completed_counts: Dict[str, int] = defaultdict(int)
@@ -247,7 +247,7 @@ def replan(state_path: str, plan_path: str, out_path: str):
         ]
 
         # If scheduled far in the future (> 4 working days from today), pull forward!
-        if existing_dates and existing_dates[0] > available_days[min(3, len(available_days)-1)]:
+        if available_days and existing_dates and existing_dates[0] > available_days[min(3, len(available_days)-1)]:
             far_date = existing_dates[0]
             # Find earliest day in first 3 available days with capacity
             for d_str in available_days[:3]:
@@ -412,7 +412,7 @@ def replan(state_path: str, plan_path: str, out_path: str):
         writer = csv.writer(f)
         writer.writerow(fieldnames)
         for r in sorted(flattened_rows, key=lambda x: (x["date"], x["so_id"], int(x["sequence"]))):
-            writer.writerow([r["date"], r["so_id"], r["sequence"], r["account_id"], "Dealer"])
+            writer.writerow([r["date"], r["so_id"], r["sequence"], r["account_id"], r.get("account_type", "Dealer")])
 
     # Save state memory for the next working day
     save_memory(mem)
