@@ -27,7 +27,12 @@ py -3.11 simulate.py --workbook PJP_Assignment_Sample_Data.xlsx --plan plan_nove
 * **WhatsApp Nudges:** `whatsapp_nudges.json`
 * **Route Map Visuals:** `docs/maps/route_map_SO-*.png`
 * **2-Page Findings Write-Up:** `docs/approach_and_findings_writeup.md`
-* **Academic Research Paper:** `docs/research_paper_m1.md`
+* **Academic Research Papers:**
+  * Milestone M1 (Data Quality & Baseline Replication): `docs/research_paper_m1.md`
+  * Milestone M2 (Ranking & Focus Selection): `docs/research_paper_m2.md`
+  * Milestone M3 (Scheduling & Spatial Clustering): `docs/research_paper_m3.md`
+  * Milestone M4 (Routing & TSP Sequencing): `docs/research_paper_m4.md`
+  * Milestone M5 (WhatsApp Nudges): `docs/research_paper_m5.md`
 * **Antigravity Skills:** `.agents/skills/pjp-data-engineer/` and `.agents/skills/pjp-ai-developer/`
 
 ---
