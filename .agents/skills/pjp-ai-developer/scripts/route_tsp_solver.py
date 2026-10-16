@@ -115,14 +115,22 @@ def route_tsp():
                 "loc": loc,
             }
 
-    # 3. Load unsequenced schedule grouped by (date, so_id)
+    # 3. Load dealer feature store for context-aware commercial reasons
+    features: Dict[str, dict] = {}
+    features_file = DATA_DIR / "dealer_features.csv"
+    if features_file.exists():
+        with open(features_file, mode="r", encoding="utf-8") as f:
+            for r in csv.DictReader(f):
+                features[r["dealer_id"]] = r
+
+    # 4. Load unsequenced schedule grouped by (date, so_id)
     daily_groups: Dict[Tuple[str, str], List[dict]] = defaultdict(list)
     with open(unsequenced_file, mode="r", encoding="utf-8") as f:
         for row in csv.DictReader(f):
             group_key = (row["date"], row["so_id"])
             daily_groups[group_key].append(dealers[row["account_id"]])
 
-    # 4. Sequence daily routes with 2-opt TSP and safety budgets
+    # 5. Sequence daily routes with 2-opt TSP and safety budgets
     plan_rows: List[dict] = []
     budget_exceeded_count = 0
 
@@ -158,6 +166,19 @@ def route_tsp():
             arrival_min_part = int((30 + arrival_minute) % 60)
             arrival_string = f"{arrival_hour:02d}:{arrival_min_part:02d}"
 
+            # Dynamic context-aware commercial reason tagging
+            feat = features.get(dealer["dealer_id"], {})
+            if int(feat.get("club") or 0) == 1:
+                reason = "Loyalty Club Bi-Monthly Cadence"
+            elif float(feat.get("degrowth_mom_inr") or 0.0) > 100000.0 or float(feat.get("degrowth_qoq_inr") or 0.0) > 200000.0:
+                reason = "Revenue Recovery (De-growth Alert)"
+            elif float(feat.get("headroom_inr") or 0.0) > 15000000.0:
+                reason = "Wallet Share Expansion (High Headroom)"
+            elif float(feat.get("sales_rate_daily") or 0.0) >= 1.0:
+                reason = "Active Account Growth & Retention"
+            else:
+                reason = "Focus Coverage & Service Touchpoint"
+
             plan_rows.append({
                 "date": date_str,
                 "so_id": so_id,
@@ -166,7 +187,7 @@ def route_tsp():
                 "account_type": "Dealer",
                 "planned_arrival": arrival_string,
                 "travel_min_from_previous": round(leg_travel, 1),
-                "reason": "Focus Coverage",
+                "reason": reason,
             })
 
     # Write combined plan_november.csv
