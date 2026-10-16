@@ -1,0 +1,678 @@
+dealer_id,so_id,parent_dealer_id,outlet_type,loyalty_club_member,club_tier,town,town_class,lat,lon,location_source,in_customer_master,billed_since_apr_2026,sfdc_visits_apr_oct_2026,first_sale_in_data
+A-D001,SO-A,,Sub dealer,No,,,,12.99022,77.46593,"SFDC check-ins (median, jittered)",No,No,3,
+A-D002,SO-A,,Dealer,No,Silver,Bengaluru,Metro,12.98811,77.55398,"SFDC check-ins (median, jittered)",Yes,Yes,7,2025-04-03
+A-D003,SO-A,,Dealer,No,Silver,Bengaluru,Metro,12.97607,77.51296,"SFDC check-ins (median, jittered)",Yes,Yes,8,2025-05-31
+A-D004,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,13.00017,77.49159,"SFDC check-ins (median, jittered)",Yes,Yes,9,2025-04-03
+A-D005,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D006,SO-A,,,No,Silver,Bengaluru,Metro,,,Unknown,Yes,No,0,2025-04-22
+A-D007,SO-A,,Sub dealer,No,Silver,Bengaluru,Metro,12.9895,77.56337,"SFDC check-ins (median, jittered)",No,Yes,1,2025-12-22
+A-D008,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.96941,77.52404,"SFDC check-ins (median, jittered)",Yes,Yes,7,2025-04-03
+A-D009,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.97999,77.55558,"SFDC check-ins (median, jittered)",Yes,Yes,9,2025-04-01
+A-D010,SO-A,,Dealer,No,Silver,Bengaluru,Metro,12.92096,77.47722,"SFDC check-ins (median, jittered)",Yes,No,6,2025-04-04
+A-D011,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,12.9802,77.54046,"SFDC check-ins (median, jittered)",Yes,Yes,7,2025-04-11
+A-D012,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.90871,77.53355,"SFDC check-ins (median, jittered)",No,Yes,1,2025-04-04
+A-D013,SO-A,,Sub dealer,Yes,Gold,Bengaluru,Tier 1,12.99184,77.46814,"SFDC check-ins (median, jittered)",Yes,Yes,18,2025-04-01
+A-D014,SO-A,,,No,Silver,Bengaluru,Tier 1,,,Unknown,Yes,Yes,0,2025-05-16
+A-D015,SO-A,,Dealer,No,Silver,Bengaluru,Metro,12.97609,77.51324,"SFDC check-ins (median, jittered)",Yes,No,8,2025-07-15
+A-D016,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.9841,77.53125,"SFDC check-ins (median, jittered)",Yes,Yes,6,2025-04-28
+A-D017,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,13.07932,77.50135,"SFDC check-ins (median, jittered)",Yes,Yes,4,2025-07-11
+A-D018,SO-A,,,No,Silver,Bengaluru,Tier 1,,,Unknown,Yes,Yes,0,2026-09-16
+A-D019,SO-A,,Dealer,Yes,Elite,Bengaluru,Tier 1,12.99363,77.54938,"SFDC check-ins (median, jittered)",Yes,Yes,12,2025-04-01
+A-D020,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,2025-10-04
+A-D021,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,12.99073,77.55644,"SFDC check-ins (median, jittered)",Yes,Yes,2,2025-07-23
+A-D022,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,13.08688,77.4959,"SFDC check-ins (median, jittered)",No,Yes,2,2026-03-21
+A-D023,SO-A,,Sub dealer,No,,,,12.99126,77.46226,"SFDC check-ins (median, jittered)",No,No,2,
+A-D024,SO-A,,Dealer,No,Silver,Bengaluru,Metro,13.03035,77.53145,"SFDC check-ins (median, jittered)",Yes,No,2,2025-05-03
+A-D025,SO-A,,,No,Silver,Bengaluru,Tier 1,,,Unknown,Yes,Yes,0,2025-06-13
+A-D026,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.9784,77.55377,"SFDC check-ins (median, jittered)",No,Yes,5,2025-04-18
+A-D027,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,12.89383,77.42959,"SFDC check-ins (median, jittered)",Yes,Yes,5,2025-04-03
+A-D028,SO-A,,Dealer,No,Silver,Bengaluru,Metro,12.9571,77.47902,"SFDC check-ins (median, jittered)",No,No,1,2025-08-01
+A-D029,SO-A,,,No,Silver,Bengaluru,Metro,,,Unknown,Yes,Yes,0,2025-05-29
+A-D030,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D031,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.98679,77.50889,"SFDC check-ins (median, jittered)",Yes,Yes,8,2025-05-29
+A-D032,SO-A,,,No,Silver,Bengaluru,Metro,,,Unknown,Yes,No,0,2025-07-09
+A-D033,SO-A,,Dealer,Yes,Elite,Bengaluru,Tier 1,13.00357,77.47055,"SFDC check-ins (median, jittered)",Yes,Yes,10,2025-04-01
+A-D034,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D035,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D036,SO-A,,Dealer,No,Silver,Bengaluru,Metro,12.92581,77.47325,"SFDC check-ins (median, jittered)",Yes,Yes,7,2025-05-15
+A-D037,SO-A,,Dealer,No,Silver,Bengaluru,Metro,13.00732,77.43947,"SFDC check-ins (median, jittered)",Yes,No,1,2025-09-26
+A-D038,SO-A,,Dealer,No,Silver,Bengaluru,Metro,13.02481,77.52695,"SFDC check-ins (median, jittered)",Yes,No,6,2025-04-05
+A-D039,SO-A,,Dealer,No,Silver,,,12.96974,77.48736,"SFDC check-ins (median, jittered)",No,Yes,2,2026-04-13
+A-D040,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D041,SO-A,,,No,Silver,Bengaluru,Tier 1,,,Unknown,Yes,Yes,0,2025-04-14
+A-D042,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,13.01549,77.48657,"SFDC check-ins (median, jittered)",No,Yes,1,2025-12-09
+A-D043,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.96931,77.50077,"SFDC check-ins (median, jittered)",Yes,Yes,10,2025-04-08
+A-D044,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,13.02701,77.52496,"SFDC check-ins (median, jittered)",Yes,Yes,3,2025-04-01
+A-D045,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.98687,77.52558,"SFDC check-ins (median, jittered)",Yes,Yes,2,2025-12-05
+A-D046,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,2025-09-09
+A-D047,SO-A,,Dealer,No,Silver,,,12.99275,77.50082,"SFDC check-ins (median, jittered)",No,No,3,
+A-D048,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D049,SO-A,,,No,Silver,Bengaluru,Tier 1,,,Unknown,Yes,Yes,0,2025-05-07
+A-D050,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D051,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,12.99562,77.46277,"SFDC check-ins (median, jittered)",Yes,Yes,5,2025-04-28
+A-D052,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D053,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.96086,77.48744,"SFDC check-ins (median, jittered)",No,Yes,2,2025-04-11
+A-D054,SO-A,,,No,Silver,,,,,Unknown,Yes,Yes,0,2026-06-08
+A-D055,SO-A,,,No,Silver,Bengaluru,Tier 1,,,Unknown,Yes,Yes,0,2026-09-02
+A-D056,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,12.99692,77.49313,"SFDC check-ins (median, jittered)",Yes,Yes,4,2026-03-28
+A-D057,SO-A,,Dealer,No,Silver,Bengaluru,Metro,12.90669,77.47583,"SFDC check-ins (median, jittered)",Yes,No,5,2025-04-03
+A-D058,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,12.97326,77.5146,"SFDC check-ins (median, jittered)",Yes,Yes,10,2025-04-07
+A-D059,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D060,SO-A,,,No,Silver,Bengaluru,Tier 1,,,Unknown,Yes,Yes,0,2026-04-30
+A-D061,SO-A,,Sub dealer,No,Silver,,,12.98519,77.57786,"SFDC check-ins (median, jittered)",No,No,7,
+A-D062,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D063,SO-A,,Dealer,No,Silver,,,12.91898,77.47649,"SFDC check-ins (median, jittered)",No,Yes,5,2026-04-13
+A-D064,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D065,SO-A,,Sub dealer,No,Silver,,,12.97109,77.50767,"SFDC check-ins (median, jittered)",No,No,1,
+A-D066,SO-A,,Dealer,No,Silver,Bengaluru,Metro,12.97711,77.51632,"SFDC check-ins (median, jittered)",No,Yes,6,2025-10-30
+A-D067,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,12.99957,77.53765,"SFDC check-ins (median, jittered)",Yes,Yes,8,2025-05-05
+A-D068,SO-A,,Dealer,No,Silver,Bengaluru,Metro,12.98903,77.50726,"SFDC check-ins (median, jittered)",No,Yes,1,2025-04-22
+A-D069,SO-A,,Dealer,Yes,Gold,Bengaluru,Tier 1,12.99767,77.54179,"SFDC check-ins (median, jittered)",Yes,Yes,10,2025-04-01
+A-D070,SO-A,,Sub dealer,No,Silver,Bengaluru,Metro,12.92335,77.4727,"SFDC check-ins (median, jittered)",Yes,No,8,2025-04-01
+A-D071,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,13.05034,77.48711,"SFDC check-ins (median, jittered)",Yes,Yes,12,2025-05-17
+A-D072,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.97639,77.52021,"SFDC check-ins (median, jittered)",Yes,Yes,10,2025-05-27
+A-D073,SO-A,,,No,Silver,Bengaluru,Metro,,,Unknown,Yes,No,0,2025-09-16
+A-D074,SO-A,,Dealer,No,Silver,Bengaluru,Metro,12.95918,77.50379,"SFDC check-ins (median, jittered)",Yes,No,9,2025-10-03
+A-D075,SO-A,,,No,Silver,Bengaluru,Tier 1,,,Unknown,Yes,Yes,0,2025-05-17
+A-D076,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D077,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D078,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D079,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D080,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D081,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D082,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D083,SO-A,,,No,Silver,Bengaluru,Tier 1,,,Unknown,No,Yes,0,2025-09-16
+A-D084,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D085,SO-A,,Dealer,No,Silver,Bengaluru,Metro,13.04094,77.50356,"SFDC check-ins (median, jittered)",Yes,No,1,2025-04-07
+A-D086,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D087,SO-A,,Sub dealer,No,,,,12.9627,77.48711,"SFDC check-ins (median, jittered)",No,No,1,
+A-D088,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,12.96745,77.48705,"SFDC check-ins (median, jittered)",No,Yes,4,2025-04-05
+A-D089,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D090,SO-A,,Dealer,No,Silver,,,12.99987,77.48239,"SFDC check-ins (median, jittered)",No,No,5,2026-01-01
+A-D091,SO-A,,,No,Silver,Bengaluru,Tier 1,,,Unknown,Yes,Yes,0,2025-04-29
+A-D092,SO-A,,Dealer,No,Silver,,,12.96599,77.49278,"SFDC check-ins (median, jittered)",Yes,No,2,
+A-D093,SO-A,,Dealer,No,Silver,,,12.99938,77.49002,"SFDC check-ins (median, jittered)",Yes,No,2,
+A-D094,SO-A,,,No,Silver,Bengaluru,Metro,,,Unknown,Yes,No,0,2025-04-25
+A-D095,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D096,SO-A,,Dealer,No,Silver,Bengaluru,,12.97698,77.52655,"SFDC check-ins (median, jittered)",No,Yes,2,2026-08-07
+A-D097,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,12.95321,77.47836,"SFDC check-ins (median, jittered)",Yes,Yes,1,2026-04-18
+A-D098,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,12.99981,77.58237,"SFDC check-ins (median, jittered)",Yes,Yes,9,2025-04-22
+A-D099,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,13.05274,77.49166,"SFDC check-ins (median, jittered)",Yes,Yes,11,2025-04-12
+A-D100,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D101,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.95019,77.487,"SFDC check-ins (median, jittered)",Yes,Yes,9,2025-04-03
+A-D102,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,12.97915,77.55444,"SFDC check-ins (median, jittered)",Yes,Yes,7,2025-05-14
+A-D103,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.9844,77.48359,"SFDC check-ins (median, jittered)",Yes,Yes,5,2025-11-06
+A-D104,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.99645,77.57821,"SFDC check-ins (median, jittered)",Yes,Yes,8,2025-05-23
+A-D105,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,12.93354,77.48143,"SFDC check-ins (median, jittered)",Yes,Yes,8,2026-03-11
+A-D106,SO-A,,Dealer,Yes,Elite,Bengaluru,Tier 1,13.04416,77.50943,"SFDC check-ins (median, jittered)",Yes,Yes,12,2025-04-01
+A-D107,SO-A,,,No,Silver,Bengaluru,Metro,,,Unknown,Yes,Yes,0,2025-05-07
+A-D108,SO-A,,,No,Silver,Bengaluru,Metro,,,Unknown,Yes,No,0,2025-04-10
+A-D109,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D110,SO-A,,,No,Silver,Bengaluru,Tier 1,,,Unknown,Yes,Yes,0,2025-04-11
+A-D111,SO-A,,Sub dealer,No,Silver,Bengaluru,Metro,12.97148,77.5165,"SFDC check-ins (median, jittered)",Yes,Yes,10,2025-04-14
+A-D112,SO-A,,,No,Silver,Bengaluru,Tier 1,,,Unknown,Yes,Yes,0,2026-06-18
+A-D113,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D114,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,12.97287,77.55178,"SFDC check-ins (median, jittered)",No,Yes,6,2026-05-13
+A-D115,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.96194,77.52511,"SFDC check-ins (median, jittered)",Yes,Yes,6,2025-04-17
+A-D116,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D117,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.93389,77.49141,"SFDC check-ins (median, jittered)",Yes,Yes,10,2025-04-05
+A-D118,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.90748,77.47514,"SFDC check-ins (median, jittered)",Yes,Yes,9,2025-04-10
+A-D119,SO-A,,Sub dealer,Yes,Gold,Bengaluru,Tier 1,12.97176,77.50676,"SFDC check-ins (median, jittered)",Yes,Yes,17,2025-04-01
+A-D120,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,12.94987,77.4979,"SFDC check-ins (median, jittered)",Yes,Yes,21,2025-04-07
+A-D121,SO-A,,Dealer,No,Silver,Bengaluru,Metro,12.919,77.47584,"SFDC check-ins (median, jittered)",Yes,Yes,7,2025-05-08
+A-D122,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,12.98361,77.57896,"SFDC check-ins (median, jittered)",Yes,Yes,2,2026-07-17
+A-D123,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,13.07552,77.50494,"SFDC check-ins (median, jittered)",Yes,Yes,4,2026-02-20
+A-D124,SO-A,,Dealer,No,Silver,Bengaluru,Metro,13.0085,77.52495,"SFDC check-ins (median, jittered)",No,Yes,6,2026-01-14
+A-D125,SO-A,,Sub dealer,No,Silver,Bengaluru,Metro,12.99114,77.46046,"SFDC check-ins (median, jittered)",Yes,Yes,7,2025-11-12
+A-D126,SO-A,,,No,Silver,Bengaluru,Metro,,,Unknown,Yes,Yes,0,2025-07-16
+A-D127,SO-A,,Dealer,No,Silver,Bengaluru,Metro,12.93333,77.49219,"SFDC check-ins (median, jittered)",Yes,No,10,2025-04-25
+A-D128,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D129,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.91568,77.56069,"SFDC check-ins (median, jittered)",Yes,Yes,6,2025-04-16
+A-D130,SO-A,,Dealer,No,,,,12.93572,77.48642,"SFDC check-ins (median, jittered)",No,No,1,
+A-D131,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,13.00207,77.48816,"SFDC check-ins (median, jittered)",Yes,Yes,10,2025-04-04
+A-D132,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.98095,77.53125,"SFDC check-ins (median, jittered)",Yes,Yes,10,2025-04-03
+A-D133,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D134,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,12.95134,77.47786,"SFDC check-ins (median, jittered)",Yes,Yes,7,2025-08-19
+A-D135,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.9713,77.52642,"SFDC check-ins (median, jittered)",Yes,Yes,7,2025-05-19
+A-D136,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D137,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D138,SO-A,A-D019,Dealer,Yes,Elite,Bengaluru,Tier 1,13.02157,77.50508,"SFDC check-ins (median, jittered)",Yes,Yes,4,2025-07-08
+A-D139,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D140,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,12.98835,77.54547,"SFDC check-ins (median, jittered)",Yes,Yes,11,2025-05-26
+A-D141,SO-A,,Dealer,No,Silver,,,12.98188,77.53139,"SFDC check-ins (median, jittered)",Yes,No,1,
+A-D142,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D143,SO-A,,Sub dealer,No,Silver,Bengaluru,Metro,13.00615,77.46918,"SFDC check-ins (median, jittered)",Yes,Yes,9,2025-04-08
+A-D144,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D145,SO-A,,,No,Silver,Bengaluru,Tier 1,,,Unknown,Yes,Yes,0,2025-08-16
+A-D146,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,12.97554,77.51448,"SFDC check-ins (median, jittered)",No,Yes,6,2025-04-14
+A-D147,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D148,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,13.00701,77.55387,"SFDC check-ins (median, jittered)",Yes,Yes,7,2025-04-02
+A-D149,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D150,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D151,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D152,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.93138,77.48745,"SFDC check-ins (median, jittered)",Yes,Yes,17,2025-04-11
+A-D153,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D154,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,12.99502,77.57948,"SFDC check-ins (median, jittered)",Yes,Yes,7,2025-04-10
+A-D155,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.98273,77.52323,"SFDC check-ins (median, jittered)",Yes,Yes,3,2025-04-02
+A-D156,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.92884,77.48546,"SFDC check-ins (median, jittered)",Yes,Yes,11,2025-04-07
+A-D157,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,13.02117,77.53148,"SFDC check-ins (median, jittered)",Yes,Yes,10,2025-04-15
+A-D158,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,12.97294,77.55322,"SFDC check-ins (median, jittered)",No,Yes,1,2025-04-03
+A-D159,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.98644,77.52186,"SFDC check-ins (median, jittered)",Yes,Yes,7,2025-04-03
+A-D160,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,13.08849,77.49591,"SFDC check-ins (median, jittered)",Yes,Yes,8,2025-04-04
+A-D161,SO-A,,Dealer,No,Silver,Bengaluru,Metro,12.97047,77.49304,"SFDC check-ins (median, jittered)",Yes,No,9,2025-04-03
+A-D162,SO-A,,,No,Silver,Bengaluru,Tier 1,,,Unknown,Yes,Yes,0,2025-04-02
+A-D163,SO-A,,Sub dealer,No,,,,13.08783,77.50131,"SFDC check-ins (median, jittered)",No,No,7,
+A-D164,SO-A,,,No,Silver,Bengaluru,Metro,,,Unknown,No,Yes,0,2025-10-03
+A-D165,SO-A,,Dealer,Yes,Gold,Bengaluru,Tier 1,13.00416,77.55494,"SFDC check-ins (median, jittered)",Yes,Yes,10,2025-04-01
+A-D166,SO-A,,Dealer,No,Silver,,,12.95187,77.48979,"SFDC check-ins (median, jittered)",Yes,No,6,
+A-D167,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D168,SO-A,,Dealer,No,Silver,Bengaluru,Metro,12.97831,77.51773,"SFDC check-ins (median, jittered)",No,No,4,2025-08-04
+A-D169,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.95662,77.53632,"SFDC check-ins (median, jittered)",Yes,Yes,6,2025-04-01
+A-D170,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.93056,77.4647,"SFDC check-ins (median, jittered)",No,Yes,4,2025-12-25
+A-D171,SO-A,,,No,Silver,Bengaluru,Tier 1,,,Unknown,Yes,Yes,0,2025-10-09
+A-D172,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.95132,77.49229,"SFDC check-ins (median, jittered)",Yes,Yes,12,2025-04-12
+A-D173,SO-A,,,No,Silver,Bengaluru,Tier 1,,,Unknown,Yes,Yes,0,2026-05-18
+A-D174,SO-A,,,No,Silver,Bengaluru,Tier 1,,,Unknown,No,Yes,0,2025-04-03
+A-D175,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,13.00934,77.48301,"SFDC check-ins (median, jittered)",Yes,Yes,9,2025-05-09
+A-D176,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D177,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,12.98369,77.50128,"SFDC check-ins (median, jittered)",Yes,Yes,11,2025-07-07
+A-D178,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,12.9603,77.50562,"SFDC check-ins (median, jittered)",Yes,Yes,11,2025-04-01
+A-D179,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,12.99409,77.55115,"SFDC check-ins (median, jittered)",Yes,Yes,10,2025-04-01
+A-D180,SO-A,,Dealer,No,Silver,,,12.92206,77.47172,"SFDC check-ins (median, jittered)",No,No,4,
+A-D181,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D182,SO-A,,Dealer,No,,,,12.93536,77.47957,"SFDC check-ins (median, jittered)",No,Yes,1,2026-07-23
+A-D183,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D184,SO-A,,Dealer,No,Silver,Bengaluru,Metro,12.99609,77.49501,"SFDC check-ins (median, jittered)",Yes,No,2,2025-05-14
+A-D185,SO-A,,Sub dealer,No,Silver,Bengaluru,Metro,12.94205,77.4952,"SFDC check-ins (median, jittered)",No,Yes,7,2025-04-01
+A-D186,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,13.04268,77.51348,"SFDC check-ins (median, jittered)",Yes,Yes,10,2025-04-04
+A-D187,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.97301,77.48774,"SFDC check-ins (median, jittered)",Yes,Yes,6,2025-06-07
+A-D188,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,12.96655,77.48314,"SFDC check-ins (median, jittered)",Yes,Yes,1,2025-09-09
+A-D189,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D190,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D191,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.99405,77.5777,"SFDC check-ins (median, jittered)",Yes,Yes,7,2025-04-12
+A-D192,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D193,SO-A,,Sub dealer,No,Silver,Bengaluru,Metro,12.9653,77.48961,"SFDC check-ins (median, jittered)",Yes,No,6,2025-04-12
+A-D194,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,13.04008,77.52203,"SFDC check-ins (median, jittered)",Yes,Yes,7,2025-08-08
+A-D195,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D196,SO-A,,,No,,Bengaluru,Tier 1,,,Unknown,Yes,Yes,0,2026-07-15
+A-D197,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,12.95828,77.48836,"SFDC check-ins (median, jittered)",Yes,Yes,11,2025-05-15
+A-D198,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,13.02331,77.52352,"SFDC check-ins (median, jittered)",Yes,Yes,9,2025-04-08
+A-D199,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.99217,77.51308,"SFDC check-ins (median, jittered)",Yes,Yes,7,2025-04-11
+A-D200,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D201,SO-A,,,No,Silver,,,,,Unknown,Yes,Yes,0,2026-05-23
+A-D202,SO-A,,Dealer,No,Silver,Bengaluru,Metro,12.96714,77.52191,"SFDC check-ins (median, jittered)",Yes,Yes,3,2025-04-30
+A-D203,SO-A,,Dealer,No,Silver,Bengaluru,Metro,13.01823,77.52196,"SFDC check-ins (median, jittered)",Yes,Yes,8,2025-07-11
+A-D204,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,12.96855,77.48141,"SFDC check-ins (median, jittered)",Yes,Yes,10,2025-04-12
+A-D205,SO-A,,Sub dealer,No,,,,13.05912,77.50394,"SFDC check-ins (median, jittered)",No,No,9,
+A-D206,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D207,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,13.00638,77.5278,"SFDC check-ins (median, jittered)",Yes,Yes,6,2025-07-21
+A-D208,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D209,SO-A,,Dealer,No,Silver,,,12.99617,77.55109,"SFDC check-ins (median, jittered)",Yes,No,3,
+A-D210,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,12.94783,77.48811,"SFDC check-ins (median, jittered)",Yes,Yes,9,2025-07-07
+A-D211,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D212,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D213,SO-A,,,No,,,,,,Unknown,Yes,Yes,0,2026-07-13
+A-D214,SO-A,,Dealer,No,Silver,Bengaluru,Metro,12.97035,77.52755,"SFDC check-ins (median, jittered)",Yes,Yes,6,2025-04-29
+A-D215,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D216,SO-A,,Prime dealer,No,Silver,Bengaluru,Tier 1,12.98696,77.52806,"SFDC check-ins (median, jittered)",Yes,Yes,10,2025-04-04
+A-D217,SO-A,,Dealer,No,Silver,Bengaluru,Metro,12.97285,77.52595,"SFDC check-ins (median, jittered)",Yes,No,4,2025-05-13
+A-D218,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D219,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.96499,77.52337,"SFDC check-ins (median, jittered)",Yes,Yes,7,2025-04-02
+A-D220,SO-A,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.97481,77.55125,"SFDC check-ins (median, jittered)",Yes,Yes,4,2025-09-03
+A-D221,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,13.0103,77.48075,"SFDC check-ins (median, jittered)",Yes,Yes,9,2025-04-08
+A-D222,SO-A,,Dealer,No,Silver,Bengaluru,Tier 1,12.96091,77.4992,"SFDC check-ins (median, jittered)",Yes,Yes,1,2026-07-08
+A-D223,SO-A,,,No,Silver,,,,,Unknown,Yes,No,0,
+A-D224,SO-A,,Dealer,No,Silver,Bengaluru,Metro,12.9639,77.49806,"SFDC check-ins (median, jittered)",Yes,No,10,2025-04-16
+B-D001,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.94806,77.54175,"SFDC check-ins (median, jittered)",Yes,Yes,8,2025-04-02
+B-D002,SO-B,,Prime dealer,Yes,Elite,Bengaluru,Tier 1,12.95349,77.5402,"SFDC check-ins (median, jittered)",Yes,Yes,17,2025-04-02
+B-D003,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.91012,77.51971,"SFDC check-ins (median, jittered)",Yes,Yes,9,2025-04-01
+B-D004,SO-B,,,No,Silver,Bengaluru,Tier 1,,,Unknown,No,Yes,0,2026-02-21
+B-D005,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.95311,77.58078,"SFDC check-ins (median, jittered)",Yes,Yes,3,2025-04-26
+B-D006,SO-B,,Sub dealer,No,,,,12.94285,77.52923,"SFDC check-ins (median, jittered)",No,No,4,
+B-D007,SO-B,,Sub dealer,No,Silver,Bengaluru,Metro,12.96071,77.5214,"SFDC check-ins (median, jittered)",Yes,Yes,6,2025-04-05
+B-D008,SO-B,,Prime dealer,Yes,Elite,Bengaluru,Tier 1,12.92867,77.50203,"SFDC check-ins (median, jittered)",Yes,Yes,15,2025-04-01
+B-D009,SO-B,,Sub dealer,No,,,,12.93832,77.52162,"SFDC check-ins (median, jittered)",No,No,4,
+B-D010,SO-B,,Sub dealer,No,Silver,Bengaluru,Metro,12.96102,77.56067,"SFDC check-ins (median, jittered)",Yes,Yes,1,2025-07-16
+B-D011,SO-B,,Sub dealer,No,Silver,Bengaluru,Metro,12.95764,77.52855,"SFDC check-ins (median, jittered)",No,Yes,7,2025-05-03
+B-D012,SO-B,,,No,Silver,Bengaluru,Tier 1,,,Unknown,Yes,Yes,0,2025-04-17
+B-D013,SO-B,,Sub dealer,No,,,,12.94217,77.54182,"SFDC check-ins (median, jittered)",No,No,10,
+B-D014,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.95419,77.53526,"SFDC check-ins (median, jittered)",Yes,Yes,9,2025-04-05
+B-D015,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.92864,77.52304,"SFDC check-ins (median, jittered)",Yes,Yes,4,2025-04-10
+B-D016,SO-B,,Sub dealer,No,Silver,Bengaluru,Metro,12.88376,77.49919,"SFDC check-ins (median, jittered)",Yes,No,3,2025-04-03
+B-D017,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.95734,77.54699,"SFDC check-ins (median, jittered)",Yes,Yes,8,2025-04-07
+B-D018,SO-B,,Dealer,No,Silver,,,12.94169,77.5253,"SFDC check-ins (median, jittered)",Yes,No,4,2025-10-08
+B-D019,SO-B,,,No,Silver,Bengaluru,Tier 1,,,Unknown,Yes,Yes,0,2025-04-07
+B-D020,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.94066,77.55117,"SFDC check-ins (median, jittered)",Yes,Yes,6,2025-04-14
+B-D021,SO-B,,Dealer,No,Silver,Bengaluru,Metro,12.95472,77.5291,"SFDC check-ins (median, jittered)",Yes,No,3,2025-04-03
+B-D022,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.87842,77.51435,"SFDC check-ins (median, jittered)",Yes,Yes,2,2025-04-07
+B-D023,SO-B,,Dealer,Yes,Elite,Bengaluru,Tier 1,12.93679,77.51477,"SFDC check-ins (median, jittered)",Yes,Yes,2,2025-04-01
+B-D024,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.95535,77.54625,"SFDC check-ins (median, jittered)",No,Yes,2,2026-07-31
+B-D025,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.90006,77.52233,"SFDC check-ins (median, jittered)",Yes,Yes,9,2025-04-03
+B-D026,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.94211,77.52798,"SFDC check-ins (median, jittered)",Yes,Yes,4,2025-11-10
+B-D027,SO-B,,Dealer,No,Silver,Bengaluru,Metro,12.96002,77.52304,"SFDC check-ins (median, jittered)",Yes,No,3,2025-04-14
+B-D028,SO-B,,Sub dealer,No,Silver,Bengaluru,Metro,12.94724,77.54157,"SFDC check-ins (median, jittered)",Yes,No,3,2026-03-24
+B-D029,SO-B,,Dealer,Yes,Elite,Bengaluru,Tier 1,12.9542,77.54514,"SFDC check-ins (median, jittered)",No,Yes,16,2025-04-01
+B-D030,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.95206,77.54344,"SFDC check-ins (median, jittered)",Yes,Yes,17,2025-11-04
+B-D031,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.94959,77.53713,"SFDC check-ins (median, jittered)",Yes,Yes,5,2025-04-26
+B-D032,SO-B,,Dealer,Yes,Platinum,Bengaluru,Tier 1,12.95284,77.54655,"SFDC check-ins (median, jittered)",Yes,Yes,24,2025-04-03
+B-D033,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.92828,77.50379,"SFDC check-ins (median, jittered)",Yes,Yes,4,2025-04-18
+B-D034,SO-B,,,No,Silver,Bengaluru,Tier 1,,,Unknown,Yes,Yes,0,2025-04-30
+B-D035,SO-B,,Dealer,No,Silver,Bengaluru,Metro,12.9495,77.53371,"SFDC check-ins (median, jittered)",Yes,No,2,2025-04-16
+B-D036,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.94817,77.54524,"SFDC check-ins (median, jittered)",Yes,Yes,6,2025-04-01
+B-D037,SO-B,,,No,Silver,Bengaluru,Tier 1,,,Unknown,Yes,Yes,0,2025-04-09
+B-D038,SO-B,,,No,Silver,Bengaluru,Tier 1,,,Unknown,Yes,Yes,0,2025-04-08
+B-D039,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.95104,77.57815,"SFDC check-ins (median, jittered)",Yes,Yes,8,2025-04-11
+B-D040,SO-B,,Sub dealer,No,Silver,Bengaluru,Metro,12.95582,77.54568,"SFDC check-ins (median, jittered)",Yes,Yes,8,2026-01-06
+B-D041,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.95647,77.5526,"SFDC check-ins (median, jittered)",Yes,Yes,6,2026-04-29
+B-D042,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.90482,77.5225,"SFDC check-ins (median, jittered)",Yes,Yes,6,2025-04-02
+B-D043,SO-B,,Dealer,No,Silver,Bengaluru,Metro,12.95293,77.54228,"SFDC check-ins (median, jittered)",Yes,No,5,2025-06-17
+B-D044,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.89968,77.52326,"SFDC check-ins (median, jittered)",No,Yes,4,2025-04-11
+B-D045,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.99136,77.54592,"SFDC check-ins (median, jittered)",Yes,Yes,12,2025-04-04
+B-D046,SO-B,,Sub dealer,No,,,,12.92204,77.51533,"SFDC check-ins (median, jittered)",No,No,3,
+B-D047,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.91407,77.56298,"SFDC check-ins (median, jittered)",Yes,Yes,5,2025-04-15
+B-D048,SO-B,,Sub dealer,No,Silver,Bengaluru,Metro,12.95102,77.54667,"SFDC check-ins (median, jittered)",Yes,No,3,2025-04-12
+B-D049,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.95457,77.58092,"SFDC check-ins (median, jittered)",Yes,Yes,8,2025-09-09
+B-D050,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.95901,77.53263,"SFDC check-ins (median, jittered)",No,Yes,6,2026-06-18
+B-D051,SO-B,,,No,Silver,Bengaluru,Tier 1,,,Unknown,Yes,Yes,0,2025-04-16
+B-D052,SO-B,,Sub dealer,No,Silver,,,12.95327,77.54464,"SFDC check-ins (median, jittered)",No,No,4,2025-06-03
+B-D053,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.95805,77.53281,"SFDC check-ins (median, jittered)",Yes,Yes,9,2025-04-09
+B-D054,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.94108,77.5308,"SFDC check-ins (median, jittered)",Yes,Yes,8,2025-04-16
+B-D055,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.95032,77.54821,"SFDC check-ins (median, jittered)",Yes,Yes,3,2025-04-05
+B-D056,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.9514,77.54741,"SFDC check-ins (median, jittered)",Yes,Yes,6,2025-05-06
+B-D057,SO-B,,,No,Silver,Bengaluru,Tier 1,,,Unknown,Yes,Yes,0,2025-04-02
+B-D058,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.94988,77.5471,"SFDC check-ins (median, jittered)",No,Yes,1,2026-01-28
+B-D059,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.9144,77.51162,"SFDC check-ins (median, jittered)",No,Yes,3,2025-04-02
+B-D060,SO-B,,Sub dealer,No,Silver,Bengaluru,Metro,12.94231,77.52758,"SFDC check-ins (median, jittered)",Yes,No,10,2025-04-09
+B-D061,SO-B,,Dealer,Yes,,Bengaluru,Tier 1,12.97776,77.54428,"SFDC check-ins (median, jittered)",No,Yes,3,2025-04-01
+B-D062,SO-B,,Sub dealer,No,,,,12.95326,77.54375,"SFDC check-ins (median, jittered)",No,No,1,
+B-D063,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.92774,77.55195,"SFDC check-ins (median, jittered)",Yes,Yes,5,2025-04-12
+B-D064,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.88718,77.51531,"SFDC check-ins (median, jittered)",No,Yes,6,2025-04-01
+B-D065,SO-B,,Sub dealer,No,Silver,Bengaluru,Metro,12.95759,77.54942,"SFDC check-ins (median, jittered)",No,Yes,6,2026-02-18
+B-D066,SO-B,,Sub dealer,Yes,Diamond,Bengaluru,Tier 1,12.90398,77.51557,"SFDC check-ins (median, jittered)",Yes,Yes,13,2025-04-04
+B-D067,SO-B,,Dealer,No,Silver,Bengaluru,Metro,12.90245,77.51965,"SFDC check-ins (median, jittered)",Yes,No,2,2025-08-18
+B-D068,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.94948,77.53257,"SFDC check-ins (median, jittered)",Yes,Yes,7,2025-04-02
+B-D069,SO-B,,Dealer,No,Silver,Bengaluru,Metro,12.93068,77.54628,"SFDC check-ins (median, jittered)",Yes,No,5,2025-04-29
+B-D070,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.91493,77.56367,"SFDC check-ins (median, jittered)",Yes,Yes,8,2025-04-07
+B-D071,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.91479,77.55831,"SFDC check-ins (median, jittered)",Yes,Yes,9,2025-04-02
+B-D072,SO-B,,,No,,,,,,Unknown,Yes,No,0,
+B-D073,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.90151,77.52225,"SFDC check-ins (median, jittered)",Yes,Yes,12,2025-04-05
+B-D074,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.932,77.55777,"SFDC check-ins (median, jittered)",Yes,Yes,6,2025-07-02
+B-D075,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.95881,77.58162,"SFDC check-ins (median, jittered)",Yes,Yes,4,2025-04-02
+B-D076,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.95708,77.58357,"SFDC check-ins (median, jittered)",Yes,Yes,6,2025-04-03
+B-D077,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.94688,77.5234,"SFDC check-ins (median, jittered)",Yes,Yes,7,2025-04-19
+B-D078,SO-B,,Sub dealer,No,Silver,Bengaluru,Metro,12.94869,77.53722,"SFDC check-ins (median, jittered)",Yes,No,5,2025-07-01
+B-D079,SO-B,,Sub dealer,No,,,,12.94868,77.54406,"SFDC check-ins (median, jittered)",No,No,1,
+B-D080,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.91131,77.52054,"SFDC check-ins (median, jittered)",No,Yes,4,2026-01-06
+B-D081,SO-B,,Prime dealer,Yes,Elite,Bengaluru,Tier 1,12.88113,77.72243,"SFDC check-ins (median, jittered)",No,Yes,1,2025-04-03
+B-D082,SO-B,,Sub dealer,No,Silver,Bengaluru,Metro,12.91892,77.51204,"SFDC check-ins (median, jittered)",Yes,No,2,2026-03-23
+B-D083,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.93754,77.55603,"SFDC check-ins (median, jittered)",Yes,Yes,6,2025-05-08
+B-D084,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.96369,77.5802,"SFDC check-ins (median, jittered)",Yes,Yes,2,2025-12-06
+B-D085,SO-B,,Dealer,Yes,Elite,Bengaluru,Tier 1,13.03438,77.70827,"SFDC check-ins (median, jittered)",No,Yes,1,2025-04-01
+B-D086,SO-B,,Dealer,No,Silver,,,12.95056,77.54496,"SFDC check-ins (median, jittered)",Yes,No,4,
+B-D087,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.91654,77.56352,"SFDC check-ins (median, jittered)",Yes,Yes,3,2025-08-04
+B-D088,SO-B,,Dealer,Yes,Elite,Bengaluru,Tier 1,12.95564,77.56506,"SFDC check-ins (median, jittered)",Yes,Yes,11,2025-04-12
+B-D089,SO-B,,Sub dealer,No,Silver,Bengaluru,Metro,12.95612,77.54538,"SFDC check-ins (median, jittered)",No,No,1,2025-05-05
+B-D090,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.95389,77.54222,"SFDC check-ins (median, jittered)",Yes,Yes,16,2025-04-01
+B-D091,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.95444,77.54446,"SFDC check-ins (median, jittered)",Yes,Yes,5,2025-04-02
+B-D092,SO-B,,,No,Silver,Bengaluru,Tier 1,,,Unknown,Yes,Yes,0,2025-05-02
+B-D093,SO-B,,Dealer,Yes,Elite,Bengaluru,Tier 1,12.95155,77.54399,"SFDC check-ins (median, jittered)",Yes,Yes,16,2025-04-01
+B-D094,SO-B,,,No,Silver,Bengaluru,Tier 1,,,Unknown,Yes,Yes,0,2025-07-19
+B-D095,SO-B,,Dealer,No,Silver,Bengaluru,Metro,12.95561,77.54862,"SFDC check-ins (median, jittered)",No,No,4,2025-06-14
+B-D096,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.90651,77.52081,"SFDC check-ins (median, jittered)",Yes,Yes,7,2025-04-08
+B-D097,SO-B,,Sub dealer,No,,,,12.91335,77.52058,"SFDC check-ins (median, jittered)",No,No,1,
+B-D098,SO-B,,Dealer,Yes,Elite,Bengaluru,Tier 1,12.90691,77.59605,"SFDC check-ins (median, jittered)",No,Yes,1,2025-04-01
+B-D099,SO-B,,Dealer,No,,Bengaluru,Tier 1,12.95762,77.56646,"SFDC check-ins (median, jittered)",No,Yes,2,2026-07-18
+B-D100,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.94635,77.54465,"SFDC check-ins (median, jittered)",No,Yes,3,2026-04-15
+B-D101,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.95002,77.57804,"SFDC check-ins (median, jittered)",Yes,Yes,9,2025-04-19
+B-D102,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.95321,77.54295,"SFDC check-ins (median, jittered)",Yes,Yes,12,2025-07-12
+B-D103,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.95105,77.5326,"SFDC check-ins (median, jittered)",Yes,Yes,7,2025-06-06
+B-D104,SO-B,,,No,Silver,Bengaluru,Metro,,,Unknown,Yes,No,0,2025-04-18
+B-D105,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.88939,77.51619,"SFDC check-ins (median, jittered)",Yes,Yes,5,2025-04-03
+B-D106,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.94018,77.57786,"SFDC check-ins (median, jittered)",Yes,Yes,6,2025-04-10
+B-D107,SO-B,,Prime dealer,No,Silver,Bengaluru,Tier 1,12.92423,77.55276,"SFDC check-ins (median, jittered)",Yes,Yes,6,2025-04-02
+B-D108,SO-B,,,No,Silver,Bengaluru,Tier 1,,,Unknown,Yes,Yes,0,2025-05-19
+B-D109,SO-B,,Dealer,Yes,Diamond,Bengaluru,Tier 1,12.94904,77.54752,"SFDC check-ins (median, jittered)",Yes,Yes,17,2025-04-01
+B-D110,SO-B,,Sub dealer,No,Silver,,,12.93546,77.51576,"SFDC check-ins (median, jittered)",No,No,3,
+B-D111,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.95265,77.54677,"SFDC check-ins (median, jittered)",Yes,Yes,6,2025-05-28
+B-D112,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.9565,77.54764,"SFDC check-ins (median, jittered)",Yes,Yes,5,2025-08-14
+B-D113,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.90392,77.54319,"SFDC check-ins (median, jittered)",Yes,Yes,3,2025-04-15
+B-D114,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.91037,77.53443,"SFDC check-ins (median, jittered)",Yes,Yes,1,2025-08-20
+B-D115,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.95431,77.54659,"SFDC check-ins (median, jittered)",Yes,Yes,6,2025-04-12
+B-D116,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.94987,77.53412,"SFDC check-ins (median, jittered)",Yes,Yes,3,2025-10-08
+B-D117,SO-B,,Sub dealer,No,Silver,Bengaluru,Metro,12.95241,77.54012,"SFDC check-ins (median, jittered)",Yes,No,1,2025-07-17
+B-D118,SO-B,,Sub dealer,No,Silver,,,12.9556,77.54506,"SFDC check-ins (median, jittered)",No,No,8,
+B-D119,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.9534,77.57871,"SFDC check-ins (median, jittered)",Yes,Yes,4,2025-07-22
+B-D120,SO-B,,Sub dealer,No,,,,12.95226,77.54604,"SFDC check-ins (median, jittered)",No,No,1,
+B-D121,SO-B,,,No,Silver,Bengaluru,Metro,,,Unknown,Yes,No,0,2025-04-03
+B-D122,SO-B,,Dealer,Yes,Elite,Bengaluru,Tier 1,12.87881,77.50842,"SFDC check-ins (median, jittered)",No,Yes,1,2025-09-01
+B-D123,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.93005,77.57237,"SFDC check-ins (median, jittered)",No,Yes,3,2026-04-17
+B-D124,SO-B,,Dealer,Yes,Platinum,Bengaluru,Tier 1,12.93694,77.51644,"SFDC check-ins (median, jittered)",No,Yes,14,2025-04-01
+B-D125,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.95243,77.54561,"SFDC check-ins (median, jittered)",Yes,Yes,3,2025-07-04
+B-D126,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.96282,77.58052,"SFDC check-ins (median, jittered)",Yes,Yes,3,2025-05-07
+B-D127,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.93024,77.54588,"SFDC check-ins (median, jittered)",Yes,Yes,8,2025-04-21
+B-D128,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.95308,77.57943,"SFDC check-ins (median, jittered)",Yes,Yes,9,2025-04-02
+B-D129,SO-B,,Sub dealer,No,,,,12.96389,77.54478,"SFDC check-ins (median, jittered)",No,No,8,
+B-D130,SO-B,,Dealer,No,Silver,,,12.95804,77.562,"SFDC check-ins (median, jittered)",No,Yes,1,2026-04-18
+B-D131,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.92483,77.50293,"SFDC check-ins (median, jittered)",Yes,Yes,7,2025-04-01
+B-D132,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.94884,77.53817,"SFDC check-ins (median, jittered)",Yes,Yes,12,2025-04-11
+B-D133,SO-B,,Dealer,No,Silver,Bengaluru,Metro,12.91547,77.52075,"SFDC check-ins (median, jittered)",Yes,Yes,5,2025-09-24
+B-D134,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.93273,77.54729,"SFDC check-ins (median, jittered)",Yes,Yes,2,2025-05-22
+B-D135,SO-B,,Prime dealer,Yes,Elite,Bengaluru,Tier 1,12.89122,77.53276,"SFDC check-ins (median, jittered)",No,Yes,1,2025-04-02
+B-D136,SO-B,,Sub dealer,No,Silver,Bengaluru,Metro,12.9493,77.53305,"SFDC check-ins (median, jittered)",Yes,Yes,7,2025-04-01
+B-D137,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.93903,77.57547,"SFDC check-ins (median, jittered)",No,Yes,4,2025-12-15
+B-D138,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.92174,77.57267,"SFDC check-ins (median, jittered)",No,Yes,2,2026-03-17
+B-D139,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.91055,77.55238,"SFDC check-ins (median, jittered)",Yes,Yes,5,2025-08-26
+B-D140,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.94878,77.49872,"SFDC check-ins (median, jittered)",Yes,Yes,19,2025-07-15
+B-D141,SO-B,,Sub dealer,No,Silver,,,12.93006,77.55524,"SFDC check-ins (median, jittered)",No,No,9,
+B-D142,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.91742,77.56142,"SFDC check-ins (median, jittered)",Yes,Yes,7,2025-04-07
+B-D143,SO-B,,Sub dealer,No,Silver,Bengaluru,Metro,12.95686,77.54739,"SFDC check-ins (median, jittered)",No,Yes,4,2026-06-09
+B-D144,SO-B,,Sub dealer,No,Silver,Bengaluru,Metro,12.9115,77.53968,"SFDC check-ins (median, jittered)",No,Yes,3,2026-04-23
+B-D145,SO-B,,Sub dealer,No,Silver,Bengaluru,Metro,12.95727,77.55499,"SFDC check-ins (median, jittered)",No,Yes,3,2026-04-11
+B-D146,SO-B,,Dealer,No,Silver,Bengaluru,Tier 1,12.95386,77.54403,"SFDC check-ins (median, jittered)",Yes,Yes,7,2025-06-09
+B-D147,SO-B,,Sub dealer,No,Silver,Bengaluru,Metro,12.95492,77.54691,"SFDC check-ins (median, jittered)",Yes,No,3,2025-12-24
+B-D148,SO-B,,,No,Silver,Bengaluru,Tier 1,,,Unknown,Yes,Yes,0,2026-06-26
+B-D149,SO-B,,Sub dealer,No,Silver,Bengaluru,Metro,12.95105,77.54642,"SFDC check-ins (median, jittered)",Yes,Yes,5,2025-04-04
+B-D150,SO-B,,Sub dealer,Yes,Gold,Bengaluru,Tier 1,12.95296,77.54546,"SFDC check-ins (median, jittered)",Yes,Yes,17,2025-07-10
+B-D151,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.94909,77.53247,"SFDC check-ins (median, jittered)",Yes,Yes,7,2025-05-17
+B-D152,SO-B,,Dealer,Yes,Platinum,Bengaluru,Tier 1,12.89764,77.52169,"SFDC check-ins (median, jittered)",Yes,Yes,14,2025-04-01
+B-D153,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.95184,77.54667,"SFDC check-ins (median, jittered)",Yes,Yes,19,2025-04-09
+B-D154,SO-B,,Sub dealer,No,Silver,Bengaluru,Tier 1,12.9292,77.5532,"SFDC check-ins (median, jittered)",Yes,Yes,7,2025-05-09
+C-D001,SO-C,,,No,,Belagavi,Tier 3,,,Unknown,Yes,Yes,0,2025-04-01
+C-D002,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D003,SO-C,,Sub dealer,No,,Hubli,Tier 3,15.35539,75.13426,"SFDC check-ins (median, jittered)",Yes,Yes,13,2025-04-01
+C-D004,SO-C,,,No,Silver,Hubli,Tier 1,,,Unknown,No,Yes,0,2025-11-20
+C-D005,SO-C,,Sub dealer,No,Silver,Belagavi,Tier 3,16.16906,74.83265,"SFDC check-ins (median, jittered)",No,Yes,1,2025-04-02
+C-D006,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D007,SO-C,,Dealer,No,Silver,Belagavi,Tier 3,15.8175,74.85655,"SFDC check-ins (median, jittered)",No,Yes,1,2025-04-02
+C-D008,SO-C,,Dealer,No,,,,15.88692,74.51377,"SFDC check-ins (median, jittered)",No,No,1,
+C-D009,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D010,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D011,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D012,SO-C,,Dealer,No,,Bagalkot,Tier 3,16.16274,75.66234,"SFDC check-ins (median, jittered)",Yes,Yes,5,2026-03-26
+C-D013,SO-C,,Dealer,No,,,,15.35593,75.13559,"SFDC check-ins (median, jittered)",No,No,1,
+C-D014,SO-C,,Dealer,No,Silver,Belagavi,Tier 3,16.17364,74.83651,"SFDC check-ins (median, jittered)",No,No,2,2025-07-31
+C-D015,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D016,SO-C,,,No,Silver,Belagavi,Tier 3,,,Unknown,No,Yes,0,2026-02-11
+C-D017,SO-C,,Dealer,No,Silver,Dharwad,Tier 3,15.85377,74.51256,"SFDC check-ins (median, jittered)",No,No,1,2025-08-19
+C-D018,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D019,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D020,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D021,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D022,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D023,SO-C,,Dealer,No,,,,15.84656,74.50803,"SFDC check-ins (median, jittered)",No,No,2,
+C-D024,SO-C,,,No,,Hubli,Tier 3,,,Unknown,Yes,Yes,0,2025-04-01
+C-D025,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D026,SO-C,,Prime dealer,Yes,,Hubli,Tier 3,15.35807,75.13668,"SFDC check-ins (median, jittered)",Yes,Yes,76,2025-04-01
+C-D027,SO-C,,Dealer,No,,,,15.85725,74.54616,"SFDC check-ins (median, jittered)",No,No,1,
+C-D028,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D029,SO-C,,Dealer,No,,,,15.35318,75.11544,"SFDC check-ins (median, jittered)",No,No,8,
+C-D030,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D031,SO-C,,Dealer,No,,Belagavi,Tier 3,15.85798,74.51272,"SFDC check-ins (median, jittered)",Yes,Yes,2,2025-04-05
+C-D032,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D033,SO-C,,,No,,Dharwad,Tier 1,,,Unknown,Yes,No,0,2025-08-20
+C-D034,SO-C,,,No,,Belagavi,Tier 1,,,Unknown,Yes,No,0,2025-09-05
+C-D035,SO-C,,,No,Silver,Bagalkot,Tier 3,,,Unknown,No,Yes,0,2025-07-09
+C-D036,SO-C,,Dealer,No,,Dharwad,Tier 3,15.34591,75.14213,"SFDC check-ins (median, jittered)",Yes,No,3,2025-06-27
+C-D037,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D038,SO-C,,Sub dealer,No,,Dharwad,Tier 3,15.35729,75.11697,"SFDC check-ins (median, jittered)",Yes,Yes,5,2025-04-07
+C-D039,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D040,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D041,SO-C,,Dealer,No,,,,15.4618,75.01128,"SFDC check-ins (median, jittered)",Yes,No,1,2026-01-28
+C-D042,SO-C,,Dealer,No,,,,15.45707,75.00888,"SFDC check-ins (median, jittered)",No,No,1,
+C-D043,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D044,SO-C,,,No,,Belagavi,Tier 3,,,Unknown,Yes,Yes,0,2025-05-01
+C-D045,SO-C,,Dealer,No,,Belagavi,Tier 1,15.84668,74.52363,"SFDC check-ins (median, jittered)",Yes,No,1,2025-12-17
+C-D046,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D047,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D048,SO-C,,Dealer,No,Silver,,,15.83584,74.50723,"SFDC check-ins (median, jittered)",No,Yes,1,2026-04-08
+C-D049,SO-C,,Dealer,No,Silver,Dharwad,Tier 3,15.34644,75.14066,"SFDC check-ins (median, jittered)",No,Yes,1,2025-08-14
+C-D050,SO-C,,Sub dealer,No,,Bagalkot,Tier 3,16.16773,75.6616,"SFDC check-ins (median, jittered)",Yes,Yes,6,2025-04-21
+C-D051,SO-C,,,No,,Belagavi,Tier 1,,,Unknown,Yes,Yes,0,2026-01-30
+C-D052,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D053,SO-C,,,No,,Dharwad,Tier 3,,,Unknown,Yes,Yes,0,2025-08-01
+C-D054,SO-C,,Dealer,No,,,,15.86378,74.48755,"SFDC check-ins (median, jittered)",No,No,6,
+C-D055,SO-C,,Sub dealer,No,Silver,,,16.51786,74.94989,"SFDC check-ins (median, jittered)",Yes,No,1,
+C-D056,SO-C,,Dealer,No,,Dharwad,Tier 1,15.35727,75.13644,"SFDC check-ins (median, jittered)",Yes,No,4,2026-01-12
+C-D057,SO-C,,Dealer,No,Silver,,,16.38826,75.11201,"SFDC check-ins (median, jittered)",Yes,No,1,
+C-D058,SO-C,,Dealer,No,Silver,Belagavi,Tier 1,15.81964,74.85348,"SFDC check-ins (median, jittered)",No,No,1,2026-02-23
+C-D059,SO-C,,,No,,Belagavi,Tier 3,,,Unknown,Yes,Yes,0,2026-03-06
+C-D060,SO-C,,Dealer,No,,Belagavi,Tier 3,15.85765,74.51062,"SFDC check-ins (median, jittered)",Yes,No,1,2025-04-16
+C-D061,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D062,SO-C,,,No,Silver,Dharwad,Tier 3,,,Unknown,Yes,Yes,0,2026-06-16
+C-D063,SO-C,,Dealer,No,Silver,,,16.72179,75.06509,"SFDC check-ins (median, jittered)",Yes,No,1,
+C-D064,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D065,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D066,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D067,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D068,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D069,SO-C,,,No,,,,,,Unknown,Yes,No,0,2025-06-21
+C-D070,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D071,SO-C,,Dealer,No,Silver,,,16.23821,74.60492,"SFDC check-ins (median, jittered)",Yes,No,1,
+C-D072,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D073,SO-C,,Dealer,No,Silver,,,15.86134,74.51223,"SFDC check-ins (median, jittered)",Yes,No,2,
+C-D074,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D075,SO-C,,Sub dealer,No,Silver,Belagavi,Tier 3,15.86556,74.50989,"SFDC check-ins (median, jittered)",No,No,4,2025-04-30
+C-D076,SO-C,,Sub dealer,No,Silver,Belagavi,Tier 3,15.85599,74.51508,"SFDC check-ins (median, jittered)",No,No,2,2025-06-03
+C-D077,SO-C,,Dealer,No,Silver,,,15.34586,75.13806,"SFDC check-ins (median, jittered)",Yes,No,3,
+C-D078,SO-C,,Dealer,No,Silver,,,16.23596,74.75954,"SFDC check-ins (median, jittered)",Yes,No,1,
+C-D079,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D080,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D081,SO-C,,Dealer,No,Silver,Bagalkot,Tier 3,16.32785,75.29223,"SFDC check-ins (median, jittered)",No,Yes,1,2025-04-08
+C-D082,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D083,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D084,SO-C,,Sub dealer,No,,,,15.89771,74.55134,"SFDC check-ins (median, jittered)",No,No,5,
+C-D085,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D086,SO-C,,,No,,Dharwad,Tier 3,,,Unknown,Yes,Yes,0,2025-04-15
+C-D087,SO-C,,Sub dealer,No,,Hubli,Tier 3,15.34725,75.14294,"SFDC check-ins (median, jittered)",Yes,Yes,8,2025-04-03
+C-D088,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D089,SO-C,,Sub dealer,No,,Belagavi,Tier 3,15.82906,74.50027,"SFDC check-ins (median, jittered)",Yes,Yes,4,2025-04-10
+C-D090,SO-C,,Sub dealer,No,,Dharwad,Tier 3,15.46698,75.0133,"SFDC check-ins (median, jittered)",Yes,Yes,49,2025-06-12
+C-D091,SO-C,,,No,Silver,Belagavi,Tier 1,,,Unknown,No,Yes,0,2025-09-03
+C-D092,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D093,SO-C,,,No,Silver,Belagavi,Tier 3,,,Unknown,Yes,Yes,0,2026-06-12
+C-D094,SO-C,,Dealer,No,,Dharwad,Tier 1,15.35534,75.11671,"SFDC check-ins (median, jittered)",Yes,No,6,2025-07-10
+C-D095,SO-C,,Dealer,No,Silver,Dharwad,Tier 1,15.34734,75.13754,"SFDC check-ins (median, jittered)",No,No,1,2025-10-29
+C-D096,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D097,SO-C,,,No,,Hubli,Tier 3,,,Unknown,Yes,No,0,2025-05-08
+C-D098,SO-C,,,No,Silver,Hubli,Tier 3,,,Unknown,Yes,Yes,0,2025-05-19
+C-D099,SO-C,,,No,,Dharwad,Tier 3,,,Unknown,Yes,No,0,2025-04-24
+C-D100,SO-C,,,No,,Dharwad,Tier 3,,,Unknown,Yes,No,0,2025-06-09
+C-D101,SO-C,,Dealer,No,Silver,,,15.35631,75.13373,"SFDC check-ins (median, jittered)",Yes,No,8,
+C-D102,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D103,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D104,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D105,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D106,SO-C,,,No,,Belagavi,Tier 3,,,Unknown,Yes,No,0,2025-04-07
+C-D107,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D108,SO-C,,Dealer,No,Silver,,,16.52081,74.95312,"SFDC check-ins (median, jittered)",Yes,No,1,
+C-D109,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D110,SO-C,,Dealer,No,Silver,Gadag,Tier 3,15.42411,75.62995,"SFDC check-ins (median, jittered)",No,No,1,2025-10-04
+C-D111,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D112,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D113,SO-C,,Dealer,No,Silver,Belagavi,Tier 1,15.83514,74.5201,"SFDC check-ins (median, jittered)",No,Yes,4,2025-09-20
+C-D114,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D115,SO-C,,Dealer,No,,,,15.85804,74.51475,"SFDC check-ins (median, jittered)",No,No,2,
+C-D116,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D117,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D118,SO-C,,Dealer,No,,,,16.39862,75.10851,"SFDC check-ins (median, jittered)",No,No,1,
+C-D119,SO-C,,Dealer,No,,,,15.84347,74.51177,"SFDC check-ins (median, jittered)",No,No,1,
+C-D120,SO-C,,Dealer,No,,,,15.8363,74.51733,"SFDC check-ins (median, jittered)",No,No,7,
+C-D121,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D122,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D123,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D124,SO-C,,Sub dealer,No,,Belgaum,Tier 3,15.84364,74.51418,"SFDC check-ins (median, jittered)",Yes,Yes,3,2025-04-09
+C-D125,SO-C,,Dealer,No,Silver,,,15.3543,75.11096,"SFDC check-ins (median, jittered)",Yes,No,2,
+C-D126,SO-C,,Sub dealer,No,,Belagavi,Tier 3,15.87564,74.51472,"SFDC check-ins (median, jittered)",Yes,Yes,4,2025-05-09
+C-D127,SO-C,,Sub dealer,No,Silver,,,16.1764,75.66107,"SFDC check-ins (median, jittered)",Yes,No,4,
+C-D128,SO-C,,Sub dealer,No,,Dharwad,Tier 3,15.3526,75.13414,"SFDC check-ins (median, jittered)",Yes,Yes,3,2025-05-15
+C-D129,SO-C,,,No,,Hubli,Tier 3,,,Unknown,Yes,Yes,0,2025-04-11
+C-D130,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D131,SO-C,,,No,Silver,,,,,Unknown,Yes,Yes,0,2026-08-22
+C-D132,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D133,SO-C,,,No,,Hubli,Tier 1,,,Unknown,Yes,Yes,0,2026-03-18
+C-D134,SO-C,,Dealer,No,Silver,,,16.71916,75.05873,"SFDC check-ins (median, jittered)",Yes,No,1,
+C-D135,SO-C,,Dealer,No,,Dharwad,Tier 3,15.35727,75.13606,"SFDC check-ins (median, jittered)",Yes,Yes,5,2025-06-16
+C-D136,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D137,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D138,SO-C,,Sub dealer,No,,Hubli,Tier 3,15.35147,75.11067,"SFDC check-ins (median, jittered)",Yes,Yes,5,2025-05-12
+C-D139,SO-C,,Sub dealer,No,Silver,Belagavi,Tier 3,15.88084,74.52611,"SFDC check-ins (median, jittered)",No,Yes,2,2025-04-18
+C-D140,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D141,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D142,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D143,SO-C,,Dealer,No,,,,15.85808,74.54566,"SFDC check-ins (median, jittered)",No,No,1,
+C-D144,SO-C,,,No,,,,,,Unknown,Yes,No,0,2026-02-16
+C-D145,SO-C,,Sub dealer,No,,Bagalkot,Tier 3,16.16798,75.66219,"SFDC check-ins (median, jittered)",Yes,Yes,8,2025-05-31
+C-D146,SO-C,,,No,Silver,Uttara Kannada,Tier 3,,,Unknown,Yes,Yes,0,2026-04-22
+C-D147,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D148,SO-C,,,No,,Belagavi,Tier 3,,,Unknown,Yes,No,0,2025-04-04
+C-D149,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D150,SO-C,,Dealer,No,Silver,Bagalkot,Tier 3,16.38806,75.1144,"SFDC check-ins (median, jittered)",No,Yes,1,2025-10-28
+C-D151,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D152,SO-C,,Dealer,No,Silver,Hubli,Tier 1,15.34694,75.14205,"SFDC check-ins (median, jittered)",Yes,Yes,3,2026-06-25
+C-D153,SO-C,,,No,Silver,Hyderabad,Metro,,,Unknown,Yes,Yes,0,2025-04-23
+C-D154,SO-C,,Dealer,No,Silver,Bagalkot,Tier 3,16.38838,75.11221,"SFDC check-ins (median, jittered)",No,No,1,2025-04-18
+C-D155,SO-C,,,No,Silver,Rabkavi Banahatti,Tier 3,,,Unknown,No,Yes,0,2025-04-22
+C-D156,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D157,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D158,SO-C,,,No,,Belagavi,Tier 3,,,Unknown,Yes,Yes,0,2025-04-24
+C-D159,SO-C,,Sub dealer,No,Silver,,,15.84713,74.52313,"SFDC check-ins (median, jittered)",Yes,No,1,
+C-D160,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D161,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D162,SO-C,,,No,Silver,Gadag,Tier 3,,,Unknown,No,Yes,0,2025-04-04
+C-D163,SO-C,,Dealer,No,,,,15.45539,75.00987,"SFDC check-ins (median, jittered)",No,No,7,
+C-D164,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D165,SO-C,,Dealer,No,,,,15.37293,75.12065,"SFDC check-ins (median, jittered)",No,No,1,
+C-D166,SO-C,,Sub dealer,No,,,,15.89648,74.53972,"SFDC check-ins (median, jittered)",No,No,1,
+C-D167,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D168,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D169,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D170,SO-C,,,No,,Dharwad,Tier 1,,,Unknown,Yes,No,0,2026-02-19
+C-D171,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D172,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D173,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D174,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D175,SO-C,,Dealer,No,Silver,,,15.88515,74.51358,"SFDC check-ins (median, jittered)",No,No,1,
+C-D176,SO-C,,Sub dealer,No,Silver,,,16.48948,75.0516,"SFDC check-ins (median, jittered)",No,No,1,2025-05-20
+C-D177,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D178,SO-C,,Sub dealer,No,Silver,Belagavi,Tier 1,15.84433,74.51397,"SFDC check-ins (median, jittered)",No,Yes,8,2025-09-22
+C-D179,SO-C,,Dealer,No,,Hubli,Tier 3,15.35231,75.13573,"SFDC check-ins (median, jittered)",Yes,Yes,12,2025-04-07
+C-D180,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D181,SO-C,,Dealer,No,Silver,Bagalkot,(blank),16.18177,75.6566,"SFDC check-ins (median, jittered)",Yes,Yes,5,2026-05-12
+C-D182,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D183,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D184,SO-C,,Dealer,No,,,,15.81378,74.85017,"SFDC check-ins (median, jittered)",No,No,1,
+C-D185,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D186,SO-C,,,No,Silver,Belagavi,Tier 1,,,Unknown,Yes,Yes,0,2026-04-17
+C-D187,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D188,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D189,SO-C,,Sub dealer,No,Silver,Belagavi,Tier 3,15.84499,74.51456,"SFDC check-ins (median, jittered)",No,Yes,1,2025-08-12
+C-D190,SO-C,,Sub dealer,No,,,,15.36354,75.16275,"SFDC check-ins (median, jittered)",No,No,3,
+C-D191,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D192,SO-C,,,No,,Belagavi,Tier 3,,,Unknown,Yes,Yes,0,2025-04-07
+C-D193,SO-C,,,No,,Belagavi,Tier 1,,,Unknown,Yes,No,0,2025-04-04
+C-D194,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D195,SO-C,,Dealer,No,Silver,Belagavi,Tier 3,15.86854,74.52748,"SFDC check-ins (median, jittered)",No,Yes,6,2025-04-07
+C-D196,SO-C,,Sub dealer,No,,Hubli,Tier 1,15.35559,75.11373,"SFDC check-ins (median, jittered)",Yes,Yes,18,2025-08-28
+C-D197,SO-C,,Sub dealer,No,,Dharwad,Tier 1,15.35558,75.13281,"SFDC check-ins (median, jittered)",Yes,No,7,2025-09-01
+C-D198,SO-C,,Dealer,No,,Belagavi,Tier 3,15.83398,74.50246,"SFDC check-ins (median, jittered)",Yes,Yes,2,2025-04-05
+C-D199,SO-C,,Dealer,No,,,,15.83778,74.52632,"SFDC check-ins (median, jittered)",No,No,1,
+C-D200,SO-C,,,No,,Belagavi,Tier 1,,,Unknown,Yes,No,0,2026-02-03
+C-D201,SO-C,,,No,Silver,Belagavi,Tier 1,,,Unknown,Yes,Yes,0,2026-06-04
+C-D202,SO-C,,,No,Silver,,,,,Unknown,Yes,Yes,0,2026-08-08
+C-D203,SO-C,,,No,Silver,Belagavi,Tier 3,,,Unknown,Yes,Yes,0,2026-06-22
+C-D204,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D205,SO-C,,Dealer,No,,,,15.81472,74.84483,"SFDC check-ins (median, jittered)",No,No,1,
+C-D206,SO-C,,Dealer,No,,Dharwad,Tier 1,15.35125,75.14505,"SFDC check-ins (median, jittered)",Yes,Yes,4,2025-12-02
+C-D207,SO-C,,,No,Silver,,,,,Unknown,Yes,Yes,0,2026-07-08
+C-D208,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D209,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D210,SO-C,,Sub dealer,No,,Dharwad,Tier 3,15.35758,75.13424,"SFDC check-ins (median, jittered)",Yes,Yes,8,2025-04-01
+C-D211,SO-C,,Dealer,No,Silver,Belagavi,Tier 1,15.84498,74.51282,"SFDC check-ins (median, jittered)",No,No,2,2025-10-07
+C-D212,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D213,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D214,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D215,SO-C,,Dealer,No,,,,15.81553,74.84845,"SFDC check-ins (median, jittered)",No,No,1,
+C-D216,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D217,SO-C,,Dealer,No,Silver,Dharwad,Tier 1,15.34916,75.14131,"SFDC check-ins (median, jittered)",No,No,6,2025-08-23
+C-D218,SO-C,,,No,,Dharwad,Tier 3,,,Unknown,Yes,Yes,0,2025-04-01
+C-D219,SO-C,,Dealer,No,Silver,Dharwad,Tier 3,15.35274,75.11116,"SFDC check-ins (median, jittered)",No,No,1,2025-07-30
+C-D220,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D221,SO-C,,Sub dealer,No,,,,16.18085,75.65988,"SFDC check-ins (median, jittered)",Yes,No,5,2025-10-16
+C-D222,SO-C,,Sub dealer,No,,Belagavi,Tier 3,15.84427,74.51024,"SFDC check-ins (median, jittered)",Yes,Yes,1,2025-07-17
+C-D223,SO-C,,,No,,Belgaum,Tier 3,,,Unknown,Yes,No,0,2025-04-14
+C-D224,SO-C,,,No,,Dharwad,Tier 1,,,Unknown,Yes,No,0,2025-11-24
+C-D225,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D226,SO-C,,Dealer,No,Silver,,,16.16858,74.82954,"SFDC check-ins (median, jittered)",Yes,No,1,
+C-D227,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D228,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D229,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D230,SO-C,,,No,,,,,,Unknown,Yes,No,0,2025-09-11
+C-D231,SO-C,,Dealer,No,Silver,,,16.34205,74.9668,"SFDC check-ins (median, jittered)",Yes,No,1,
+C-D232,SO-C,,,No,,Dharwad,Tier 1,,,Unknown,Yes,No,0,2026-01-14
+C-D233,SO-C,,,No,,Dharwad,Tier 3,,,Unknown,Yes,Yes,0,2026-03-07
+C-D234,SO-C,,Dealer,No,,Dharwad,Tier 3,15.34997,75.14117,"SFDC check-ins (median, jittered)",Yes,Yes,5,2025-04-14
+C-D235,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D236,SO-C,,,No,Silver,,,,,Unknown,Yes,Yes,0,2026-06-23
+C-D237,SO-C,,Sub dealer,No,Silver,Dharwad,Tier 3,15.35647,75.13441,"SFDC check-ins (median, jittered)",No,No,8,2025-04-05
+C-D238,SO-C,,,No,,Bagalkot,Tier 3,,,Unknown,Yes,Yes,0,2025-10-25
+C-D239,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D240,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D241,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D242,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D243,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D244,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D245,SO-C,,,No,,Dharwad,Tier 1,,,Unknown,Yes,Yes,0,2025-12-15
+C-D246,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D247,SO-C,,Sub dealer,No,Silver,Belagavi,Tier 1,15.88532,74.54017,"SFDC check-ins (median, jittered)",No,No,2,2025-09-02
+C-D248,SO-C,,Sub dealer,No,Silver,Gadag,Tier 3,15.42752,75.62961,"SFDC check-ins (median, jittered)",No,No,1,2025-07-02
+C-D249,SO-C,,Sub dealer,No,,Dharwad,Tier 3,15.35638,75.11687,"SFDC check-ins (median, jittered)",No,Yes,6,2025-04-01
+C-D250,SO-C,,Sub dealer,No,,Belagavi,Tier 3,15.94638,75.29863,"SFDC check-ins (median, jittered)",Yes,Yes,1,2025-06-17
+C-D251,SO-C,,,No,Silver,,,,,Unknown,Yes,Yes,0,2026-09-17
+C-D252,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D253,SO-C,,Dealer,No,,Hubli,Tier 3,15.34967,75.10518,"SFDC check-ins (median, jittered)",Yes,Yes,8,2025-05-12
+C-D254,SO-C,,,No,Silver,Dharwad,Tier 3,,,Unknown,No,Yes,0,2025-06-14
+C-D255,SO-C,,Sub dealer,No,,Bagalkot,Tier 3,16.16287,75.66171,"SFDC check-ins (median, jittered)",Yes,Yes,1,2025-05-22
+C-D256,SO-C,,,No,,Dharwad,Tier 3,,,Unknown,Yes,Yes,0,2025-05-24
+C-D257,SO-C,,Dealer,No,Silver,Belagavi,Tier 1,16.71597,75.0569,"SFDC check-ins (median, jittered)",Yes,Yes,1,2026-05-02
+C-D258,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D259,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D260,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D261,SO-C,,Dealer,No,Silver,Belagavi,Tier 3,15.94476,75.29412,"SFDC check-ins (median, jittered)",No,No,1,2025-08-12
+C-D262,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D263,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D264,SO-C,,Sub dealer,No,Silver,Belagavi,Tier 3,15.86272,74.51102,"SFDC check-ins (median, jittered)",No,Yes,4,2025-05-05
+C-D265,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D266,SO-C,,Sub dealer,No,,,,15.35193,75.11103,"SFDC check-ins (median, jittered)",No,No,1,
+C-D267,SO-C,,Dealer,No,,Belagavi,Tier 3,15.8532,74.51336,"SFDC check-ins (median, jittered)",Yes,Yes,4,2025-07-23
+C-D268,SO-C,,,No,,Hubli,Tier 3,,,Unknown,Yes,Yes,0,2026-02-24
+C-D269,SO-C,,Dealer,No,Silver,Belagavi,Tier 3,15.83817,74.52765,"SFDC check-ins (median, jittered)",No,Yes,1,2025-12-25
+C-D270,SO-C,,Dealer,No,Silver,Bagalkot,Tier 3,16.33159,75.28535,"SFDC check-ins (median, jittered)",No,Yes,1,2025-04-03
+C-D271,SO-C,,Dealer,No,Silver,,,16.16383,74.81972,"SFDC check-ins (median, jittered)",Yes,No,1,
+C-D272,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D273,SO-C,,Dealer,No,,Belagavi,Tier 3,15.87563,74.51247,"SFDC check-ins (median, jittered)",Yes,Yes,6,2025-04-03
+C-D274,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D275,SO-C,,Dealer,No,,,,15.84594,74.51399,"SFDC check-ins (median, jittered)",Yes,No,3,2025-12-08
+C-D276,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D277,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D278,SO-C,,Sub dealer,No,,Belagavi,Tier 3,15.82325,74.49085,"SFDC check-ins (median, jittered)",No,Yes,3,2025-04-08
+C-D279,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D280,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D281,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D282,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D283,SO-C,,Dealer,No,Silver,Belagavi,Tier 1,16.25414,74.48642,"SFDC check-ins (median, jittered)",No,Yes,3,2026-02-23
+C-D284,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D285,SO-C,,Sub dealer,No,,Belagavi,Tier 3,15.84415,74.51276,"SFDC check-ins (median, jittered)",Yes,Yes,9,2025-04-01
+C-D286,SO-C,,Dealer,No,,Belagavi,Tier 3,15.84551,74.51365,"SFDC check-ins (median, jittered)",Yes,Yes,7,2025-04-01
+C-D287,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D288,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D289,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D290,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D291,SO-C,,,No,,Belagavi,Tier 3,,,Unknown,Yes,Yes,0,2025-04-09
+C-D292,SO-C,,Dealer,No,Silver,Bagalkot,Tier 3,16.33344,75.28581,"SFDC check-ins (median, jittered)",No,Yes,1,2025-06-30
+C-D293,SO-C,,Dealer,No,,,,15.50147,74.90504,"SFDC check-ins (median, jittered)",No,No,3,
+C-D294,SO-C,,Dealer,No,,,,15.35383,75.13911,"SFDC check-ins (median, jittered)",No,No,42,
+C-D295,SO-C,,,No,Silver,Dharwad,Tier 1,,,Unknown,Yes,Yes,0,2026-06-09
+C-D296,SO-C,,,No,Silver,,,,,Unknown,Yes,No,0,
+C-D297,SO-C,,Sub dealer,No,,Hubli,Tier 1,15.35908,75.13707,"SFDC check-ins (median, jittered)",Yes,Yes,26,2026-01-13
+C-D298,SO-C,,,No,,Dharwad,Tier 3,,,Unknown,Yes,No,0,2025-04-09
+C-D299,SO-C,,Dealer,No,,Bagalkote,Tier 3,16.18132,75.66122,"SFDC check-ins (median, jittered)",Yes,Yes,5,2025-04-07

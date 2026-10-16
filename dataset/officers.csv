@@ -1,0 +1,4 @@
+so_id,territory,geography,daily_call_norm,approx_day_start_lat,approx_day_start_lon,dealers_in_universe,median_completed_calls_per_day
+SO-A,Bengaluru urban (west),Dense metro,6 focus dealers + 2 demand-gen calls (time reserved; no demand-gen data provided),12.93957,77.49507,224,9
+SO-B,Bengaluru urban (west/south),Dense metro,6 focus dealers + 2 demand-gen calls (time reserved; no demand-gen data provided),12.95276,77.54104,154,8
+SO-C,Hubballi-Dharwad-Belagavi,"Upcountry, multi-town",6 focus dealers + 2 demand-gen calls (time reserved; no demand-gen data provided),15.4648,74.99564,299,8

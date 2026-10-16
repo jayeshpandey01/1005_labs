@@ -1,0 +1,27 @@
+{
+ "seed": 2,
+ "simulated_adherence": 0.9706,
+ "initial_plan_adherence": 0.8622,
+ "focus_dealers": 394,
+ "focus_coverage": 0.8832,
+ "club_dealers_in_focus": 27,
+ "club_cadence_met": 0.1852,
+ "drop_events": 12,
+ "drops_visited_within_7_days": 4,
+ "drop_response_rate": 0.3333,
+ "median_days_to_drop_visit": 8.0,
+ "hike_events": 10,
+ "visits_made_during_hikes": 1,
+ "visits_cancelled_during_hikes": 2,
+ "visits_planned_day_of": 374,
+ "visits_completed": 363,
+ "missed_by_reason": {
+  "missed_dealer_unavailable": 10,
+  "missed_out_of_time": 1
+ },
+ "avg_travel_min_per_so_day": 90.8,
+ "avg_completed_per_so_day": 4.84,
+ "guardrail_breaches": {},
+ "replan_failures": 0,
+ "simulated_points_november": 67692
+}
