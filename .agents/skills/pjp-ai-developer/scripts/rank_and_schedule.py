@@ -226,37 +226,72 @@ def rank_and_schedule():
             daily_buckets[slot_one].append(club_dealer["dealer_id"])
             daily_buckets[slot_two].append(club_dealer["dealer_id"])
 
-        # B. Cluster located accounts by spatial proximity from daily anchors
-        located.sort(key=lambda d: haversine_km((d["lat"], d["lon"]), start_coord))
+        # B. Cluster located accounts by spatial proximity with temporal front-loading of de-growth
+        degrowth_priority = [d for d in located if d.get("degrowth_blended", 0.0) > 0]
+        degrowth_priority.sort(key=lambda d: d.get("degrowth_blended", 0.0), reverse=True)
 
         for day_idx in range(num_workdays):
             # Dynamic day capacity: distant upcountry beats capped at 5 to protect budget
             max_day_cap = 5 if (officer["is_upcountry"] and day_idx >= 15) else 6
-            available_slots = max_day_cap - len(daily_buckets[day_idx])
+            # Reserve 1 slot on local beats for unlocated accounts
+            reserved_for_unloc = 1 if (day_idx < len(unlocated) and (not officer["is_upcountry"] or day_idx < 15)) else 0
+            available_slots = max_day_cap - len(daily_buckets[day_idx]) - reserved_for_unloc
 
             if available_slots <= 0 or not located:
                 continue
 
-            # Pick anchor dealer
-            anchor = located.pop(0)
-            daily_buckets[day_idx].append(anchor["dealer_id"])
-            anchor_loc = (anchor["lat"], anchor["lon"])
+            # Temporal front-loading: in Days 1 to 10 (day_idx 0 to 9), prioritize de-growing accounts as anchors
+            anchor = None
+            if day_idx < 10 and degrowth_priority:
+                while degrowth_priority:
+                    candidate = degrowth_priority.pop(0)
+                    if candidate in located:
+                        anchor = candidate
+                        located.remove(candidate)
+                        break
 
-            # Chained nearest-neighbor extraction
-            take_count = min(available_slots - 1, len(located))
-            if take_count > 0:
-                located.sort(key=lambda d: haversine_km((d["lat"], d["lon"]), anchor_loc))
-                for _ in range(take_count):
-                    daily_buckets[day_idx].append(located.pop(0)["dealer_id"])
+            if not anchor and located:
+                # Nearest unassigned dealer from home base as spatial seed anchor
+                located.sort(key=lambda d: haversine_km((d["lat"], d["lon"]), start_coord))
+                anchor = located.pop(0)
 
-        # C. Distribute unlocated dealers strictly to local beats (<= 50 km from base)
+            if anchor:
+                daily_buckets[day_idx].append(anchor["dealer_id"])
+                anchor_loc = (anchor["lat"], anchor["lon"])
+
+                # Chained nearest-neighbor extraction
+                take_count = min(available_slots - 1, len(located))
+                if take_count > 0:
+                    located.sort(key=lambda d: haversine_km((d["lat"], d["lon"]), anchor_loc))
+                    for _ in range(take_count):
+                        daily_buckets[day_idx].append(located.pop(0)["dealer_id"])
+
+        # C. Distribute unlocated dealers strictly bounded to at most 1 per day and local beats
+        unloc_per_day = [0] * num_workdays
         for unloc_dealer in unlocated:
             placed = False
             for day_idx in range(num_workdays):
-                if len(daily_buckets[day_idx]) < 6:
+                # Enforce at most 1 unlocated account per day
+                if unloc_per_day[day_idx] >= 1:
+                    continue
+                # For upcountry, restrict to local beats (day_idx < 15, within 50 km)
+                if officer["is_upcountry"] and day_idx >= 15:
+                    continue
+                max_day_cap = 5 if (officer["is_upcountry"] and day_idx >= 15) else 6
+                if len(daily_buckets[day_idx]) < max_day_cap:
                     daily_buckets[day_idx].append(unloc_dealer["dealer_id"])
+                    unloc_per_day[day_idx] += 1
                     placed = True
                     break
+
+            # Fallback if local days are completely full
+            if not placed:
+                for day_idx in range(num_workdays):
+                    if len(daily_buckets[day_idx]) < 6 and unloc_per_day[day_idx] < 1:
+                        daily_buckets[day_idx].append(unloc_dealer["dealer_id"])
+                        unloc_per_day[day_idx] += 1
+                        placed = True
+                        break
 
         # Output unsequenced visits
         for day_idx, workday in enumerate(workdays):

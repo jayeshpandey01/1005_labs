@@ -18,58 +18,58 @@
   },
   {
     "nudge_id": 2,
-    "dealer_id": "A-D117",
-    "dealer_name": "A-D117 Laminates & Plywood",
+    "dealer_id": "A-D131",
+    "dealer_name": "A-D131 Laminates & Plywood",
     "so_id": "SO-A",
     "visit_date": "2026-11-02",
     "trigger_type": "Product Tier De-growth Alert",
-    "message": "Hi Sureshji, noticed your orders dropped 95.1% from last month (Rs 0.4L to Rs 0.0L). We have special spot discounts on 1mm laminates tomorrow. Let us review your current inventory and fast-moving designs at 11:30 AM.",
-    "character_count": 216,
+    "message": "Hi Sureshji, noticed your orders dropped 100.0% from last month (Rs 0.3L to Rs 0.0L). We have special spot discounts on 1mm laminates tomorrow. Let us review your current inventory and fast-moving designs at 11:30 AM.",
+    "character_count": 217,
     "grounding_data": {
-      "prior_month_sales_inr": 41464.0,
-      "curr_month_sales_inr": 2026.0,
-      "degrowth_percentage": "95.1%",
-      "value_lost_inr": 39438.0
+      "prior_month_sales_inr": 25883.0,
+      "curr_month_sales_inr": 0.0,
+      "degrowth_percentage": "100.0%",
+      "value_lost_inr": 25883.0
     }
   },
   {
     "nudge_id": 3,
-    "dealer_id": "A-D127",
-    "dealer_name": "A-D127 Hardware & Timber",
+    "dealer_id": "A-D056",
+    "dealer_name": "A-D056 Hardware & Timber",
     "so_id": "SO-A",
     "visit_date": "2026-11-02",
     "trigger_type": "High GST Wallet Headroom Opportunity",
-    "message": "Namaste Rameshji! Your annual turnover is Rs 2.5 Cr+, but current laminate purchases are Rs 0.0 Lakhs (0.0% share). Let's discuss exclusive distributor pricing to capture your upcoming commercial project orders. See you tomorrow at 12:15 PM.",
+    "message": "Namaste Rameshji! Your annual turnover is Rs 2.5 Cr+, but current laminate purchases are Rs 0.6 Lakhs (0.3% share). Let's discuss exclusive distributor pricing to capture your upcoming commercial project orders. See you tomorrow at 12:15 PM.",
     "character_count": 241,
     "grounding_data": {
       "gst_turnover_proxy_inr": 25000000.0,
-      "annual_purchases_inr": 0.0,
-      "estimated_wallet_share": "0.0%",
-      "uncaptured_headroom_inr": 25000000.0
+      "annual_purchases_inr": 63579.0,
+      "estimated_wallet_share": "0.3%",
+      "uncaptured_headroom_inr": 24936421.0
     }
   },
   {
     "nudge_id": 4,
-    "dealer_id": "A-D120",
-    "dealer_name": "A-D120 Plywood Depot",
+    "dealer_id": "A-D004",
+    "dealer_name": "A-D004 Plywood Depot",
     "so_id": "SO-A",
     "visit_date": "2026-11-02",
     "trigger_type": "Sudden Sales Drop Recovery",
-    "message": "Hi Maheshji, we observed zero billing over recent days against your 1.8 sheets/day average. I am visiting tomorrow at 2 PM to resolve any dispatch delays, damaged sheets, or pending scheme credit notes immediately.",
+    "message": "Hi Maheshji, we observed zero billing over recent days against your 1.7 sheets/day average. I am visiting tomorrow at 2 PM to resolve any dispatch delays, damaged sheets, or pending scheme credit notes immediately.",
     "character_count": 214,
     "grounding_data": {
-      "historical_daily_rate": "1.8 sheets/day",
+      "historical_daily_rate": "1.7 sheets/day",
       "urgency_window": "< 7 days response"
     }
   },
   {
     "nudge_id": 5,
-    "dealer_id": "A-D185",
-    "dealer_name": "A-D185 Interiors",
+    "dealer_id": "A-D093",
+    "dealer_name": "A-D093 Interiors",
     "so_id": "SO-A",
     "visit_date": "2026-11-02",
     "trigger_type": "Non-Club Monthly Scheme Acceleration",
-    "message": "Namaste A-D185 Interiors! You are currently at 5 scheme points. Reaching Slab 1 (15 pts) unlocks a cash bonus of Rs 150 (Rs 10.0/pt). Just 5 sheets of Tier-4 will qualify you for the payout. Visiting tomorrow at 3:30 PM.",
+    "message": "Namaste A-D093 Interiors! You are currently at 5 scheme points. Reaching Slab 1 (15 pts) unlocks a cash bonus of Rs 150 (Rs 10.0/pt). Just 5 sheets of Tier-4 will qualify you for the payout. Visiting tomorrow at 3:30 PM.",
     "character_count": 220,
     "grounding_data": {
       "current_monthly_points": 5,
