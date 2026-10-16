@@ -35,7 +35,30 @@ py -3.11 simulate.py --workbook PJP_Assignment_Sample_Data.xlsx --plan plan_nove
   * Milestone M5 (WhatsApp Nudges): `docs/research_paper_m5.md`
   * Milestone M6 (Dynamic Online Re-planner): `docs/research_paper_m6.md`
   * Milestone M7 (Simulation & Tuning): `docs/research_paper_m7.md`
+* **PJP-Graphify Knowledge Graph:** `dataset/pjp_knowledge_graph.json` (746 nodes, 1657 edges)
+* **Interactive Cytoscape Dashboard:** `pjp_graph_dashboard.html`
+* **PJP-Graphify Research Paper:** `docs/research_paper_pjp_graphify.md`
 * **Antigravity Skills:** `.agents/skills/pjp-data-engineer/` and `.agents/skills/pjp-ai-developer/`
+
+## PJP-Graphify: Knowledge Graph & Tree Query System
+
+Inspired by `jayeshpandey01/Graph-Based-Query-System` and `Graphify-Labs/graphify`, the PJP pipeline includes an edge-explained Knowledge Graph with deterministic hierarchical tree queries and a standalone Cytoscape.js dark-mode visual explorer:
+
+```powershell
+# 1. Query Dealer 360 Tree (Financials, Headroom, Schedule, Nudges, Anomaly Lineage)
+py -3.11 -m pjp_graph --dealer A-D004
+
+# 2. Query Daily Itinerary Tour Tree (Base departure, sequenced legs, travel times, arrivals)
+py -3.11 -m pjp_graph --itinerary SO-A 2026-11-02
+
+# 3. Query Anomaly Lineage & CUSUM Recovery
+py -3.11 -m pjp_graph --query "Trace drop on A-D004"
+
+# 4. Generate & Export Standalone Cytoscape.js HTML Dashboard
+py -3.11 -m pjp_graph --dashboard
+```
+
+Open `pjp_graph_dashboard.html` in any browser to interactively explore nodes, search accounts, and inspect explained edges.
 
 ---
 

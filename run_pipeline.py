@@ -30,6 +30,7 @@ STAGES = [
     ("Stage 4: WhatsApp Nudge Generator", [sys.executable, str(BASE_DIR / ".agents" / "skills" / "pjp-ai-developer" / "scripts" / "generate_nudges.py")]),
     ("Stage 5: Route Map Visualizer", [sys.executable, str(BASE_DIR / "scripts" / "generate_maps.py")]),
     ("Stage 6: Simulation Benchmark (Seeds 1-3)", [sys.executable, str(BASE_DIR / ".agents" / "skills" / "pjp-ai-developer" / "scripts" / "run_seed_benchmark.py")]),
+    ("Stage 7: PJP-Graphify Knowledge Graph & Dashboard", [sys.executable, "-m", "pjp_graph.cli", "--dashboard"]),
 ]
 
 def run():
@@ -60,6 +61,8 @@ def run():
     print("  [x] WhatsApp Nudges: whatsapp_nudges.json (5 data-backed messages)")
     print("  [x] Route Maps: docs/maps/route_map_SO-*.png")
     print("  [x] Benchmark Scores: results/seed_*/summary.json")
+    print("  [x] Knowledge Graph: dataset/pjp_knowledge_graph.json (746 nodes, 1657 edges)")
+    print("  [x] Interactive Dashboard: pjp_graph_dashboard.html")
     print("=" * 72)
 
 if __name__ == "__main__":
