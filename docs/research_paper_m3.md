@@ -76,24 +76,24 @@ We audited all repository tables, schedules, and simulation code directly govern
 
 | File Path | Dimension / Size | Key Fields Audited | Concrete Function in Milestone M3 |
 | :--- | :--- | :--- | :--- |
-| [`dataset/Planning_Calendar.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/Planning_Calendar.csv) | 30 rows, 680 B | `date`, `day_name`, `working_day` | Defines the 25 active working days (Mon–Sat) and the 5 non-working Sundays (Nov 1, 8, 15, 22, 29). |
-| [`dataset/officers.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/officers.csv) | 3 rows, 597 B | `so_id`, `territory`, `geography`, `approx_day_start_lat`, `approx_day_start_lon` | Establishes the origin coordinate $\mathbf{x}_{\text{base}}$ for daily tours and speed baselines (18 vs 30 km/h). |
-| [`dataset/dealers.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/dealers.csv) | 677 rows, 62 KB | `dealer_id`, `so_id`, `lat`, `lon`, `town`, `loyalty_club_member` | Source of coordinate geometry (395 located, 282 unlocated) and territorial boundaries. |
-| [`dataset/SFDC_Activities.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/SFDC_Activities.csv) | 3,700 rows, 400 KB | `activity_id`, `so_id`, `duration_min`, `check_in`, `check_out`, `planned_or_adhoc` | Historical baseline for call durations, travel intervals, and empirical quota gaming behavior. |
-| [`dataset/ranked_dealers.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/ranked_dealers.csv) | 677 rows, 35 KB | `rank_score`, `score_degrowth`, `is_focus`, `club`, `has_gps` | Input prioritized roster defining which accounts must be scheduled into the 25-day calendar. |
-| [`dataset/initial_schedule_unsequenced.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/initial_schedule_unsequenced.csv) | 435 rows, 17 KB | `date`, `so_id`, `sequence`, `account_id`, `account_type` | Primary deliverable of Milestone M3: the unsequenced calendar partition across all 25 working days. |
-| [`simulate.py`](file:///c:/Users/jayes/Downloads/PJP_Simulator/simulate.py) | 317 lines | `CFG`, `speed_kmh`, `unknown_location_travel_min`, `travel_mult`, `p_rain`, `p_traffic` | Ground-truth simulation engine evaluating time budgets, transit speed, weather disruptions, and scoring. |
-| [`docs/assumptions_log.md`](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/assumptions_log.md) | 115 lines | Operational invariants: net focus budget (460 min), DG reservation (80 min), call durations (25 min). | Invariant catalog ensuring architectural compliance. |
+| [`dataset/Planning_Calendar.csv`](../dataset/Planning_Calendar.csv) | 30 rows, 680 B | `date`, `day_name`, `working_day` | Defines the 25 active working days (Mon–Sat) and the 5 non-working Sundays (Nov 1, 8, 15, 22, 29). |
+| [`dataset/officers.csv`](../dataset/officers.csv) | 3 rows, 597 B | `so_id`, `territory`, `geography`, `approx_day_start_lat`, `approx_day_start_lon` | Establishes the origin coordinate $\mathbf{x}_{\text{base}}$ for daily tours and speed baselines (18 vs 30 km/h). |
+| [`dataset/dealers.csv`](../dataset/dealers.csv) | 677 rows, 62 KB | `dealer_id`, `so_id`, `lat`, `lon`, `town`, `loyalty_club_member` | Source of coordinate geometry (395 located, 282 unlocated) and territorial boundaries. |
+| [`dataset/SFDC_Activities.csv`](../dataset/SFDC_Activities.csv) | 3,700 rows, 400 KB | `activity_id`, `so_id`, `duration_min`, `check_in`, `check_out`, `planned_or_adhoc` | Historical baseline for call durations, travel intervals, and empirical quota gaming behavior. |
+| [`dataset/ranked_dealers.csv`](../dataset/ranked_dealers.csv) | 677 rows, 35 KB | `rank_score`, `score_degrowth`, `is_focus`, `club`, `has_gps` | Input prioritized roster defining which accounts must be scheduled into the 25-day calendar. |
+| [`dataset/initial_schedule_unsequenced.csv`](../dataset/initial_schedule_unsequenced.csv) | 435 rows, 17 KB | `date`, `so_id`, `sequence`, `account_id`, `account_type` | Primary deliverable of Milestone M3: the unsequenced calendar partition across all 25 working days. |
+| [`simulate.py`](../simulate.py) | 317 lines | `CFG`, `speed_kmh`, `unknown_location_travel_min`, `travel_mult`, `p_rain`, `p_traffic` | Ground-truth simulation engine evaluating time budgets, transit speed, weather disruptions, and scoring. |
+| [`docs/assumptions_log.md`](assumptions_log.md) | 115 lines | Operational invariants: net focus budget (460 min), DG reservation (80 min), call durations (25 min). | Invariant catalog ensuring architectural compliance. |
 
 ---
 
 ## 3. Empirical Research Findings
 
-Milestone M3 directly addresses research questions **R7 (Travel & Call Realism)**, **R8 (Capacity Slack Sizing)**, and **R10 (Weather Forecasting Impact)** from [`docs/millstone.md`](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/millstone.md).
+Milestone M3 directly addresses research questions **R7 (Travel & Call Realism)**, **R8 (Capacity Slack Sizing)**, and **R10 (Weather Forecasting Impact)** from [`docs/millstone.md`](millstone.md).
 
 ### 3.1 Research Question R7: Empirical Call Durations and Travel Feasibility
 * **Empirical Analysis of SFDC Activities:**
-  Analysis of 3,355 historical sales activities in [`dataset/SFDC_Activities.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/SFDC_Activities.csv) revealed significant operational divergence across territories:
+  Analysis of 3,355 historical sales activities in [`dataset/SFDC_Activities.csv`](../dataset/SFDC_Activities.csv) revealed significant operational divergence across territories:
 
 | Sales Officer | Territory Profile | Logged Call Count | Median Duration | Interquartile Range (IQR) | Quota Gaming Calls (< 10 min) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -108,7 +108,7 @@ Milestone M3 directly addresses research questions **R7 (Travel & Call Realism)*
 
 ### 3.2 Research Question R8: Territory Capacity Slack and Sizing
 * **Theoretical Capacity vs. Disrupted Reality:**
-  Under the rules in [`simulate.py`](file:///c:/Users/jayes/Downloads/PJP_Simulator/simulate.py#L48), rain or severe traffic caps daily completed visits at 5 instead of 6:
+  Under the rules in [`simulate.py`](../simulate.py#L48), rain or severe traffic caps daily completed visits at 5 instead of 6:
   * **Metro (SO-A, SO-B):** $p_{\text{rain}} = 0.15, \, p_{\text{traffic}} = 0.10 \implies p_{\text{disrupted}} = 0.25$.
     Over 25 working days, an expected $6.25\text{ days}$ experience disruption. Even on a perfectly routed 150-visit schedule, maximum completed visits cannot exceed:
     $$\mathbb{E}[\text{Max Completed}] = (18.75 \times 6) + (6.25 \times 5) = 112.5 + 31.25 \approx 143.75\text{ visits}$$
@@ -242,7 +242,7 @@ flowchart TD
 
 #### Task 3.1: Spatial Graph Construction (`G_travel`)
 * Construct the complete spatial travel graph $G_{\text{travel}}$ for each territory using NetworkX.
-* Ingest coordinates from [`dataset/dealers.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/dealers.csv) and home base coordinates from [`dataset/officers.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/officers.csv).
+* Ingest coordinates from [`dataset/dealers.csv`](../dataset/dealers.csv) and home base coordinates from [`dataset/officers.csv`](../dataset/officers.csv).
 * Compute edge weights $W(i, j) = \frac{\text{dist} \times 1.35}{\text{speed}} \times 60$, applying flat penalties (25 min metro, 45 min upcountry) for missing coordinates.
 
 #### Task 3.2: Spatial Beat Clustering & Anchor Selection
@@ -251,7 +251,7 @@ flowchart TD
 * For SO-C: partition into localized town beats (Hubballi beats, Dharwad beats, Belagavi beats, Bagalkot beats).
 
 #### Task 3.3: Value-at-Risk Front-Loading (Days 1–10)
-* Filter accounts in the top 20% of `score_degrowth` from [`dataset/ranked_dealers.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/ranked_dealers.csv).
+* Filter accounts in the top 20% of `score_degrowth` from [`dataset/ranked_dealers.csv`](../dataset/ranked_dealers.csv).
 * Map these high-risk accounts into daily beats scheduled across Working Days 1 to 10 (November 2 to November 12).
 
 #### Task 3.4: VIP Loyalty Club Cadence Assignment
@@ -265,7 +265,7 @@ flowchart TD
 * Enforce a hard cap of at most 1 unlocated account per daily beat.
 
 #### Task 3.6: Output Generation & Invariant Verification
-* Export unsequenced calendar to [`dataset/initial_schedule_unsequenced.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/initial_schedule_unsequenced.csv).
+* Export unsequenced calendar to [`dataset/initial_schedule_unsequenced.csv`](../dataset/initial_schedule_unsequenced.csv).
 * Verify zero guardrail breaches:
   * No day $> 6$ visits.
   * No dealer $> 2$ visits.

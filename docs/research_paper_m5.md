@@ -70,14 +70,14 @@ Milestone M5 acts as the communicative synthesis layer connecting data engineeri
 
 | File Path | Entity Count / Size | Critical Attributes Audited | Role in Milestone M5 |
 | :--- | :--- | :--- | :--- |
-| [`whatsapp_nudges.json`](file:///c:/Users/jayes/Downloads/PJP_Simulator/whatsapp_nudges.json) | 5 records, 3.4 KB | `nudge_id`, `dealer_id`, `trigger_type`, `message`, `character_count`, `grounding_data` | Primary deliverable containing the verified WhatsApp sample talking points. |
-| [`.agents/skills/pjp-ai-developer/scripts/generate_nudges.py`](file:///c:/Users/jayes/Downloads/PJP_Simulator/.agents/skills/pjp-ai-developer/scripts/generate_nudges.py) | 350 lines | 5 trigger generators, grounding dictionary, length validation | Production script executing algorithmic nudge synthesis. |
-| [`plan_november.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_november.csv) | 425 rows, 35 KB | `date`, `so_id`, `sequence`, `account_id`, `planned_arrival` | Master journey plan providing live scheduled dates and exact arrival timestamps. |
-| [`dataset/dealer_features.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/dealer_features.csv) | 677 rows, 115 KB | `degrowth_mom_inr`, `headroom_inr`, `sales_rate_daily`, `sales_prior_month_inr` | Feature repository supplying historical sales velocities, losses, and wallet proxies. |
-| [`dataset/scheme_targets.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/scheme_targets.csv) | 1,248 rows, 114 KB | `parent_dealer_id`, `scheme`, `slab`, `slab_target_points` | Loyalty Club milestone target tiers and qualification thresholds. |
-| [`dataset/scheme_rules_club.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/scheme_rules_club.csv) | 16 rows, 1.2 KB | `scheme_type`, `slab`, `min_points`, `payout_rate_inr` | Club incentive rules governing rupee payouts per point. |
-| [`dataset/scheme_rules_nonclub.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/scheme_rules_nonclub.csv) | 4 rows, 342 B | `slab`, `min_points`, `payout_rate_inr` | Monthly stepped reward thresholds (15, 25, 50, 100 points) for non-club dealers. |
-| [`dataset/dealers.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/dealers.csv) | 677 rows, 62 KB | `dealer_id`, `so_id`, `town`, `loyalty_club_member` | Master dealer entity directory. |
+| [`whatsapp_nudges.json`](../whatsapp_nudges.json) | 5 records, 3.4 KB | `nudge_id`, `dealer_id`, `trigger_type`, `message`, `character_count`, `grounding_data` | Primary deliverable containing the verified WhatsApp sample talking points. |
+| [`.agents/skills/pjp-ai-developer/scripts/generate_nudges.py`](../.agents/skills/pjp-ai-developer/scripts/generate_nudges.py) | 350 lines | 5 trigger generators, grounding dictionary, length validation | Production script executing algorithmic nudge synthesis. |
+| [`plan_november.csv`](../plan_november.csv) | 425 rows, 35 KB | `date`, `so_id`, `sequence`, `account_id`, `planned_arrival` | Master journey plan providing live scheduled dates and exact arrival timestamps. |
+| [`dataset/dealer_features.csv`](../dataset/dealer_features.csv) | 677 rows, 115 KB | `degrowth_mom_inr`, `headroom_inr`, `sales_rate_daily`, `sales_prior_month_inr` | Feature repository supplying historical sales velocities, losses, and wallet proxies. |
+| [`dataset/scheme_targets.csv`](../dataset/scheme_targets.csv) | 1,248 rows, 114 KB | `parent_dealer_id`, `scheme`, `slab`, `slab_target_points` | Loyalty Club milestone target tiers and qualification thresholds. |
+| [`dataset/scheme_rules_club.csv`](../dataset/scheme_rules_club.csv) | 16 rows, 1.2 KB | `scheme_type`, `slab`, `min_points`, `payout_rate_inr` | Club incentive rules governing rupee payouts per point. |
+| [`dataset/scheme_rules_nonclub.csv`](../dataset/scheme_rules_nonclub.csv) | 4 rows, 342 B | `slab`, `min_points`, `payout_rate_inr` | Monthly stepped reward thresholds (15, 25, 50, 100 points) for non-club dealers. |
+| [`dataset/dealers.csv`](../dataset/dealers.csv) | 677 rows, 62 KB | `dealer_id`, `so_id`, `town`, `loyalty_club_member` | Master dealer entity directory. |
 
 ---
 
@@ -210,7 +210,7 @@ flowchart TD
 
 ## 5. Empirical Evaluation and Quantitative Characterization of the 5 Nudges
 
-We synthesized and evaluated five production nudges for scheduled stops on Day 1 of the November 2026 plan. All five are serialized in [`whatsapp_nudges.json`](file:///c:/Users/jayes/Downloads/PJP_Simulator/whatsapp_nudges.json).
+We synthesized and evaluated five production nudges for scheduled stops on Day 1 of the November 2026 plan. All five are serialized in [`whatsapp_nudges.json`](../whatsapp_nudges.json).
 
 ### 5.1 Nudge Corpus and Underlying Data Traceability
 
@@ -232,10 +232,10 @@ The table below details each message, its length, and its exact data lineage acr
    All messages comfortably satisfy the 300-character ceiling, ensuring un-truncated mobile display.
 
 2. **Zero-Emoji Compliance:**
-   Automated unicode regex analysis confirms that zero emojis exist across [`whatsapp_nudges.json`](file:///c:/Users/jayes/Downloads/PJP_Simulator/whatsapp_nudges.json) and script source files, preserving executive enterprise communication standards.
+   Automated unicode regex analysis confirms that zero emojis exist across [`whatsapp_nudges.json`](../whatsapp_nudges.json) and script source files, preserving executive enterprise communication standards.
 
 3. **Arrival Timestamp Synthesis:**
-   Each message specifies an arrival time. In our enhanced execution plan, arrival times are linked directly to `planned_arrival` from [`plan_november.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_november.csv) (e.g., `A-D056` at 09:58 AM, `A-D093` at 10:25 AM, `A-D131` at 10:52 AM, `A-D004` at 11:19 AM, `A-D019` at 12:12 PM), guaranteeing complete inter-stage pipeline alignment.
+   Each message specifies an arrival time. In our enhanced execution plan, arrival times are linked directly to `planned_arrival` from [`plan_november.csv`](../plan_november.csv) (e.g., `A-D056` at 09:58 AM, `A-D093` at 10:25 AM, `A-D131` at 10:52 AM, `A-D004` at 11:19 AM, `A-D019` at 12:12 PM), guaranteeing complete inter-stage pipeline alignment.
 
 ---
 
@@ -288,7 +288,7 @@ This utility dynamically pulls all scheduled stops for the requested date and of
 
 The following verification matrix confirms that Milestone M5 satisfies all criteria in the assignment brief and our Senior AI Engineer quality rubric:
 
-- [x] **Deliverable Integrity:** At least 5 distinct WhatsApp sample messages generated and serialized to [`whatsapp_nudges.json`](file:///c:/Users/jayes/Downloads/PJP_Simulator/whatsapp_nudges.json).
+- [x] **Deliverable Integrity:** At least 5 distinct WhatsApp sample messages generated and serialized to [`whatsapp_nudges.json`](../whatsapp_nudges.json).
 - [x] **Trigger Diversity:** Exactly 5 distinct commercial trigger archetypes represented (Loyalty Club Gap, De-growth Alert, High GST Headroom, Drop Recovery, Non-Club Scheme).
 - [x] **Strict Length Invariant:** All 5 messages strictly under 300 characters ($214 \le L \le 263$).
 - [x] **Verifiable Data Lineage:** 100% of numeric values (points, rupee losses, wallet shares, sheet counts, arrival times) trace to underlying rows in `dealer_features.csv`, `scheme_targets.csv`, `scheme_rules_nonclub.csv`, and `plan_november.csv`.

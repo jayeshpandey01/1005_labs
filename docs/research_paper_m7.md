@@ -125,7 +125,7 @@ pie title Breakdown of 35 Drop Events across Practice Seeds 1-3
 * **Empirical Finding:** In 8 events, a non-club dealer was visited early in November (e.g. Days 1 to 5) as part of normal focus coverage. Later in the month (e.g. Day 12 or 18), the dealer suffered a structural drop.
 * **Root Cause Analysis:** The scheduler originally scheduled non-club dealers for exactly 1 visit. Once completed, `completed_counts[did] == 1`. In early re-planner drafts, an over-conservative condition `if completed_counts[did] >= 1: continue` prevented scheduling a second visit to recover the account.
 * **Mathematical Resolution:**  
-  The hard guardrail in [`simulate.py` line 267](file:///c:/Users/jayes/Downloads/PJP_Simulator/simulate.py#L267) permits up to **2 visits per dealer per month** (`dealer_visited_more_than_twice` triggers only if visits $> 2$).
+  The hard guardrail in [`simulate.py` line 267](../simulate.py#L267) permits up to **2 visits per dealer per month** (`dealer_visited_more_than_twice` triggers only if visits $> 2$).
   Therefore, when a dealer with 1 completed visit suffers a drop, the re-planner is **fully authorized to schedule a second recovery visit**, capturing drop recovery points without breaching the 2-visit guardrail.
 
 ### 3.3 Failure Mode C: Dealer Unavailability Collisions (3 out of 35 drops)

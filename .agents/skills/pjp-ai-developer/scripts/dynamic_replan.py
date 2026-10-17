@@ -70,6 +70,17 @@ def load_dealer_metadata() -> Dict[str, dict]:
     return meta
 
 
+def load_officer_starts() -> Dict[str, Tuple[float, float]]:
+    """Load officer start coordinates from officers.csv."""
+    officers_file = DATA_DIR / "officers.csv"
+    starts: Dict[str, Tuple[float, float]] = {}
+    if officers_file.exists():
+        with open(officers_file, mode="r", encoding="utf-8") as f:
+            for r in csv.DictReader(f):
+                starts[r["so_id"]] = (float(r["approx_day_start_lat"]), float(r["approx_day_start_lon"]))
+    return starts
+
+
 def load_memory(today: str, completed_mtd: Optional[List[dict]] = None) -> dict:
     """Load persistent CUSUM and event memory across daily re-planner invocations."""
     # Reset memory on the first day of simulation (no completed visits yet or start date)
@@ -116,6 +127,7 @@ def replan(state_path: str, plan_path: str, out_path: str):
 
     dealer_rates = load_dealer_rates()
     dealer_meta = load_dealer_metadata()
+    officer_starts = load_officer_starts()
     mem = load_memory(today, completed_mtd)
 
     # 1. Track completed visits and recoveries month-to-date
@@ -130,6 +142,14 @@ def replan(state_path: str, plan_path: str, out_path: str):
             if aid in mem["flagged_drops"]:
                 mem["recovered_drops"][aid] = today
                 mem["cusum_deficits"][aid] = 0.0
+
+    # Track missed visits to Loyalty Club dealers today
+    missed_club_dealers = []
+    for v in visits_today:
+        aid = v.get("account_id")
+        status = v.get("status")
+        if status != "completed" and dealer_meta.get(aid, {}).get("club", False):
+            missed_club_dealers.append((aid, v.get("so_id")))
 
     # Purge expired hikes (hikes last 10 days in simulate.py)
     expired_hikes = []
@@ -230,6 +250,34 @@ def replan(state_path: str, plan_path: str, out_path: str):
 
     available_days = sorted(list({k[0] for k in plan_by_day_so.keys() if k[0] >= next_day}))
 
+    # 6B. Re-Schedule Missed Visits to Loyalty Club Dealers
+    # If a Club dealer missed a visit today (dealer unavailable, etc.), re-queue downstream
+    for (club_aid, so_id) in missed_club_dealers:
+        fwd_dates = [
+            d_str for d_str in available_days
+            if any(club_aid == s["account_id"] for s in plan_by_day_so.get((d_str, so_id), []))
+        ]
+        if completed_counts[club_aid] + len(fwd_dates) < 2:
+            club_loc = dealer_meta.get(club_aid, {}).get("loc")
+            for d_str in available_days:
+                d_dt = DT.date.fromisoformat(d_str)
+                if any(abs((d_dt - DT.date.fromisoformat(f_d)).days) < 10 for f_d in fwd_dates):
+                    continue
+                stops = plan_by_day_so.get((d_str, so_id), [])
+                if len(stops) < 6 and club_aid not in [s["account_id"] for s in stops]:
+                    if club_loc and stops:
+                        locs = [dealer_meta.get(s["account_id"], {}).get("loc") for s in stops if dealer_meta.get(s["account_id"], {}).get("loc")]
+                        if locs and min(haversine_km(club_loc, l) for l in locs) > (40.0 if so_id == "SO-C" else 18.0):
+                            continue
+                    stops.append({
+                        "date": d_str,
+                        "so_id": so_id,
+                        "sequence": len(stops) + 1,
+                        "account_id": club_aid,
+                        "account_type": "Dealer",
+                    })
+                    break
+
     # 7. THE 'PULL-FORWARD' DYNAMIC OPERATOR FOR DROPPED ACCOUNTS (Milestone M7)
     # If a dropped account is already scheduled, but > 4 days out from today:
     # Pull it forward to the earliest available day in [next_day, today + 3]!
@@ -249,10 +297,36 @@ def replan(state_path: str, plan_path: str, out_path: str):
         # If scheduled far in the future (> 4 working days from today), pull forward!
         if available_days and existing_dates and existing_dates[0] > available_days[min(3, len(available_days)-1)]:
             far_date = existing_dates[0]
-            # Find earliest day in first 3 available days with capacity
+            is_club = dealer_meta.get(did, {}).get("club", False)
+            dealer_loc = dealer_meta.get(did, {}).get("loc")
+            is_upcountry = (dealer_so == "SO-C")
+            did_comp_dates = [DT.date.fromisoformat(c["date"]) for c in completed_mtd if c["account_id"] == did]
+
+            pulled = False
+            # Strategy A: Find earliest day in first 3 available days with open capacity
             for d_str in available_days[:3]:
+                d_date = DT.date.fromisoformat(d_str)
+
+                # 1. CLUB GAP INVARIANT: if club account, must be >= 10 days from any completed or other planned visit
+                if is_club:
+                    if any(abs((d_date - c_d).days) < 10 for c_d in did_comp_dates):
+                        continue
+                    other_fwd = [DT.date.fromisoformat(x) for x in existing_dates if x != far_date]
+                    if any(abs((d_date - f_d).days) < 10 for f_d in other_fwd):
+                        continue
+
                 stops = plan_by_day_so.get((d_str, dealer_so), [])
                 day_cap = 5 if (d_str == next_day and weather_forecast.get(dealer_so) in ("rain", "traffic")) else 6
+
+                # 2. SPATIAL PROXIMITY CHECK: do not insert into distant cluster
+                if dealer_loc and stops:
+                    locs = [dealer_meta.get(s["account_id"], {}).get("loc") for s in stops if dealer_meta.get(s["account_id"], {}).get("loc")]
+                    if locs:
+                        min_dist_to_day = min(haversine_km(dealer_loc, loc) for loc in locs)
+                        max_allowed_dist = 40.0 if is_upcountry else 18.0
+                        if min_dist_to_day > max_allowed_dist:
+                            continue
+
                 if len(stops) < day_cap and did not in [s["account_id"] for s in stops]:
                     # Remove from far date
                     plan_by_day_so[(far_date, dealer_so)] = [
@@ -267,7 +341,68 @@ def replan(state_path: str, plan_path: str, out_path: str):
                         "account_type": "Dealer",
                     }
                     plan_by_day_so[(d_str, dealer_so)].append(new_row)
+                    pulled = True
                     break
+
+            # Strategy B: If early days are full, perform an intelligent zero-churn swap!
+            if not pulled:
+                for d_str in available_days[:3]:
+                    d_date = DT.date.fromisoformat(d_str)
+
+                    # CLUB GAP INVARIANT
+                    if is_club:
+                        if any(abs((d_date - c_d).days) < 10 for c_d in did_comp_dates):
+                            continue
+                        other_fwd = [DT.date.fromisoformat(x) for x in existing_dates if x != far_date]
+                        if any(abs((d_date - f_d).days) < 10 for f_d in other_fwd):
+                            continue
+
+                    stops = plan_by_day_so.get((d_str, dealer_so), [])
+                    if did in [s["account_id"] for s in stops]:
+                        continue
+
+                    # SPATIAL PROXIMITY CHECK
+                    if dealer_loc and stops:
+                        locs = [dealer_meta.get(s["account_id"], {}).get("loc") for s in stops if dealer_meta.get(s["account_id"], {}).get("loc")]
+                        if locs:
+                            min_dist_to_day = min(haversine_km(dealer_loc, loc) for loc in locs)
+                            max_allowed_dist = 40.0 if is_upcountry else 18.0
+                            if min_dist_to_day > max_allowed_dist:
+                                continue
+
+                    # Find a swappable account: not club, not in flagged drops
+                    swappable_idx = None
+                    for idx, s in enumerate(reversed(stops)):
+                        cand_id = s["account_id"]
+                        if not dealer_meta.get(cand_id, {}).get("club", False) and cand_id not in mem["flagged_drops"]:
+                            swappable_idx = len(stops) - 1 - idx
+                            break
+                    if swappable_idx is not None:
+                        swapped_stop = stops.pop(swappable_idx)
+                        # Remove did from far date
+                        plan_by_day_so[(far_date, dealer_so)] = [
+                            s for s in plan_by_day_so[(far_date, dealer_so)] if s["account_id"] != did
+                        ]
+                        # Put did on early date
+                        new_early = {
+                            "date": d_str,
+                            "so_id": dealer_so,
+                            "sequence": len(stops) + 1,
+                            "account_id": did,
+                            "account_type": "Dealer",
+                        }
+                        stops.append(new_early)
+                        # Put swapped account on far date
+                        new_far = {
+                            "date": far_date,
+                            "so_id": dealer_so,
+                            "sequence": len(plan_by_day_so[(far_date, dealer_so)]) + 1,
+                            "account_id": swapped_stop["account_id"],
+                            "account_type": "Dealer",
+                        }
+                        plan_by_day_so[(far_date, dealer_so)].append(new_far)
+                        pulled = True
+                        break
 
     # 8. Predictive Weather Adaptation with Absolute Club Protection
     # On disrupted days (rain or traffic), simulate.py caps completed visits at 5.
@@ -376,19 +511,54 @@ def replan(state_path: str, plan_path: str, out_path: str):
 
     for (day_str, so_id) in sorted(plan_by_day_so.keys()):
         rows = plan_by_day_so[(day_str, so_id)]
+        if not rows:
+            continue
 
-        # Sequence ordering priority
-        def sequence_priority(item):
-            aid = item["account_id"]
-            if dealer_meta.get(aid, {}).get("club", False):
-                return 0  # Club accounts first (Sequences 1-3)
-            if aid in mem["flagged_drops"] and aid not in mem["recovered_drops"]:
-                return 1  # Drop recovery second
-            return 2      # Regular focus third
+        start_coord = officer_starts.get(so_id, (12.97, 77.59))
+        is_upcountry = (so_id == "SO-C")
 
-        rows.sort(key=sequence_priority)
+        # Solve Nearest-Neighbor tour from home base to minimize travel minutes and prevent zigzag
+        ordered_rows = []
+        remaining = list(rows)
+        curr_loc = start_coord
 
-        for r in rows:
+        while remaining:
+            def dist_from_curr(r):
+                loc = dealer_meta.get(r["account_id"], {}).get("loc")
+                if loc is None or curr_loc is None:
+                    return 45.0 if is_upcountry else 25.0
+                return haversine_km(curr_loc, loc)
+
+            best_idx = min(range(len(remaining)), key=lambda i: dist_from_curr(remaining[i]))
+            next_stop = remaining.pop(best_idx)
+            ordered_rows.append(next_stop)
+            loc = dealer_meta.get(next_stop["account_id"], {}).get("loc")
+            if loc:
+                curr_loc = loc
+
+        # Sequence Lock: On 6-stop days, protect Loyalty Club accounts and flagged drops from weather cut
+        if len(ordered_rows) == 6:
+            # 1. Loyalty Club account must NEVER be at slot 6
+            last_aid = ordered_rows[5]["account_id"]
+            if dealer_meta.get(last_aid, {}).get("club", False):
+                for swap_i in (4, 3, 2, 1, 0):
+                    cand_aid = ordered_rows[swap_i]["account_id"]
+                    if not dealer_meta.get(cand_aid, {}).get("club", False):
+                        ordered_rows[5], ordered_rows[swap_i] = ordered_rows[swap_i], ordered_rows[5]
+                        break
+
+            # 2. Flagged drops on forecast bad-weather days must NEVER be at slot 6
+            fc = weather_forecast.get(so_id, "clear")
+            if day_str == next_day and fc in ("rain", "traffic"):
+                last_aid = ordered_rows[5]["account_id"]
+                if last_aid in mem["flagged_drops"] and last_aid not in mem["recovered_drops"]:
+                    for swap_i in (4, 3, 2, 1, 0):
+                        cand_aid = ordered_rows[swap_i]["account_id"]
+                        if not dealer_meta.get(cand_aid, {}).get("club", False) and cand_aid not in mem["flagged_drops"]:
+                            ordered_rows[5], ordered_rows[swap_i] = ordered_rows[swap_i], ordered_rows[5]
+                            break
+
+        for r in ordered_rows:
             did = r["account_id"]
             d_meta = dealer_meta.get(did, {})
             # Guardrail: Verify territory assignment

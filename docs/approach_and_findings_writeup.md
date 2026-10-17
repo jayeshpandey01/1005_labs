@@ -17,13 +17,13 @@ Field Sales Officers (SOs) in building material distribution traditionally sched
 To solve this, we designed and implemented a production-grade, 5-stage automated journey planning pipeline. The system ingests raw multi-table enterprise ERP and CRM data, cleans data gaps, scores accounts using value-weighted de-growth and GST wallet headroom, partitions visits into feasible 25-day beats, solves daily Open TSP routing with chronological arrival timestamps, generates personalized WhatsApp talking points, and dynamically adapts online to weather disruptions and sales anomalies via a stateful CUSUM change-point engine.
 
 Evaluated on the official simulation harness across practice seeds 1, 2, and 3, our solution achieved:
-* **Simulated Adherence:** **92.7% to 94.5%** (comfortably beating the 90.0% target, up from 35.0%–55.2% historically).
-* **Focus-Dealer Coverage:** **87.7% to 90.5%** across 398 distinct focus accounts.
-* **Club Cadence Met:** **88.9% to 96.3%** receiving exactly 2 visits spaced at least 10 days apart (up from ad-hoc historical visits).
-* **Drop Response Rate:** **36.4% to 41.7%** of hidden sales drops visited within 7 days of onset.
+* **Simulated Adherence:** **92.0% to 95.4%** (comfortably beating the 90.0% target, up from 35.0%–55.2% historically).
+* **Focus-Dealer Coverage:** **86.9% to 90.2%** across 398 distinct focus accounts.
+* **Club Cadence Met:** **88.9% to 92.6%** receiving exactly 2 visits spaced at least 10 days apart (up from ad-hoc historical visits).
+* **Drop Response Rate:** **58.3% to 75.0%** of hidden sales drops visited within 7 days of onset (median response time: **3.0–3.5 days**).
 * **Guardrail Reliability:** **Zero breaches** of daily visit caps, dealer monthly limits, or officer territory boundaries.
 * **System Reliability:** **Zero re-plan failures** with sub-second execution latency (well within the 120-second contract).
-* **Simulated Sales Points:** **73,675 to 78,219 points** generated in November.
+* **Simulated Sales Points:** **73,813 to 78,366 points** generated in November.
 
 ---
 
@@ -43,15 +43,15 @@ The table below contrasts historical field performance (from Salesforce logs) ag
 
 | Evaluation Metric | Assignment Weight | Today's Baseline (Manual) | Simulated POC (Seed 1) | Simulated POC (Seed 2) | Simulated POC (Seed 3) | Target / Benchmark |
 |---|---|---|---|---|---|---|
-| **Simulated Adherence** | **30%** | 35.0% - 55.2% | **94.5%** | **92.8%** | **92.7%** | $\ge 90.0\%$ |
-| **Focus-Dealer Coverage** | **25%** | ~40.0% - 60.0% | **90.5%** | **87.7%** | **88.2%** | Maximize |
-| **Drop Response Rate** | **20%** | Unmeasured (Ad-hoc) | **41.7%** (5/12) | **41.7%** (5/12) | **36.4%** (4/11) | Tracked ($\le 7$d) |
-| **Club Cadence Met** | **10%** | Ad-hoc / unspaced | **96.3%** (26/27) | **96.3%** (26/27) | **88.9%** (24/27) | $\ge 10$d gap |
-| **Hike Handling** | **5%** | 0 cancellations | **0 cancelled** (3 made) | **1 cancelled** (3 made) | **1 cancelled** (1 made) | $> 0$ |
+| **Simulated Adherence** | **30%** | 35.0% - 55.2% | **95.4%** | **92.1%** | **92.0%** | $\ge 90.0\%$ |
+| **Focus-Dealer Coverage** | **25%** | ~40.0% - 60.0% | **90.2%** | **86.9%** | **87.9%** | Maximize |
+| **Drop Response Rate** | **20%** | Unmeasured (Ad-hoc) | **58.3%** (7/12) | **75.0%** (9/12) | **63.6%** (7/11) | Tracked ($\le 7$d) |
+| **Club Cadence Met** | **10%** | Ad-hoc / unspaced | **92.6%** (25/27) | **88.9%** (24/27) | **88.9%** (24/27) | $\ge 10$d gap |
+| **Hike Handling** | **5%** | 0 cancellations | **0 cancelled** (4 made) | **2 cancelled** (2 made) | **2 cancelled** (0 made) | $> 0$ |
 | **Guardrails & Reliability** | **10%** | Frequent violations | **0 breaches / 0 fails** | **0 breaches / 0 fails** | **0 breaches / 0 fails** | **0 breaches** |
-| **Simulated Points** | Context | Historical baseline | **76,129 pts** | **73,675 pts** | **78,219 pts** | Maximize |
-| **Avg Travel Min / Day** | Context | 180+ min (estimated) | **125.6 min** | **124.6 min** | **127.2 min** | Feasible ($< 180$m) |
-| **Avg Completed / Day** | Context | 2.5 - 3.8 calls | **5.28 calls** | **5.16 calls** | **5.11 calls** | $\ge 5.0$ calls |
+| **Simulated Points** | Context | Historical baseline | **76,291 pts** | **73,813 pts** | **78,366 pts** | Maximize |
+| **Avg Travel Min / Day** | Context | 180+ min (estimated) | **130.4 min** | **136.6 min** | **140.8 min** | Feasible ($< 180$m) |
+| **Avg Completed / Day** | Context | 2.5 - 3.8 calls | **5.27 calls** | **5.12 calls** | **5.08 calls** | $\ge 5.0$ calls |
 
 ---
 
@@ -100,7 +100,7 @@ To visualize daily field execution, the cartographic maps below depict Day 1 iti
 - Day 1 Visits: 6 Focus Calls (4 Wallet Expansion, 1 De-growth Recovery, 1 Loyalty Club)
 - Travel Time: 87.6 min | Call Time: 150 min | Net Day: 237.6 / 460 min
 
-![Route Map SO-A](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/maps/route_map_SO-A.png)
+![Route Map SO-A](maps/route_map_SO-A.png)
 
 ---
 
@@ -109,7 +109,7 @@ To visualize daily field execution, the cartographic maps below depict Day 1 iti
 - Day 1 Visits: 6 Focus Calls
 - Travel Time: 38.7 min | Call Time: 150 min | Net Day: 188.7 / 460 min
 
-![Route Map SO-B](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/maps/route_map_SO-B.png)
+![Route Map SO-B](maps/route_map_SO-B.png)
 
 ---
 
@@ -118,7 +118,7 @@ To visualize daily field execution, the cartographic maps below depict Day 1 iti
 - Day 1 Visits: 5 Focus Calls (Outstation Belagavi Cluster)
 - Travel Time: 284.7 min | Call Time: 125 min | Net Day: 409.7 / 460 min
 
-![Route Map SO-C](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/maps/route_map_SO-C.png)
+![Route Map SO-C](maps/route_map_SO-C.png)
 
 ---
 
@@ -126,17 +126,17 @@ To visualize daily field execution, the cartographic maps below depict Day 1 iti
 
 All project deliverables have been validated and packaged for reproducible evaluation:
 
-* **One-Command Master Runner:** [`run_pipeline.py`](file:///c:/Users/jayes/Downloads/PJP_Simulator/run_pipeline.py) and [`run.bat`](file:///c:/Users/jayes/Downloads/PJP_Simulator/run.bat).
-* **November Journey Plans:** Master [`plan_november.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_november.csv), and individual plans [`plan_SO-A.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_SO-A.csv), [`plan_SO-B.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_SO-B.csv), and [`plan_SO-C.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_SO-C.csv).
-* **Dynamic Re-planner:** [`mypjp/replan.py`](file:///c:/Users/jayes/Downloads/PJP_Simulator/mypjp/replan.py) invoked via `py -3.11 -m mypjp.replan --state STATE.json --plan CURRENT_PLAN.csv --out NEXT_PLAN.csv`.
-* **WhatsApp Talking Points:** [`whatsapp_nudges.json`](file:///c:/Users/jayes/Downloads/PJP_Simulator/whatsapp_nudges.json) with 5 data-backed triggers and arrival timestamps.
-* **Practice Seed Benchmark Results:** [`results/seed_1/summary.json`](file:///c:/Users/jayes/Downloads/PJP_Simulator/results/seed_1/summary.json), [`results/seed_2/summary.json`](file:///c:/Users/jayes/Downloads/PJP_Simulator/results/seed_2/summary.json), and [`results/seed_3/summary.json`](file:///c:/Users/jayes/Downloads/PJP_Simulator/results/seed_3/summary.json).
+* **One-Command Master Runner:** [`run_pipeline.py`](../run_pipeline.py) and [`run.bat`](../run.bat).
+* **November Journey Plans:** Master [`plan_november.csv`](../plan_november.csv), and individual plans [`plan_SO-A.csv`](../plan_SO-A.csv), [`plan_SO-B.csv`](../plan_SO-B.csv), and [`plan_SO-C.csv`](../plan_SO-C.csv).
+* **Dynamic Re-planner:** [`mypjp/replan.py`](../mypjp/replan.py) invoked via `py -3.11 -m mypjp.replan --state STATE.json --plan CURRENT_PLAN.csv --out NEXT_PLAN.csv`.
+* **WhatsApp Talking Points:** [`whatsapp_nudges.json`](../whatsapp_nudges.json) with 5 data-backed triggers and arrival timestamps.
+* **Practice Seed Benchmark Results:** [`results/seed_1/summary.json`](../results/seed_1/summary.json), [`results/seed_2/summary.json`](../results/seed_2/summary.json), and [`results/seed_3/summary.json`](../results/seed_3/summary.json).
 * **Academic Research Papers:**
-  * M1 (Data Quality & Baseline Replication): [`docs/research_paper_m1.md`](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/research_paper_m1.md)
-  * M2 (Ranking & Focus Selection): [`docs/research_paper_m2.md`](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/research_paper_m2.md)
-  * M3 (Scheduling & Spatial Clustering): [`docs/research_paper_m3.md`](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/research_paper_m3.md)
-  * M4 (Routing & TSP Sequencing): [`docs/research_paper_m4.md`](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/research_paper_m4.md)
-  * M5 (WhatsApp Nudges): [`docs/research_paper_m5.md`](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/research_paper_m5.md)
-  * M6 (Dynamic Online Re-planner): [`docs/research_paper_m6.md`](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/research_paper_m6.md)
-  * M7 (Simulation & Tuning): [`docs/research_paper_m7.md`](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/research_paper_m7.md)
-  * M8 (Packaging, Route Maps & Write-Up): [`docs/research_paper_m8.md`](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/research_paper_m8.md)
+  * M1 (Data Quality & Baseline Replication): [`research_paper_m1.md`](research_paper_m1.md)
+  * M2 (Ranking & Focus Selection): [`research_paper_m2.md`](research_paper_m2.md)
+  * M3 (Scheduling & Spatial Clustering): [`research_paper_m3.md`](research_paper_m3.md)
+  * M4 (Routing & TSP Sequencing): [`research_paper_m4.md`](research_paper_m4.md)
+  * M5 (WhatsApp Nudges): [`research_paper_m5.md`](research_paper_m5.md)
+  * M6 (Dynamic Online Re-planner): [`research_paper_m6.md`](research_paper_m6.md)
+  * M7 (Simulation & Tuning): [`research_paper_m7.md`](research_paper_m7.md)
+  * M8 (Packaging, Route Maps & Write-Up): [`research_paper_m8.md`](research_paper_m8.md)

@@ -35,7 +35,7 @@ from pathlib import Path
 try:
     import openpyxl
 except ImportError:
-    sys.exit('pip install openpyxl')
+    openpyxl = None
 
 CFG = {
     'day_start': '09:30', 'day_minutes': 540,                 # 09:30-18:30
@@ -81,23 +81,63 @@ def read_sheet(wb, name):
 
 
 def load(workbook):
-    wb = openpyxl.load_workbook(workbook, read_only=True, data_only=True)
-    officers = {o['so_id']: o for o in read_sheet(wb, 'Officers')}
+    officer_rows, dealer_rows, sales_rows = None, None, None
+    if openpyxl is not None and Path(workbook).is_file() and str(workbook).endswith('.xlsx'):
+        try:
+            wb = openpyxl.load_workbook(workbook, read_only=True, data_only=True)
+            officer_rows = read_sheet(wb, 'Officers')
+            dealer_rows = read_sheet(wb, 'Dealers')
+            sales_rows = read_sheet(wb, 'Sales_Daily')
+        except Exception:
+            officer_rows = None
+
+    if officer_rows is None:
+        base_dir = Path(__file__).resolve().parent
+        csv_dir = base_dir / 'dataset'
+        if not (csv_dir / 'officers.csv').exists():
+            csv_dir = Path(workbook).parent if Path(workbook).is_dir() else Path('.')
+
+        def read_csv_rows(filename):
+            p = csv_dir / filename
+            if not p.exists():
+                return []
+            with open(p, 'r', encoding='utf-8') as f:
+                reader = csv.DictReader(f)
+                return [row for row in reader]
+
+        officer_rows = read_csv_rows('officers.csv')
+        dealer_rows = read_csv_rows('dealers.csv')
+        sales_rows = read_csv_rows('sales_daily.csv')
+
+    officers = {o['so_id']: o for o in officer_rows}
     for o in officers.values():
         o['kind'] = 'upcountry' if 'upcountry' in str(o['geography']).lower() else 'metro'
         o['start'] = (float(o['approx_day_start_lat']), float(o['approx_day_start_lon']))
     dealers = {}
-    for d in read_sheet(wb, 'Dealers'):
-        dealers[d['dealer_id']] = {'so_id': d['so_id'], 'club': d['loyalty_club_member'] == 'Yes',
-                                   'loc': (float(d['lat']), float(d['lon'])) if d['lat'] is not None else None}
+    for d in dealer_rows:
+        loc = None
+        lat_val = d.get('lat')
+        lon_val = d.get('lon')
+        if lat_val is not None and str(lat_val).strip() != '' and lon_val is not None and str(lon_val).strip() != '':
+            loc = (float(lat_val), float(lon_val))
+        dealers[d['dealer_id']] = {
+            'so_id': d['so_id'],
+            'club': str(d.get('loyalty_club_member', '')).strip().lower() == 'yes',
+            'loc': loc
+        }
     a, b = (DT.date.fromisoformat(x) for x in CFG['history_window'])
     n_work = sum(1 for i in range((b - a).days + 1) if (a + DT.timedelta(i)).weekday() != 6)
     sheets, points = C.Counter(), C.Counter()
-    for s in read_sheet(wb, 'Sales_Daily'):
-        day = s['date'].date() if hasattr(s['date'], 'date') else DT.date.fromisoformat(str(s['date'])[:10])
+    for s in sales_rows:
+        day_raw = s['date']
+        day = day_raw.date() if hasattr(day_raw, 'date') else DT.date.fromisoformat(str(day_raw)[:10])
         if a <= day <= b and s['dealer_id'] in dealers:
-            sheets[s['dealer_id']] += s['sheets'] or 0
-            points[s['dealer_id']] += (s['sheets'] or 0) * (s['points_per_sheet'] or 0)
+            sh_val = s.get('sheets')
+            sh = float(sh_val) if sh_val not in (None, '') else 0.0
+            pps_val = s.get('points_per_sheet')
+            pps = float(pps_val) if pps_val not in (None, '') else 0.0
+            sheets[s['dealer_id']] += sh
+            points[s['dealer_id']] += sh * pps
     for did, d in dealers.items():
         d['rate'] = max(0.0, sheets[did] / n_work)                 # sheets per working day
         d['pps'] = points[did] / sheets[did] if sheets[did] > 0 else 2.0

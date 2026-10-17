@@ -1,0 +1,9 @@
+scheme,slab,target_points_per_month,payout_per_point_inr
+Non-club monthly scheme,Slab 1,15,10
+Non-club monthly scheme,Slab 2,25,12.5
+Non-club monthly scheme,Slab 3,50,15
+Non-club monthly scheme,Slab 4,100,20
+Annual trip scheme (all retail outlets),Slab 1,"2,750 per year",Trip
+Annual trip scheme (all retail outlets),Slab 2,"5,500 per year",Trip
+Annual trip scheme (all retail outlets),Slab 3,"11,000 per year",Trip
+Annual trip scheme (all retail outlets),Slab 4,"22,000 per year",Trip

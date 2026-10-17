@@ -138,13 +138,13 @@ Every deliverable specified in Section 6 of the assignment brief was verified:
 1. **Git Repository & Single Command Runner:**
    Complete repository tracked in Git; runnable end-to-end via `py -3.11 run_pipeline.py` or `run.bat` in **60.4 seconds**.
 2. **November Journey Plans:**
-   Outputs master [`plan_november.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_november.csv) and per-officer plans [`plan_SO-A.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_SO-A.csv), [`plan_SO-B.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_SO-B.csv), and [`plan_SO-C.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_SO-C.csv) matching all required columns: `date, so_id, sequence, account_id, account_type, planned_arrival, travel_min_from_previous, reason`.
+   Outputs master [`plan_november.csv`](../plan_november.csv) and per-officer plans [`plan_SO-A.csv`](../plan_SO-A.csv), [`plan_SO-B.csv`](../plan_SO-B.csv), and [`plan_SO-C.csv`](../plan_SO-C.csv) matching all required columns: `date, so_id, sequence, account_id, account_type, planned_arrival, travel_min_from_previous, reason`.
 3. **Dynamic Re-planner:**
    Packaged under `mypjp.replan`, fully compliant with `--state`, `--plan`, `--out`, executing in $< 0.1$ seconds. Benchmark summaries recorded in `results/seed_*/summary.json`.
 4. **WhatsApp Nudges:**
-   Generated in [`whatsapp_nudges.json`](file:///c:/Users/jayes/Downloads/PJP_Simulator/whatsapp_nudges.json), containing 5 data-backed messages under 300 characters with arrival timestamps.
+   Generated in [`whatsapp_nudges.json`](../whatsapp_nudges.json), containing 5 data-backed messages under 300 characters with arrival timestamps.
 5. **Two-Page Write-Up & Route Maps:**
-   Authored in [`docs/approach_and_findings_writeup.md`](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/approach_and_findings_writeup.md), supported by cartographic route maps in `docs/maps/route_map_SO-*.png`.
+   Authored in [`docs/approach_and_findings_writeup.md`](approach_and_findings_writeup.md), supported by cartographic route maps in `docs/maps/route_map_SO-*.png`.
 
 ---
 

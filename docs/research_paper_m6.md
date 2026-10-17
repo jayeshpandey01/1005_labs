@@ -110,21 +110,21 @@ We audited all components of the simulation environment and data interfaces gove
 
 | File Path / Interface | Entity Count / Size | Critical Contracts & Attributes Audited | Role in Milestone M6 |
 | :--- | :--- | :--- | :--- |
-| [`simulate.py`](file:///c:/Users/jayes/Downloads/PJP_Simulator/simulate.py) | 317 lines | Subprocess execution, CLI args (`--workbook`, `--plan`, `--replan-cmd`, `--seed`, `--out`), evaluation formulas | The ground-truth evaluation benchmark scoring all submissions. |
+| [`simulate.py`](../simulate.py) | 317 lines | Subprocess execution, CLI args (`--workbook`, `--plan`, `--replan-cmd`, `--seed`, `--out`), evaluation formulas | The ground-truth evaluation benchmark scoring all submissions. |
 | `STATE.json` | Dynamic JSON | `today`, `next_working_day`, `weather_today`, `weather_forecast_next_working_day`, `visits_today`, `sales_today`, `completed_visits_month_to_date`, `rules` | Per-day telemetry payload passed via stdin/file to `--replan-cmd`. |
 | `CURRENT_PLAN.csv` | Dynamic CSV | `date, so_id, sequence, account_id, account_type` for all dates $> \text{today}$ | The currently held forward plan provided to the re-planner. |
 | `NEXT_PLAN.csv` | Output CSV | `date, so_id, sequence, account_id, account_type` for all dates $> \text{today}$ | Output file rewritten by re-planner; must exist before script exits. |
-| [`mypjp/replan.py`](file:///c:/Users/jayes/Downloads/PJP_Simulator/mypjp/replan.py) | 26 lines | CLI argument parser invoking `dynamic_replan.replan` in-process | Module wrapper satisfying the execution contract (`py -3.11 -m mypjp.replan`). |
-| [`.agents/skills/pjp-ai-developer/scripts/dynamic_replan.py`](file:///c:/Users/jayes/Downloads/PJP_Simulator/.agents/skills/pjp-ai-developer/scripts/dynamic_replan.py) | 188 lines | Spike detection, weather throttling, drop recovery insertion, guardrail filtering | Core algorithmic re-planner module. |
-| [`dataset/dealer_features.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/dealer_features.csv) | 677 rows, 115 KB | `sales_rate_daily`, `is_active_for_events`, `club`, `lat`, `lon` | Feature store providing baseline rates and event eligibility flags. |
-| [`results/seed_*/summary.json`](file:///c:/Users/jayes/Downloads/PJP_Simulator/results/) | JSON files | `simulated_adherence`, `focus_coverage`, `club_cadence_met`, `drop_response_rate`, `visits_cancelled_during_hikes` | Official metric scores across practice seeds 1, 2, and 3. |
+| [`mypjp/replan.py`](../mypjp/replan.py) | 26 lines | CLI argument parser invoking `dynamic_replan.replan` in-process | Module wrapper satisfying the execution contract (`py -3.11 -m mypjp.replan`). |
+| [`.agents/skills/pjp-ai-developer/scripts/dynamic_replan.py`](../.agents/skills/pjp-ai-developer/scripts/dynamic_replan.py) | 188 lines | Spike detection, weather throttling, drop recovery insertion, guardrail filtering | Core algorithmic re-planner module. |
+| [`dataset/dealer_features.csv`](../dataset/dealer_features.csv) | 677 rows, 115 KB | `sales_rate_daily`, `is_active_for_events`, `club`, `lat`, `lon` | Feature store providing baseline rates and event eligibility flags. |
+| [`results/seed_*/summary.json`](../results/) | JSON files | `simulated_adherence`, `focus_coverage`, `club_cadence_met`, `drop_response_rate`, `visits_cancelled_during_hikes` | Official metric scores across practice seeds 1, 2, and 3. |
 
 ---
 
 ## 3. Statistical Anomaly Detection: CUSUM on Sparse Gamma Demand (R18)
 
 ### 3.1 The Stochastic Demand Model
-In [`simulate.py` (lines 145–147)](file:///c:/Users/jayes/Downloads/PJP_Simulator/simulate.py#L145-L147), daily dealer sales are generated as:
+In [`simulate.py` (lines 145–147)](../simulate.py#L145-L147), daily dealer sales are generated as:
 $$\text{Demand}_{d, t} = \lfloor \lambda_{d, t} \rfloor + \mathbb{I}\left( U \le \lambda_{d, t} - \lfloor \lambda_{d, t} \rfloor \right)$$
 Where:
 $$\lambda_{d, t} = \mu_d \cdot f(t) \cdot Z, \quad Z \sim \text{Gamma}(\alpha = 2.0, \beta = 0.5)$$
@@ -181,7 +181,7 @@ When a dealer experiences a positive demand surge ($f_{\text{hike}} = 2.2$), fie
 1. **Demand Invariance:** The spike is exogenous ($f = 2.2$ for 10 days). Dealer buying is driven by contractor projects, not the physical presence of the officer.
 2. **Diminishing Marginal Uplift:** Visiting an account provides an $+8\%$ uplift ($1.08 \times 2.2 = 2.376$). On an account selling 5 sheets/day, the uplift is $+0.88$ sheets/day.
 3. **High Opportunity Cost:** The officer consumes a 25-minute call duration and transit time. In contrast, redirecting that visit slot to an account suffering a hidden drop recovers $75\%$ of sales volume ($+0.75 \times \mu_{\text{dropped}}$) and captures drop response points.
-4. **Direct Evaluation Points:** In [`simulate.py` line 276](file:///c:/Users/jayes/Downloads/PJP_Simulator/simulate.py#L276), every visit cancelled during an active hike window directly increments `visits_cancelled_during_hikes`, scoring points in Section 5's **Hike Handling (5%)** metric.
+4. **Direct Evaluation Points:** In [`simulate.py` line 276](../simulate.py#L276), every visit cancelled during an active hike window directly increments `visits_cancelled_during_hikes`, scoring points in Section 5's **Hike Handling (5%)** metric.
 
 ### 4.2 Spike Detection Rule
 In `simulate.py`, daily sales are multiplied by $2.2$. We define the surge detection threshold:

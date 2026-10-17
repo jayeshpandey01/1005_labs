@@ -6,3 +6,14 @@ __pycache__/
 *.tmp
 pjp_sim_*
 .replan_state_memory.json
+.venv/
+__pycache__/
+node_modules/
+web/node_modules/
+web/.next/
+.vercel/
+*.env
+*.env.local
+*.env.*.local
+web/.env
+web/.env*.local

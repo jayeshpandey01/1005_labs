@@ -69,34 +69,34 @@ We conducted a systematic examination of all 18 repository assets governing Stag
 
 | File Path | Records / Size | Primary Data Entities & Attributes | Role in Milestone M2 |
 | :--- | :--- | :--- | :--- |
-| [`dataset/dealers.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/dealers.csv) | 677 rows, 62 KB | `dealer_id`, `so_id`, `loyalty_club_member`, `club_tier`, `parent_dealer_id`, `lat`, `lon` | Defines universe boundaries, club eligibility, parent linkages, and coordinate completeness. |
-| [`dataset/sales_daily.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/sales_daily.csv) | 40,500 rows, 2.4 MB | `date` (2025-04-01 to 2026-10-15), `dealer_id`, `product_tier`, `sheets`, `points_per_sheet`, `value_inr` | Granular secondary sales ledger utilized to calculate multi-temporal de-growth, annual volume, and baseline rates. |
-| [`dataset/GST_filings.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/GST_filings.csv) | 677 rows, 141 KB | `dealer_id`, `turnover_band_proxy`, `filing_frequency`, `filing_punctuality`, `compliance_colour`, `gstin_clean` | Provides external turnover capacity proxies and compliance regularity to estimate uncaptured wallet headroom. |
-| [`dataset/scheme_targets.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/scheme_targets.csv) | 282 rows, 23 KB | `parent_dealer_id`, `scheme`, `start`, `end`, `slab` (1–4), `slab_target_points` | Contains formal target thresholds across annual, quarterly, and monthly top-up loyalty schemes for club accounts. |
-| [`dataset/scheme_rules_nonclub.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/scheme_rules_nonclub.csv) | 10 rows, 495 B | `scheme`, `slab` (1–4), `target_points_per_month`, `payout_per_point_inr` | Details monthly reward slabs (15 to 100 points) and annual trip thresholds for non-club retailers. |
-| [`dataset/product_tiers.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/product_tiers.csv) | 9 rows, 172 B | `product_tier` (Tier-8 to Tier-0), `points_per_sheet` (8, 4, 2, 1, 0) | Points weighting schedule per laminate sheet, enabling conversion from volume to loyalty scheme currency. |
-| [`dataset/officers.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/officers.csv) | 3 rows, 597 B | `so_id`, `territory`, `geography` (metro vs upcountry), `approx_day_start_lat`, `approx_day_start_lon` | Establishes territory profiles, speed regimes (18 vs 30 km/h), and base coordinates for travel modeling. |
-| [`dataset/SFDC_Activities.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/SFDC_Activities.csv) | 3,700 rows, 400 KB | `activity_id`, `so_id`, `account_id`, `checkin_time`, `checkout_time`, `planned_or_adhoc`, `status` | Benchmark repository capturing historical visit frequency, duration distributions, and quota gaming patterns. |
-| [`dataset/Baseline_metrics.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/Baseline_metrics.csv) | 12 rows, 888 B | Historical monthly adherence, planned calls, completed calls, and distinct account coverage per officer. | Serves as the official performance baseline against which AI ranking and scheduling improvements are benchmarked. |
-| [`dataset/Planning_Calendar.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/Planning_Calendar.csv) | 30 rows, 680 B | `date`, `day_name`, `working_day` | Ground-truth calendar establishing exactly 25 working days and 5 non-working Sundays in November 2026. |
-| [`dataset/dealer_features.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/dealer_features.csv) | 677 rows, 115 KB | Clean feature store combining sales rates, de-growth, GST proxies, headroom, and event flags. | The foundational input dataset consumed by the Stage 1 ranking engine. |
-| [`dataset/ranked_dealers.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/ranked_dealers.csv) | 677 rows, 35 KB | Ranked dealer roster with composite scores and decomposed sub-components. | Primary deliverable of Milestone M2. |
-| [`.agents/skills/pjp-data-engineer/scripts/build_feature_store.py`](file:///c:/Users/jayes/Downloads/PJP_Simulator/.agents/skills/pjp-data-engineer/scripts/build_feature_store.py) | 211 lines | Dynamic feature engineering script computing rolling rates, GST headroom, and MoM/QoQ value lost. | Authoritative pipeline stage producing verified feature vectors. |
-| [`.agents/skills/pjp-ai-developer/scripts/rank_and_schedule.py`](file:///c:/Users/jayes/Downloads/PJP_Simulator/.agents/skills/pjp-ai-developer/scripts/rank_and_schedule.py) | 251 lines | Multi-criteria scoring and capacity-constrained focus allocation script. | Production implementation of Milestone M2 ranking and Milestone M3 beat scheduling. |
-| [`simulate.py`](file:///c:/Users/jayes/Downloads/PJP_Simulator/simulate.py) | 317 lines | Day-by-day evaluation harness simulating weather disruptions, sales events, transit, and scoring. | Imposes downstream constraints on daily budgets, event eligibility, and guardrails. |
-| [`PJP_POC_Assignment_Brief.pdf`](file:///c:/Users/jayes/Downloads/PJP_Simulator/PJP_POC_Assignment_Brief.pdf) | 5 pages | Problem statement, 5-stage architecture, constraints, evaluation weights, and deliverables. | High-level regulatory specification for ranking logic and commercial deliverables. |
-| [`docs/assumptions_log.md`](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/assumptions_log.md) | 115 lines | Central catalog of mathematical constants, data gap handling rules, and operational invariants. | Guarantees consistency across all research and implementation modules. |
-| [`docs/millstone.md`](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/millstone.md) | 163 lines | Structured roadmap detailing research questions R1 to R11 and milestones M0 through M8. | Defines the exact scope, tasks, and acceptance criteria for Milestone M2. |
+| [`dataset/dealers.csv`](../dataset/dealers.csv) | 677 rows, 62 KB | `dealer_id`, `so_id`, `loyalty_club_member`, `club_tier`, `parent_dealer_id`, `lat`, `lon` | Defines universe boundaries, club eligibility, parent linkages, and coordinate completeness. |
+| [`dataset/sales_daily.csv`](../dataset/sales_daily.csv) | 40,500 rows, 2.4 MB | `date` (2025-04-01 to 2026-10-15), `dealer_id`, `product_tier`, `sheets`, `points_per_sheet`, `value_inr` | Granular secondary sales ledger utilized to calculate multi-temporal de-growth, annual volume, and baseline rates. |
+| [`dataset/GST_filings.csv`](../dataset/GST_filings.csv) | 677 rows, 141 KB | `dealer_id`, `turnover_band_proxy`, `filing_frequency`, `filing_punctuality`, `compliance_colour`, `gstin_clean` | Provides external turnover capacity proxies and compliance regularity to estimate uncaptured wallet headroom. |
+| [`dataset/scheme_targets.csv`](../dataset/scheme_targets.csv) | 282 rows, 23 KB | `parent_dealer_id`, `scheme`, `start`, `end`, `slab` (1–4), `slab_target_points` | Contains formal target thresholds across annual, quarterly, and monthly top-up loyalty schemes for club accounts. |
+| [`dataset/scheme_rules_nonclub.csv`](../dataset/scheme_rules_nonclub.csv) | 10 rows, 495 B | `scheme`, `slab` (1–4), `target_points_per_month`, `payout_per_point_inr` | Details monthly reward slabs (15 to 100 points) and annual trip thresholds for non-club retailers. |
+| [`dataset/product_tiers.csv`](../dataset/product_tiers.csv) | 9 rows, 172 B | `product_tier` (Tier-8 to Tier-0), `points_per_sheet` (8, 4, 2, 1, 0) | Points weighting schedule per laminate sheet, enabling conversion from volume to loyalty scheme currency. |
+| [`dataset/officers.csv`](../dataset/officers.csv) | 3 rows, 597 B | `so_id`, `territory`, `geography` (metro vs upcountry), `approx_day_start_lat`, `approx_day_start_lon` | Establishes territory profiles, speed regimes (18 vs 30 km/h), and base coordinates for travel modeling. |
+| [`dataset/SFDC_Activities.csv`](../dataset/SFDC_Activities.csv) | 3,700 rows, 400 KB | `activity_id`, `so_id`, `account_id`, `checkin_time`, `checkout_time`, `planned_or_adhoc`, `status` | Benchmark repository capturing historical visit frequency, duration distributions, and quota gaming patterns. |
+| [`dataset/Baseline_metrics.csv`](../dataset/Baseline_metrics.csv) | 12 rows, 888 B | Historical monthly adherence, planned calls, completed calls, and distinct account coverage per officer. | Serves as the official performance baseline against which AI ranking and scheduling improvements are benchmarked. |
+| [`dataset/Planning_Calendar.csv`](../dataset/Planning_Calendar.csv) | 30 rows, 680 B | `date`, `day_name`, `working_day` | Ground-truth calendar establishing exactly 25 working days and 5 non-working Sundays in November 2026. |
+| [`dataset/dealer_features.csv`](../dataset/dealer_features.csv) | 677 rows, 115 KB | Clean feature store combining sales rates, de-growth, GST proxies, headroom, and event flags. | The foundational input dataset consumed by the Stage 1 ranking engine. |
+| [`dataset/ranked_dealers.csv`](../dataset/ranked_dealers.csv) | 677 rows, 35 KB | Ranked dealer roster with composite scores and decomposed sub-components. | Primary deliverable of Milestone M2. |
+| [`.agents/skills/pjp-data-engineer/scripts/build_feature_store.py`](../.agents/skills/pjp-data-engineer/scripts/build_feature_store.py) | 211 lines | Dynamic feature engineering script computing rolling rates, GST headroom, and MoM/QoQ value lost. | Authoritative pipeline stage producing verified feature vectors. |
+| [`.agents/skills/pjp-ai-developer/scripts/rank_and_schedule.py`](../.agents/skills/pjp-ai-developer/scripts/rank_and_schedule.py) | 251 lines | Multi-criteria scoring and capacity-constrained focus allocation script. | Production implementation of Milestone M2 ranking and Milestone M3 beat scheduling. |
+| [`simulate.py`](../simulate.py) | 317 lines | Day-by-day evaluation harness simulating weather disruptions, sales events, transit, and scoring. | Imposes downstream constraints on daily budgets, event eligibility, and guardrails. |
+| [`PJP_POC_Assignment_Brief.pdf`](../PJP_POC_Assignment_Brief.pdf) | 5 pages | Problem statement, 5-stage architecture, constraints, evaluation weights, and deliverables. | High-level regulatory specification for ranking logic and commercial deliverables. |
+| [`docs/assumptions_log.md`](assumptions_log.md) | 115 lines | Central catalog of mathematical constants, data gap handling rules, and operational invariants. | Guarantees consistency across all research and implementation modules. |
+| [`docs/millstone.md`](millstone.md) | 163 lines | Structured roadmap detailing research questions R1 to R11 and milestones M0 through M8. | Defines the exact scope, tasks, and acceptance criteria for Milestone M2. |
 
 ---
 
 ## 3. Empirical Research Findings
 
-Milestone M2 resolves four core research questions specified in [`docs/millstone.md`](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/millstone.md): **R3 (GST Turnover & Headroom)**, **R4 (Predictive De-Growth)**, **R6 (Stochastic Drop Profiling)**, and **R9 (Club Status & Milestone Proximity)**.
+Milestone M2 resolves four core research questions specified in [`docs/millstone.md`](millstone.md): **R3 (GST Turnover & Headroom)**, **R4 (Predictive De-Growth)**, **R6 (Stochastic Drop Profiling)**, and **R9 (Club Status & Milestone Proximity)**.
 
 ### 3.1 Research Question R3: GST Turnover Interpretation & Proxy Inversion
 * **Empirical Analysis:**
-  Cross-referencing annual purchases in [`dataset/sales_daily.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/sales_daily.csv) against statutory turnover bands in [`dataset/GST_filings.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/GST_filings.csv) revealed a critical data pathology: **7 large dealers purchase more laminate value from us than their statutory GST turnover band implies**.
+  Cross-referencing annual purchases in [`dataset/sales_daily.csv`](../dataset/sales_daily.csv) against statutory turnover bands in [`dataset/GST_filings.csv`](../dataset/GST_filings.csv) revealed a critical data pathology: **7 large dealers purchase more laminate value from us than their statutory GST turnover band implies**.
 
 | Dealer ID | SO ID | Registered GST Band Proxy | Assigned Midpoint Proxy | Actual Annual Purchases (INR) | Discrepancy Ratio |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -142,7 +142,7 @@ Milestone M2 resolves four core research questions specified in [`docs/millstone
   * **Inter-Order Gaps:** Active dealers do not order daily; they purchase in batches of 40–120 sheets once every 4 to 10 days. Consequently, **64.2% of daily records for active dealers are zero sheets** under completely normal operations.
 
 * **Drop Vulnerability Index:**
-  In [`simulate.py`](file:///c:/Users/jayes/Downloads/PJP_Simulator/simulate.py#L145-L147), sales are generated via a Gamma process:
+  In [`simulate.py`](../simulate.py#L145-L147), sales are generated via a Gamma process:
   $$\text{Demand}(d, t) \sim \text{Poisson}\left(\mu_d \cdot f_t \cdot \Gamma(\alpha=2.0, \beta=0.5)\right)$$
   When a drop event occurs, the parameter collapses to $f_t = 0.25$ (a 75% structural loss). Because a drop can only occur on the 113 active accounts, prioritization must incorporate a **Drop Susceptibility Factor**:
   $$\text{Score}_{\text{drop\_risk}}(d) = \begin{cases} \ln(1 + \mu_d) & \text{if } \mu_d \ge 0.5 \\ 0 & \text{if } \mu_d < 0.5 \end{cases}$$
@@ -155,7 +155,7 @@ Milestone M2 resolves four core research questions specified in [`docs/millstone
   * **SO-C:** 1 Club dealer (`C-D026`, located in Hubballi).
 
 * **Scheme Slab Distance Metric:**
-  In [`dataset/scheme_targets.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/scheme_targets.csv), club dealers have quarterly and annual targets across Slabs 1 through 4. For instance:
+  In [`dataset/scheme_targets.csv`](../dataset/scheme_targets.csv), club dealers have quarterly and annual targets across Slabs 1 through 4. For instance:
   * Dealer `A-D019` accumulated 125,392 points by October 15, surpassing Slab 4 (100,170 points) for the annual scheme, but requires focus on monthly top-up incentives.
   * Dealer `B-D008` accumulated 87,164 points, comfortably surpassing Slab 1 (63,000 points) and targeting Slab 2 (91,440 points).
   
@@ -257,7 +257,7 @@ flowchart TD
 ### 6.1 Detailed Task Breakdown
 
 #### Task 2.1: Inversion-Adjusted Headroom Modeling (R3)
-* Update [`build_feature_store.py`](file:///c:/Users/jayes/Downloads/PJP_Simulator/.agents/skills/pjp-data-engineer/scripts/build_feature_store.py) to incorporate the inversion adjustment:
+* Update [`build_feature_store.py`](../.agents/skills/pjp-data-engineer/scripts/build_feature_store.py) to incorporate the inversion adjustment:
   $$\text{Turnover}_{\text{est}} = \max\left(\text{GST\_Proxy}, \, 1.25 \times \text{Purchases}_{\text{annual}}\right)$$
 * Verify that dealers `B-D061`, `B-D029`, `B-D085`, and `A-D019` receive non-zero headroom reflecting true commercial capacity.
 
@@ -270,12 +270,12 @@ flowchart TD
 * Blend into a unified value-lost index: $0.45 \cdot \text{MoM} + 0.35 \cdot \text{QoQ} + 0.20 \cdot \text{YoY}$.
 
 #### Task 2.3: Scheme Milestone Proximity Index (R9)
-* Ingest [`dataset/scheme_targets.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/scheme_targets.csv) and compute points accumulated to date.
+* Ingest [`dataset/scheme_targets.csv`](../dataset/scheme_targets.csv) and compute points accumulated to date.
 * Identify the active target slab (Slabs 1–4) for each club account.
 * Calculate fractional distance to the next threshold to reward accounts near bonus qualification.
 
 #### Task 2.4: Decomposed & Explainable Ranking Engine
-* Update [`rank_and_schedule.py`](file:///c:/Users/jayes/Downloads/PJP_Simulator/.agents/skills/pjp-ai-developer/scripts/rank_and_schedule.py) to export separate sub-score columns in [`dataset/ranked_dealers.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/ranked_dealers.csv):
+* Update [`rank_and_schedule.py`](../.agents/skills/pjp-ai-developer/scripts/rank_and_schedule.py) to export separate sub-score columns in [`dataset/ranked_dealers.csv`](../dataset/ranked_dealers.csv):
   `dealer_id, so_id, club, has_gps, rate, headroom, degrowth_mom, score_degrowth, score_headroom, score_volume, score_club, rank_score, is_focus`
 * Ensure every row can be audited by sales leadership without inspecting source code.
 

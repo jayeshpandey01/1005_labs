@@ -12,15 +12,19 @@ Outputs:
 """
 
 import csv
+import os
 from pathlib import Path
 from typing import Dict, List
 
+os.environ.setdefault("MPLCONFIGDIR", "/tmp/matplotlib")
 import matplotlib.pyplot as plt
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 DATA_DIR = BASE_DIR / "dataset"
 MAPS_DIR = BASE_DIR / "docs" / "maps"
 MAPS_DIR.mkdir(parents=True, exist_ok=True)
+WEB_MAPS_DIR = BASE_DIR / "web" / "public" / "maps"
+WEB_MAPS_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def generate_maps():
@@ -201,9 +205,11 @@ def generate_maps():
         plt.tight_layout()
 
         out_path = MAPS_DIR / f"route_map_{so_id}.png"
+        web_out_path = WEB_MAPS_DIR / f"route_map_{so_id}.png"
         plt.savefig(out_path)
+        plt.savefig(web_out_path)
         plt.close()
-        print(f"Generated route map: {out_path}")
+        print(f"Generated route map: {out_path} and {web_out_path}")
 
     print("Route map visualizer: Completed Successfully")
 

@@ -19,7 +19,7 @@ This paper establishes the mathematical theory, empirical findings, and algorith
 4. **Chronological Arrival Time Synthesis:** Synthesizing exact arrival timestamps starting from 09:30 AM, explicitly incorporating a 25-minute call duration per stop and withholding 80 minutes daily for mandatory demand-generation calls.
 5. **Context-Aware Commercial Reason Tagging:** Dynamically enriching the journey plan with data-backed commercial triggers (e.g. Loyalty Club Cadence, Value-Lost De-growth Recovery, GST Wallet Expansion) rather than generic static labels.
 
-We validate the routing subsystem across all 74 daily officer-beats in November 2026, demonstrating that 100% of routes fit within the 460-minute net focus budget with zero day-budget violations, and producing both the master plan [`plan_november.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_november.csv) and individual plans ([`plan_SO-A.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_SO-A.csv), [`plan_SO-B.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_SO-B.csv), [`plan_SO-C.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_SO-C.csv)).
+We validate the routing subsystem across all 74 daily officer-beats in November 2026, demonstrating that 100% of routes fit within the 460-minute net focus budget with zero day-budget violations, and producing both the master plan [`plan_november.csv`](../plan_november.csv) and individual plans ([`plan_SO-A.csv`](../plan_SO-A.csv), [`plan_SO-B.csv`](../plan_SO-B.csv), [`plan_SO-C.csv`](../plan_SO-C.csv)).
 
 ---
 
@@ -29,7 +29,7 @@ We validate the routing subsystem across all 74 daily officer-beats in November 
 For any working day $t \in \{1, 2, \dots, 25\}$ and Sales Officer $o$, the scheduling stage (Milestone M3) assigns an unordered set of $k$ focus dealers:
 $$\mathcal{B}_{o, t} = \{d_1, d_2, \dots, d_k\}, \quad k \le 6$$
 
-Let node $0$ denote the officer's designated home base coordinate $\mathbf{x}_{\text{base}} = (\text{lat}_0, \text{lon}_0)$ loaded dynamically from [`dataset/officers.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/officers.csv).
+Let node $0$ denote the officer's designated home base coordinate $\mathbf{x}_{\text{base}} = (\text{lat}_0, \text{lon}_0)$ loaded dynamically from [`dataset/officers.csv`](../dataset/officers.csv).
 
 The Open Traveling Salesperson Problem seeks a permutation $\pi \in S_k$ of the dealer set $\{1, 2, \dots, k\}$ that minimizes total transit time starting from base:
 $$\min_{\pi \in S_k} \left[ c(0, \pi(1)) + \sum_{i=1}^{k-1} c(\pi(i), \pi(i+1)) \right]$$
@@ -67,15 +67,15 @@ We audited all files governing spatial travel times, routing contracts, and deli
 
 | File Path | Entity Count / Size | Critical Attributes Audited | Role in Milestone M4 |
 | :--- | :--- | :--- | :--- |
-| [`dataset/initial_schedule_unsequenced.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/initial_schedule_unsequenced.csv) | 435 rows, 17 KB | `date`, `so_id`, `sequence`, `account_id`, `account_type` | Input unsequenced calendar produced by Milestone M3 beat clustering. |
-| [`dataset/dealers.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/dealers.csv) | 677 rows, 62 KB | `dealer_id`, `lat`, `lon`, `town`, `so_id`, `loyalty_club_member` | Source of coordinate locations (395 located, 282 unlocated) and officer assignments. |
-| [`dataset/officers.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/officers.csv) | 3 rows, 597 B | `so_id`, `approx_day_start_lat`, `approx_day_start_lon`, `geography` | Day-start origin coordinates and territory classification (metro vs upcountry). |
-| [`dataset/dealer_features.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/dealer_features.csv) | 677 rows, 115 KB | `degrowth_mom_inr`, `headroom_inr`, `club`, `sales_rate_daily` | Supplies commercial context to synthesize meaningful, explainable visit reasons. |
-| [`plan_november.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_november.csv) | 425 rows, 35 KB | `date, so_id, sequence, account_id, account_type, planned_arrival, travel_min_from_previous, reason` | Primary master journey plan deliverable evaluated by `simulate.py`. |
-| [`plan_SO-A.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_SO-A.csv), [`plan_SO-B.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_SO-B.csv), [`plan_SO-C.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_SO-C.csv) | Individual CSVs | Formatted identically to master plan per officer | Dedicated per-officer route plans required by Section 6 of assignment brief. |
-| [`.agents/skills/pjp-ai-developer/scripts/route_tsp_solver.py`](file:///c:/Users/jayes/Downloads/PJP_Simulator/.agents/skills/pjp-ai-developer/scripts/route_tsp_solver.py) | 211 lines | Open TSP permutation solver, budget validation, and timestamp generator. | Production execution script for Milestone M4. |
-| [`scripts/generate_maps.py`](file:///c:/Users/jayes/Downloads/PJP_Simulator/scripts/generate_maps.py) | 188 lines | Matplotlib/NetworkX geospatial tour visualizer | Renders visual Day 1 route maps required by Section 6 of assignment brief. |
-| [`simulate.py`](file:///c:/Users/jayes/Downloads/PJP_Simulator/simulate.py) | 317 lines | `km()` Haversine, `road_factor = 1.35`, speed baselines, weather multipliers | Evaluation benchmark validating adherence and travel feasibility. |
+| [`dataset/initial_schedule_unsequenced.csv`](../dataset/initial_schedule_unsequenced.csv) | 435 rows, 17 KB | `date`, `so_id`, `sequence`, `account_id`, `account_type` | Input unsequenced calendar produced by Milestone M3 beat clustering. |
+| [`dataset/dealers.csv`](../dataset/dealers.csv) | 677 rows, 62 KB | `dealer_id`, `lat`, `lon`, `town`, `so_id`, `loyalty_club_member` | Source of coordinate locations (395 located, 282 unlocated) and officer assignments. |
+| [`dataset/officers.csv`](../dataset/officers.csv) | 3 rows, 597 B | `so_id`, `approx_day_start_lat`, `approx_day_start_lon`, `geography` | Day-start origin coordinates and territory classification (metro vs upcountry). |
+| [`dataset/dealer_features.csv`](../dataset/dealer_features.csv) | 677 rows, 115 KB | `degrowth_mom_inr`, `headroom_inr`, `club`, `sales_rate_daily` | Supplies commercial context to synthesize meaningful, explainable visit reasons. |
+| [`plan_november.csv`](../plan_november.csv) | 425 rows, 35 KB | `date, so_id, sequence, account_id, account_type, planned_arrival, travel_min_from_previous, reason` | Primary master journey plan deliverable evaluated by `simulate.py`. |
+| [`plan_SO-A.csv`](../plan_SO-A.csv), [`plan_SO-B.csv`](../plan_SO-B.csv), [`plan_SO-C.csv`](../plan_SO-C.csv) | Individual CSVs | Formatted identically to master plan per officer | Dedicated per-officer route plans required by Section 6 of assignment brief. |
+| [`.agents/skills/pjp-ai-developer/scripts/route_tsp_solver.py`](../.agents/skills/pjp-ai-developer/scripts/route_tsp_solver.py) | 211 lines | Open TSP permutation solver, budget validation, and timestamp generator. | Production execution script for Milestone M4. |
+| [`scripts/generate_maps.py`](../scripts/generate_maps.py) | 188 lines | Matplotlib/NetworkX geospatial tour visualizer | Renders visual Day 1 route maps required by Section 6 of assignment brief. |
+| [`simulate.py`](../simulate.py) | 317 lines | `km()` Haversine, `road_factor = 1.35`, speed baselines, weather multipliers | Evaluation benchmark validating adherence and travel feasibility. |
 
 ---
 
@@ -85,7 +85,7 @@ Milestone M4 resolves research questions **R7 (Travel & Call Realism)** and **R1
 
 ### 3.1 Research Question R7: Transit Velocity & Missing Coordinate Penalties
 * **Road Network Physics:**
-  In [`simulate.py`](file:///c:/Users/jayes/Downloads/PJP_Simulator/simulate.py#L45-L46), travel time between two geographic coordinates $\mathbf{x}_1 = (\text{lat}_1, \text{lon}_1)$ and $\mathbf{x}_2 = (\text{lat}_2, \text{lon}_2)$ is computed as:
+  In [`simulate.py`](../simulate.py#L45-L46), travel time between two geographic coordinates $\mathbf{x}_1 = (\text{lat}_1, \text{lon}_1)$ and $\mathbf{x}_2 = (\text{lat}_2, \text{lon}_2)$ is computed as:
   $$d_{\text{km}}(\mathbf{x}_1, \mathbf{x}_2) = 2 R \arcsin \left( \sqrt{\sin^2\left(\frac{\Delta\text{lat}}{2}\right) + \cos(\text{lat}_1)\cos(\text{lat}_2)\sin^2\left(\frac{\Delta\text{lon}}{2}\right)} \right)$$
   $$t_{\text{travel}}(\mathbf{x}_1, \mathbf{x}_2) = \frac{d_{\text{km}}(\mathbf{x}_1, \mathbf{x}_2) \times 1.35}{v_{\text{territory}}} \times 60\text{ minutes}$$
   Where:
@@ -97,7 +97,7 @@ Milestone M4 resolves research questions **R7 (Travel & Call Realism)** and **R1
 * **Position-Preserving Flat Penalties for Unlocated Outlets:**
   When either origin or destination lacks geographic coordinates ($\mathbf{x}_1 = \emptyset$ or $\mathbf{x}_2 = \emptyset$), the simulator assigns a flat penalty:
   $$t_{\text{penalty}} = \begin{cases} 25\text{ minutes} & \text{if metro (SO-A, SO-B)} \\ 45\text{ minutes} & \text{if upcountry (SO-C)} \end{cases}$$
-  *Crucial Simulation Invariant:* In [`simulate.py` (lines 197–202)](file:///c:/Users/jayes/Downloads/PJP_Simulator/simulate.py#L197-L202):
+  *Crucial Simulation Invariant:* In [`simulate.py` (lines 197–202)](../simulate.py#L197-L202):
   ```python
   if d['loc'] is None:
       t = CFG['unknown_location_travel_min'][o['kind']]
@@ -113,10 +113,10 @@ Milestone M4 resolves research questions **R7 (Travel & Call Realism)** and **R1
   For each daily beat of $k$ dealers, we construct the weighted complete directed subgraph $G_{\text{tour}} = (V_{\text{day}}, E_{\text{day}}, W_{\text{day}})$ with $|V_{\text{day}}| = k + 1 \le 7$ nodes.
 * **Geospatial Map Deliverable:**
   Section 6 of the assignment brief requires: *"A map of one day per SO is welcome."*
-  Using [`scripts/generate_maps.py`](file:///c:/Users/jayes/Downloads/PJP_Simulator/scripts/generate_maps.py), we plot Day 1 tours for all three officers:
-  * **SO-A (Bengaluru Urban West):** [`docs/maps/route_map_SO-A.png`](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/maps/route_map_SO-A.png)
-  * **SO-B (Bengaluru Urban South):** [`docs/maps/route_map_SO-B.png`](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/maps/route_map_SO-B.png)
-  * **SO-C (Hubballi-Dharwad):** [`docs/maps/route_map_SO-C.png`](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/maps/route_map_SO-C.png)
+  Using [`scripts/generate_maps.py`](../scripts/generate_maps.py), we plot Day 1 tours for all three officers:
+  * **SO-A (Bengaluru Urban West):** [`docs/maps/route_map_SO-A.png`](maps/route_map_SO-A.png)
+  * **SO-B (Bengaluru Urban South):** [`docs/maps/route_map_SO-B.png`](maps/route_map_SO-B.png)
+  * **SO-C (Hubballi-Dharwad):** [`docs/maps/route_map_SO-C.png`](maps/route_map_SO-C.png)
 
 ```mermaid
 graph TD
@@ -227,7 +227,7 @@ flowchart TD
 ### 6.1 Detailed Task Breakdown
 
 #### Task 4.1: Tour Subgraph Construction
-* Ingest [`dataset/initial_schedule_unsequenced.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/initial_schedule_unsequenced.csv) and group stops by `(date, so_id)`.
+* Ingest [`dataset/initial_schedule_unsequenced.csv`](../dataset/initial_schedule_unsequenced.csv) and group stops by `(date, so_id)`.
 * For each day, construct the complete graph $G_{\text{tour}}$ consisting of home base coordinate $\mathbf{x}_{\text{base}}$ and the scheduled dealer coordinates.
 * Replicate simulator road detour factor ($1.35$) and territory velocities ($18$ vs $30\text{ km/h}$).
 
@@ -242,7 +242,7 @@ flowchart TD
 * Record `travel_min_from_previous` for every leg.
 
 #### Task 4.4: Dynamic Context-Aware Visit Reasons
-* Enrich the `reason` column by cross-referencing dealer attributes from [`dataset/dealer_features.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/dealer_features.csv):
+* Enrich the `reason` column by cross-referencing dealer attributes from [`dataset/dealer_features.csv`](../dataset/dealer_features.csv):
   * Loyalty Club members: `"Loyalty Club Bi-Monthly Cadence"`
   * High de-growth accounts: `"Revenue Recovery (De-growth Alert)"`
   * High headroom accounts: `"Wallet Share Expansion (High Headroom)"`
@@ -250,12 +250,12 @@ flowchart TD
   * Regular accounts: `"Focus Coverage & Service Touchpoint"`
 
 #### Task 4.5: Master and Per-Officer CSV Generation
-* Export the master journey plan to [`plan_november.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_november.csv).
-* Dynamically discover registered officers from [`dataset/officers.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/dataset/officers.csv) and write individual plans: [`plan_SO-A.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_SO-A.csv), [`plan_SO-B.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_SO-B.csv), and [`plan_SO-C.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_SO-C.csv).
+* Export the master journey plan to [`plan_november.csv`](../plan_november.csv).
+* Dynamically discover registered officers from [`dataset/officers.csv`](../dataset/officers.csv) and write individual plans: [`plan_SO-A.csv`](../plan_SO-A.csv), [`plan_SO-B.csv`](../plan_SO-B.csv), and [`plan_SO-C.csv`](../plan_SO-C.csv).
 
 #### Task 4.6: Geospatial Route Map Generation
-* Execute [`scripts/generate_maps.py`](file:///c:/Users/jayes/Downloads/PJP_Simulator/scripts/generate_maps.py) to plot Day 1 tours on coordinate axes with numbered stop sequences and transit times.
-* Save high-resolution PNG plots to [`docs/maps/route_map_SO-A.png`](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/maps/route_map_SO-A.png), [`docs/maps/route_map_SO-B.png`](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/maps/route_map_SO-B.png), and [`docs/maps/route_map_SO-C.png`](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/maps/route_map_SO-C.png).
+* Execute [`scripts/generate_maps.py`](../scripts/generate_maps.py) to plot Day 1 tours on coordinate axes with numbered stop sequences and transit times.
+* Save high-resolution PNG plots to [`docs/maps/route_map_SO-A.png`](maps/route_map_SO-A.png), [`docs/maps/route_map_SO-B.png`](maps/route_map_SO-B.png), and [`docs/maps/route_map_SO-C.png`](maps/route_map_SO-C.png).
 
 ---
 
@@ -268,8 +268,8 @@ Milestone M4 is accepted if and only if all following criteria pass verification
 | **G4.1** | **Budget Feasibility** | 100% of daily tours fit within the 460-minute net focus budget (`days_over_budget == 0`). | 0 Overruns |
 | **G4.2** | **Sequence Ordering** | Every stop has a sequence number between 1 and 6 starting from 1. | 100% Compliance |
 | **G4.3** | **Timestamp Synthesis** | All `planned_arrival` values formatted as valid `HH:MM` starting at or after 09:30 AM. | 100% Compliance |
-| **G4.4** | **Deliverables Completeness** | [`plan_november.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_november.csv) and individual plans ([`plan_SO-*.csv`](file:///c:/Users/jayes/Downloads/PJP_Simulator/plan_SO-A.csv)) exist and match format. | 100% Compliance |
-| **G4.5** | **Route Visual Maps** | High-resolution route map PNGs generated in [`docs/maps/`](file:///c:/Users/jayes/Downloads/PJP_Simulator/docs/maps/) for all officers. | 3 Maps Generated |
+| **G4.4** | **Deliverables Completeness** | [`plan_november.csv`](../plan_november.csv) and individual plans ([`plan_SO-*.csv`](../plan_SO-A.csv)) exist and match format. | 100% Compliance |
+| **G4.5** | **Route Visual Maps** | High-resolution route map PNGs generated in [`docs/maps/`](maps/) for all officers. | 3 Maps Generated |
 | **G4.6** | **Simulation Adherence** | Simulator scores adherence $\ge 90\%$ with 0 guardrail breaches across seeds 1–3. | Verified |
 
 ---
