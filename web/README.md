@@ -10,6 +10,7 @@
 [![Tests](https://img.shields.io/badge/Tests-36%2F36_Passed-brightgreen?style=flat-square)]()
 [![Build](https://img.shields.io/badge/Build-Passing-brightgreen?style=flat-square)]()
 [![Deploy](https://img.shields.io/badge/Deploy-Vercel-000000?style=flat-square&logo=vercel&logoColor=white)](https://vercel.com/)
+[![Architecture](https://img.shields.io/badge/Architecture-Excalidraw-6965DB?style=flat-square&logo=excalidraw&logoColor=white)](https://excalidraw.com/#room=391d1052d4bbd9ac9409,aBrJo3ZKYg1Ere4rj7_Tsg)
 [![Code Style](https://img.shields.io/badge/Code_Style-Prettier-261230?style=flat-square)]()
 
 An interactive visual canvas and conversational GraphRAG copilot for **field sales optimization, multi-hop itinerary reasoning, and beat transit analytics**. Modeled after [`jayeshpandey01/Graph-Based-Query-System`](https://github.com/jayeshpandey01/Graph-Based-Query-System), the platform features hardware-accelerated Cytoscape.js network topologies, interactive per-stop transit breakdown bar charts with click-to-chat deep linking, natural language-to-Cypher retrieval, and dual-mode resilience between live Neo4j AuraDB and an in-memory graph snapshot (<5ms latency).
@@ -29,6 +30,9 @@ An interactive visual canvas and conversational GraphRAG copilot for **field sal
 ---
 
 ## 1. System Overview
+
+> **Interactive System Architecture Canvas:**  
+> [View Complete PJP System Architecture on Excalidraw](https://excalidraw.com/#room=391d1052d4bbd9ac9409,aBrJo3ZKYg1Ere4rj7_Tsg)
 
 The PJP Sales Optimization Copilot provides an interactive visual dashboard and conversational AI interface for managing field sales operations in laminate distribution. Designed to operate over November 2026 Permanent Journey Plans across three Sales Officers (SO-A, SO-B, and SO-C), the application bridges complex graph-structured data with actionable business insights.
 

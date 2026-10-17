@@ -12,6 +12,7 @@
 [![Focus Coverage](https://img.shields.io/badge/Focus_Coverage-89.2%25-green?style=flat-square)]()
 [![Guardrail Breaches](https://img.shields.io/badge/Breaches-0_Strictly-brightgreen?style=flat-square)]()
 [![Deploy](https://img.shields.io/badge/Deploy-Vercel-000000?style=flat-square&logo=vercel&logoColor=white)](https://vercel.com/)
+[![Architecture](https://img.shields.io/badge/Architecture-Excalidraw-6965DB?style=flat-square&logo=excalidraw&logoColor=white)](https://excalidraw.com/#room=391d1052d4bbd9ac9409,aBrJo3ZKYg1Ere4rj7_Tsg)
 [![Code Style](https://img.shields.io/badge/Code_Style-Ruff_%7C_Prettier-261230?style=flat-square)]()
 
 An end-to-end, enterprise optimization engine and conversational intelligence platform for **Permanent Journey Plan (PJP) scheduling, TSP spatial graph routing, and dynamic online re-planning**. The system integrates multi-table ERP ingestion, CUSUM change-point de-growth detection, GST wallet headroom modeling, 25-day constrained beat scheduling, personalized WhatsApp incentive nudges, and a Next.js 15 + Neo4j GraphRAG web copilot with hardware-accelerated Cytoscape.js visualization and sub-5ms in-memory snapshot resilience.
@@ -34,6 +35,10 @@ An end-to-end, enterprise optimization engine and conversational intelligence pl
 ---
 
 ## 1. Executive Summary & System Architecture
+
+> **Interactive System Architecture Canvas:**  
+> The comprehensive end-to-end data flow, algorithmic pipeline, and GraphRAG copilot architecture diagram is available on Excalidraw:  
+> [https://excalidraw.com/#room=391d1052d4bbd9ac9409,aBrJo3ZKYg1Ere4rj7_Tsg](https://excalidraw.com/#room=391d1052d4bbd9ac9409,aBrJo3ZKYg1Ere4rj7_Tsg)
 
 In building material distribution, field Sales Officers (SOs) traditionally schedule monthly Permanent Journey Plans (PJPs) manually through informal spreadsheets and personal intuition. This legacy practice leads to low plan adherence (averaging 35% to 55%), disproportionate call allocation toward convenient accounts, and a lack of early detection for revenue de-growth and sudden customer churn.
 
@@ -71,7 +76,7 @@ Dual-mode analytics visualizer showing per-stop transit time breakdowns, cumulat
 
 ## 3. Mathematical Formulation & Algorithmic Pipeline
 
-The pipeline executes through five modular phases in strict topological order:
+The pipeline executes through five modular phases in strict topological order (visualized in the [Interactive Architecture Canvas](https://excalidraw.com/#room=391d1052d4bbd9ac9409,aBrJo3ZKYg1Ere4rj7_Tsg)):
 
 ```
 [Multi-Table Data Ingestion]
