@@ -32,7 +32,7 @@ export async function callOpenRouter(
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${OPENROUTER_API_KEY}`,
-        "HTTP-Referer": "https://pjp-sales-copilot.vercel.app",
+        "HTTP-Referer": "https://1005-labs.vercel.app",
         "X-Title": "PJP Sales Optimization Copilot",
       },
       body: JSON.stringify({

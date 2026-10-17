@@ -2,7 +2,8 @@
 
 > **Authoritative Technical Blueprint for the PJP Sales Optimization & GraphRAG Copilot Platform**  
 > **Platform Stack:** Next.js 15 (App Router, React 19) • Neo4j AuraDB • Cytoscape.js • OpenRouter (Claude 3.5 Sonnet) • Python 3.11 Optimization Engine  
-> **Repository:** `1005_labs` • **Modeled After:** [`jayeshpandey01/Graph-Based-Query-System`](https://github.com/jayeshpandey01/Graph-Based-Query-System)
+> **Repository:** `1005_labs` • **Modeled After:** [`jayeshpandey01/Graph-Based-Query-System`](https://github.com/jayeshpandey01/Graph-Based-Query-System)  
+> **Live Production Dashboard:** [https://1005-labs.vercel.app](https://1005-labs.vercel.app)
 
 ---
 

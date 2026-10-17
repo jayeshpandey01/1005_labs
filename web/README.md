@@ -9,9 +9,11 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Tests](https://img.shields.io/badge/Tests-36%2F36_Passed-brightgreen?style=flat-square)]()
 [![Build](https://img.shields.io/badge/Build-Passing-brightgreen?style=flat-square)]()
-[![Deploy](https://img.shields.io/badge/Deploy-Vercel-000000?style=flat-square&logo=vercel&logoColor=white)](https://vercel.com/)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-1005--labs.vercel.app-000000?style=flat-square&logo=vercel&logoColor=white)](https://1005-labs.vercel.app)
 [![Architecture](https://img.shields.io/badge/Architecture-Excalidraw-6965DB?style=flat-square&logo=excalidraw&logoColor=white)](https://excalidraw.com/#room=391d1052d4bbd9ac9409,aBrJo3ZKYg1Ere4rj7_Tsg)
 [![Code Style](https://img.shields.io/badge/Code_Style-Prettier-261230?style=flat-square)]()
+
+> **Live Production Dashboard:** [https://1005-labs.vercel.app](https://1005-labs.vercel.app)
 
 An interactive visual canvas and conversational GraphRAG copilot for **field sales optimization, multi-hop itinerary reasoning, and beat transit analytics**. Modeled after [`jayeshpandey01/Graph-Based-Query-System`](https://github.com/jayeshpandey01/Graph-Based-Query-System), the platform features hardware-accelerated Cytoscape.js network topologies, interactive per-stop transit breakdown bar charts with click-to-chat deep linking, natural language-to-Cypher retrieval, and dual-mode resilience between live Neo4j AuraDB and an in-memory graph snapshot (<5ms latency).
 
@@ -248,6 +250,7 @@ npm run build
 ---
 
 ## 8. Vercel Cloud Deployment
+- **Live Production URL:** [https://1005-labs.vercel.app](https://1005-labs.vercel.app)
 
 The application is pre-configured for deployment to Vercel:
 
